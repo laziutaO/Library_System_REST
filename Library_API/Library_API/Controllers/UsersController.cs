@@ -65,5 +65,22 @@ namespace Library_API.Controllers
 
             return Ok(user);
         }
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] Guid id)
+        {
+            var user = await libraryDbContext.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            libraryDbContext.Users.Remove(user);
+            await libraryDbContext.SaveChangesAsync();
+
+            return Ok(user);
+        }
     }
 }

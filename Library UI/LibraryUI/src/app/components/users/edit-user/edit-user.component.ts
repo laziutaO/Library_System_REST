@@ -38,4 +38,10 @@ export class EditUserComponent {
       next: (responce) => {this.router.navigate(['/users']);}
     })
   }
+
+  deleteUser(id: string){
+    this.userService.deleteUser(id).subscribe({
+      next: (responce) => {this.router.navigate(['/users']);}
+    })
+  }
 }

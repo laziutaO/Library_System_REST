@@ -16,6 +16,8 @@
                     <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter phone number" [(ngModel)]="userDeteails.phone">
                   </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <span style="margin-left: 50px;"></span>
+                <button type="submit" class="btn btn-danger" (click) = "deleteUser(userDeteails.id)">Delete</button>
               </form>
         </div>
     </div>
