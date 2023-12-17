@@ -20,4 +20,12 @@ export class UsersService {
     addUserRequest.authId = "00000000-0000-0000-0000-000000000000";
     return this.http.post<User>(this.baseApiUrl + '/api/Users', addUserRequest);
   }
+
+  getUser(id: string): Observable<User> {
+    return this.http.get<User>(this.baseApiUrl + '/api/Users/' + id);
+  }
+
+  updateUser(id:string, updateUserRequest: User): Observable<User> {
+    return this.http.put<User>(this.baseApiUrl + '/api/Users/' + id, updateUserRequest);
+  }
 }

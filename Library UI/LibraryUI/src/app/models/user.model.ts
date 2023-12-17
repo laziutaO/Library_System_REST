@@ -3,5 +3,5 @@ export interface User {
     authId: string;
     firstName: string;
     lastName: string;
-    phone: string;
+    phone: number;
 }

@@ -14,7 +14,7 @@ export class AddUserComponent {
     authId: '',
     firstName: '',
     lastName: '',
-    phone: ''
+    phone: 0
   };
 
   constructor(private userService: UsersService, private router: Router) { }
