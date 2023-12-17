@@ -1,6 +1,6 @@
 export interface User {
-    id: number;
-    authId: number;
+    id: string;
+    authId: string;
     firstName: string;
     lastName: string;
     phone: string;

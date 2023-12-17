@@ -12,6 +12,12 @@ export class UsersService {
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]>{
-    return this.http.get<User[]>('https://localhost:7103/api/users');
+    return this.http.get<User[]>(this.baseApiUrl + '/api/Users');
+  }
+
+  addUser(addUserRequest: User): Observable<User> {
+    addUserRequest.id = "00000000-0000-0000-0000-000000000000";
+    addUserRequest.authId = "00000000-0000-0000-0000-000000000000";
+    return this.http.post<User>(this.baseApiUrl + '/api/Users', addUserRequest);
   }
 }

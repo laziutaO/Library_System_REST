@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { User } from '../../../models/user.model';
-import { CommonModule } from '@angular/common';
 import { UsersService } from '../../../services/users.service';
-import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
   templateUrl: './users-list.component.html',
   styleUrl: './users-list.component.css'
 })
 export class UsersListComponent {
   users: User[] = [];
 
-  constructor(private userService: UsersService) { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe({ 
-      next: (users)=> console.log(users),
+      next: (users)=> {this.users = users;},
       error: (err)=> console.log(err)
     });
+  }
+
+  redirectToNewUser() {
+    this.router.navigate(['/users/new']);
   }
 }

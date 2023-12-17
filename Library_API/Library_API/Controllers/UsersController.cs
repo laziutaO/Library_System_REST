@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Library_API.Controllers
 {
     [ApiController]
-    [Route("api[controller]")]
+    [Route("api/[controller]")]
     public class UsersController : Controller
     {
         private readonly LibraryDbContext libraryDbContext;
