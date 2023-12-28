@@ -11,7 +11,6 @@ import { User } from '../../../models/user.model';
 export class EditUserComponent {
   userDeteails: User = {
     id: '',
-    authId: '',
     firstName: '',
     lastName: '',
     phone: 0

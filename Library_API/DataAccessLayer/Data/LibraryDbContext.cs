@@ -1,7 +1,7 @@
-﻿using Library_API.Controllers.Models;
+﻿using DataAccessLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Library_API.Controllers.Data
+namespace DataAccessLayer.Data
 {
     public class LibraryDbContext : DbContext
     {

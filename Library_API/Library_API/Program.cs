@@ -1,4 +1,7 @@
-using Library_API.Controllers.Data;
+using BusinessLogicLayer;
+using DataAccessLayer.Entities;
+using DataAccessLayer.Interfaces;
+using DataAccessLayer.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnStr")));
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBaseRepository<User>, UserRepository>();
 
 var app = builder.Build();
 

@@ -74,3 +74,7 @@ C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\obj\Debug\net
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\obj\Debug\net7.0\Library_API.pdb
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\obj\Debug\net7.0\Library_API.genruntimeconfig.cache
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\obj\Debug\net7.0\ref\Library_API.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\BusinessLogicLayer.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\BusinessLogicLayer.pdb
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\DataAccessLayer.pdb

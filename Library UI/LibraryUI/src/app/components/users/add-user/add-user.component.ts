@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class AddUserComponent {
   addUserRequest: User = {
     id: '',
-    authId: '',
     firstName: '',
     lastName: '',
     phone: 0
