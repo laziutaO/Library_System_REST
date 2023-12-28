@@ -14,7 +14,7 @@ namespace DataAccessLayer.Interfaces
         Task<T> GetAsync(Guid id);
 
         Task CreateAsync(T entity);
-        Task UpdateAsync(T entity);
+        Task UpdateAsync();
         Task DeleteAsync(T entity);
     }
 }

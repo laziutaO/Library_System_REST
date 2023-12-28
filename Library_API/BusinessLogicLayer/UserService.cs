@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Entities;
+﻿using DataAccessLayer.Data;
+using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,23 @@ namespace BusinessLogicLayer
             _repository = repository;
         }
 
-        public Task CreateUserAsync(User user)
+        public async Task CreateUserAsync(User user)
         {
-            throw new NotImplementedException();
+            await _repository.CreateAsync(user);
         }
 
-        public Task DeleteUserAsync(User user)
+        public async Task<User> DeleteUserAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var user = await _repository.GetAsync(id);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            await _repository.DeleteAsync(user);
+
+            return user;
         }
 
         public async Task<IEnumerable<User>> GetAllUsersAsync()
@@ -32,14 +42,27 @@ namespace BusinessLogicLayer
             return await _repository.GetAllAsync();
         }
 
-        public Task<User> GetUserAsync(Guid id)
+        public async Task<User> GetUserAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await _repository.GetAsync(id);
         }
 
-        public Task UpdateUserAsync(User user)
+        public async Task<User> UpdateUserAsync(Guid id, User user_info)
         {
-            throw new NotImplementedException();
+            var user = await _repository.GetAsync(id);
+
+            if (user == null)
+            {
+                return null;
+            }
+
+            user.FirstName = user_info.FirstName;
+            user.LastName = user_info.LastName;
+            user.Phone = user_info.Phone;
+
+            await _repository.UpdateAsync();
+
+            return user;
         }
     }
 }

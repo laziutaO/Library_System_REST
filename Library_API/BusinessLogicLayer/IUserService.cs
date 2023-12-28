@@ -13,7 +13,7 @@ namespace BusinessLogicLayer
         Task<User> GetUserAsync(Guid id);
 
         Task CreateUserAsync(User user);
-        Task UpdateUserAsync(User user);
-        Task DeleteUserAsync(User user);
+        Task<User> UpdateUserAsync(Guid id, User user);
+        Task<User> DeleteUserAsync(Guid id);
     }
 }

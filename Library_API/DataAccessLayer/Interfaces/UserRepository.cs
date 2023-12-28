@@ -17,14 +17,17 @@ namespace DataAccessLayer.Interfaces
         {
             this.libraryDbContext = libraryDbContext;
         }
-        public Task CreateAsync(User entity)
+        public async Task CreateAsync(User entity)
         {
-            throw new NotImplementedException();
+            entity.Id = Guid.NewGuid();
+            await libraryDbContext.Users.AddAsync(entity);
+            await libraryDbContext.SaveChangesAsync();
         }
 
-        public Task DeleteAsync(User entity)
+        public async Task DeleteAsync(User entity)
         {
-            throw new NotImplementedException();
+            libraryDbContext.Users.Remove(entity);
+            await libraryDbContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<User>> GetAllAsync()
@@ -32,19 +35,15 @@ namespace DataAccessLayer.Interfaces
             return await libraryDbContext.Users.ToListAsync();
         }
 
-        public Task<User> GetAsync()
+        public async Task<User> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var user = await libraryDbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
+            return user;
         }
 
-        public Task<User> GetAsync(Guid id)
+        public async Task UpdateAsync()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateAsync(User entity)
-        {
-            throw new NotImplementedException();
+            await libraryDbContext.SaveChangesAsync();
         }
     }
 }
