@@ -35,7 +35,7 @@ namespace Library_API.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetUser([FromRoute] Guid id)
         {
-            var user = userService.GetUserAsync(id);
+            var user = await userService.GetUserAsync(id);
 
             if (user == null)
             {
