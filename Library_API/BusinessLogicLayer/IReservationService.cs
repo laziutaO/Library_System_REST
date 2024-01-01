@@ -14,7 +14,7 @@ namespace BusinessLogicLayer
         Task<Reservation> GetReservationAsync(Guid id);
 
         Task CreateReservationAsync(ReservationAddDto reserv);
-        Task<Reservation> UpdateReservationAsync(Guid id, Reservation reserv);
+        Task<Reservation> UpdateReservationAsync(Guid id, ReservationUpdateDto reserv);
         Task<Reservation> DeleteReservationAsync(Guid id);
     }
 }

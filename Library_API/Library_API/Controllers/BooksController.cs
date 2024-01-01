@@ -30,11 +30,12 @@ namespace Library_API.Controllers
         public async Task<IActionResult> GetBook([FromRoute] Guid id)
         {
             var bookRequest =  await _bookService.GetBookAsync(id);
-            var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
+            
             if (bookRequest == null)
             {
                 return NotFound();
             }
+            var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
             BookGetDto bookGetDto = new BookGetDto
             {
                 Title = bookRequest.Title,
@@ -67,11 +68,11 @@ namespace Library_API.Controllers
                 FirstName = bookRequest.Author.FirstName,
                 LastName = bookRequest.Author.LastName,
             };
-            if (author.Books == null){
-                author.Books = new List<Book>();
-            }
-            author.Books.Add(book);
-            book.Author = author;
+            //if (author.Books == null){
+            //    author.Books = new List<Book>();
+            //}
+            //author.Books.Add(book);
+            //book.Author = author;
 
             await _bookService.CreateBookAsync(book);
 

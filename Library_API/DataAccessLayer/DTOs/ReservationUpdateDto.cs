@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.DTOs
 {
-    public record struct ReservationAddDto(BookGetShortDto BookInfo, UserGetDto UserInfo, DateTime ReserveDate, DateTime ReturnDate);
-  
+    public record struct ReservationUpdateDto(DateTime ReserveDate, DateTime ReturnDate, bool IsClosed);
+   
 }

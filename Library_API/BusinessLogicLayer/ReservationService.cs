@@ -53,10 +53,12 @@ namespace BusinessLogicLayer
 
         public async Task<Reservation> GetReservationAsync(Guid id)
         {
+            var reservation = await _repository.GetAsync(id);
+
             return await _repository.GetAsync(id);
         }
 
-        public async Task<Reservation> UpdateReservationAsync(Guid id, Reservation reserv)
+        public async Task<Reservation> UpdateReservationAsync(Guid id, ReservationUpdateDto reserv)
         {
             var reservation = await _repository.GetAsync(id);
 
