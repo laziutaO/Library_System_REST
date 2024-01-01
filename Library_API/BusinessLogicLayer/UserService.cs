@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Data;
+using DataAccessLayer.DTOs;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using System;
@@ -18,9 +19,15 @@ namespace BusinessLogicLayer
             _repository = repository;
         }
 
-        public async Task CreateUserAsync(User user)
+        public async Task CreateUserAsync(UserAddDto user)
         {
-            await _repository.CreateAsync(user);
+            User new_user = new User
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Phone = user.Phone,
+            };
+            await _repository.CreateAsync(new_user);
         }
 
         public async Task<User> DeleteUserAsync(Guid id)
@@ -47,7 +54,7 @@ namespace BusinessLogicLayer
             return await _repository.GetAsync(id);
         }
 
-        public async Task<User> UpdateUserAsync(Guid id, User user_info)
+        public async Task<User> UpdateUserAsync(Guid id, UserAddDto user_info)
         {
             var user = await _repository.GetAsync(id);
 

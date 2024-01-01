@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Entities;
+﻿using DataAccessLayer.DTOs;
+using DataAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace BusinessLogicLayer
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task<User> GetUserAsync(Guid id);
 
-        Task CreateUserAsync(User user);
-        Task<User> UpdateUserAsync(Guid id, User user);
+        Task CreateUserAsync(UserAddDto user);
+        Task<User> UpdateUserAsync(Guid id, UserAddDto user);
         Task<User> DeleteUserAsync(Guid id);
     }
 }

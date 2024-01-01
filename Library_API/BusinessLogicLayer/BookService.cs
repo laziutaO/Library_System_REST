@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer.DTOs;
 
 namespace BusinessLogicLayer
 {
@@ -18,7 +19,7 @@ namespace BusinessLogicLayer
             _authorRepository = authorRepository;
         }
 
-        public async Task CreateBookAsync(Book book, Guid authorId)
+        public async Task CreateBookAsync(Book book)
         {
             //book.Author = await _authorRepository.GetAsync(authorId);
             await _repository.CreateAsync(book);
@@ -48,10 +49,10 @@ namespace BusinessLogicLayer
             return await _repository.GetAsync(id);
         }
 
-        public async Task<Book> UpdateBookAsync(Guid id, Book book_info)
+        public async Task<Book> UpdateBookAsync(Guid id, BookUpdateDto book_info)
         {
             var book = await _repository.GetAsync(id);
-
+           
             if (book == null)
             {
                 return null;
@@ -60,6 +61,7 @@ namespace BusinessLogicLayer
             book.Title = book_info.Title;
             book.Category = book_info.Category;
             book.AvailableSamples = book_info.AvailableSamples;
+      
 
             await _repository.UpdateAsync();
 

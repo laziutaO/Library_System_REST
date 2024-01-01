@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BusinessLogicLayer;
 using DataAccessLayer.Entities;
+using DataAccessLayer.DTOs;
 
 namespace Library_API.Controllers
 {
@@ -9,9 +10,11 @@ namespace Library_API.Controllers
     public class BooksController: Controller
     {
         private readonly IBookService _bookService;
-        public BooksController(IBookService bookService) 
+        private readonly IAuthorService _authorService;
+        public BooksController(IBookService bookService, IAuthorService authorService) 
         { 
             _bookService = bookService;
+            _authorService = authorService;
         }
 
         [HttpGet]
@@ -26,29 +29,60 @@ namespace Library_API.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetBook([FromRoute] Guid id)
         {
-            var book =  await _bookService.GetBookAsync(id);
-
-            if (book == null)
+            var bookRequest =  await _bookService.GetBookAsync(id);
+            var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
+            if (bookRequest == null)
             {
                 return NotFound();
             }
+            BookGetDto bookGetDto = new BookGetDto
+            {
+                Title = bookRequest.Title,
+                Category = bookRequest.Category,
+                AvailableSamples = bookRequest.AvailableSamples,
+                AuthorInfo = new AuthorGetDto
+                {
+                    FirstName = author.FirstName,
+                    LastName = author.LastName,
+                }
+            };
+            
 
-            return Ok(book);
+            return Ok(bookGetDto);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddBook([FromBody] Book bookRequest)
+        public async Task<IActionResult> AddBook(BookCreateDto bookRequest)
         {
-            var authorId = bookRequest.AuthorId;
-            await _bookService.CreateBookAsync(bookRequest, authorId);
+            //[FromBody] 
+            Book book = new Book
+            {
+                Title = bookRequest.Title,
+                Category = bookRequest.Category,
+                AvailableSamples = bookRequest.AvailableSamples,
+            };
+
+            Author author = new Author
+            {
+                FirstName = bookRequest.Author.FirstName,
+                LastName = bookRequest.Author.LastName,
+            };
+            if (author.Books == null){
+                author.Books = new List<Book>();
+            }
+            author.Books.Add(book);
+            book.Author = author;
+
+            await _bookService.CreateBookAsync(book);
 
             return Ok(bookRequest);
         }
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateBook([FromRoute] Guid id, Book bookUpdateRequest)
+        public async Task<IActionResult> UpdateBook([FromRoute] Guid id, BookUpdateDto bookUpdateRequest)
         {
+
             var book = await _bookService.UpdateBookAsync(id, bookUpdateRequest);
 
             if (book == null)

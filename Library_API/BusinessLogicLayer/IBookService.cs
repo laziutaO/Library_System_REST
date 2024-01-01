@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Entities;
+using DataAccessLayer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace BusinessLogicLayer
         Task<IEnumerable<Book>> GetAllBooksAsync();
         Task<Book> GetBookAsync(Guid id);
 
-        Task CreateBookAsync(Book book, Guid authorId);
-        Task<Book> UpdateBookAsync(Guid id, Book book);
+        Task CreateBookAsync(Book book);
+        Task<Book> UpdateBookAsync(Guid id, BookUpdateDto book);
         Task<Book> DeleteBookAsync(Guid id);
     }
 }

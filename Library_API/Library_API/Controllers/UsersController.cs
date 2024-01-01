@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DataAccessLayer.Entities;
+using DataAccessLayer.DTOs;
 
 namespace Library_API.Controllers
 {
@@ -24,7 +25,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUser([FromBody] User userRequest)
+        public async Task<IActionResult> AddUser([FromBody] UserAddDto userRequest)
         {
             await userService.CreateUserAsync(userRequest);
 
@@ -47,7 +48,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, User userUpdateRequest)
+        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, UserAddDto userUpdateRequest)
         {
             var user = await userService.UpdateUserAsync(id, userUpdateRequest);
 
