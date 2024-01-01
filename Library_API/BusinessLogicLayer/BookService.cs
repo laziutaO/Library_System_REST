@@ -6,14 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.DTOs;
+using DataAccessLayer.Data;
 
 namespace BusinessLogicLayer
 {
     public class BookService: IBookService
     {
-        public readonly IBaseRepository<Book> _repository;
+        public readonly IBookRepository _repository;
         public readonly IBaseRepository<Author> _authorRepository;
-        public BookService (IBaseRepository<Book> repository, IBaseRepository<Author> authorRepository) 
+        public BookService (IBookRepository repository, IBaseRepository<Author> authorRepository) 
         { 
             _repository = repository;
             _authorRepository = authorRepository;
@@ -67,5 +68,7 @@ namespace BusinessLogicLayer
 
             return book;
         }
+
+        
     }
 }

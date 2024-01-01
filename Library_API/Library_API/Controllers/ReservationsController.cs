@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer;
 using DataAccessLayer.Entities;
+using DataAccessLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library_API.Controllers
@@ -37,7 +38,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddReservation([FromBody] Reservation reservRequest)
+        public async Task<IActionResult> AddReservation( ReservationAddDto reservRequest)
         {
             await _reservationService.CreateReservationAsync(reservRequest);
 

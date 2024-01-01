@@ -12,9 +12,9 @@ namespace BusinessLogicLayer
 {
     public class UserService: IUserService
     {
-        public readonly IBaseRepository<User> _repository;
+        public readonly IUserRepository _repository;
 
-        public UserService(IBaseRepository<User> repository) 
+        public UserService(IUserRepository repository) 
         { 
             _repository = repository;
         }
@@ -71,5 +71,11 @@ namespace BusinessLogicLayer
 
             return user;
         }
+
+        //public async Task<Guid> GetUserIdAsync(string FirstName, string LastName)
+        //{
+        //    Guid id = await _repository.GetUserIdAsync(FirstName, LastName);
+        //    return id;
+        //}
     }
 }

@@ -17,10 +17,10 @@ builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IReservationService, ReservationService>();
-builder.Services.AddScoped<IBaseRepository<User>, UserRepository>();
+builder.Services.AddScoped<IReservationService,  ReservationService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBaseRepository<Author>, AuthorRepository>();
-builder.Services.AddScoped<IBaseRepository<Book>, BookRepository>();
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBaseRepository<Reservation>, ReserveRepository>();
 
 var app = builder.Build();

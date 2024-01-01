@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public class UserRepository : IBaseRepository<User>
+    public class UserRepository : IUserRepository
     {
         private readonly LibraryDbContext libraryDbContext;
 
@@ -44,6 +45,17 @@ namespace DataAccessLayer.Interfaces
         public async Task UpdateAsync()
         {
             await libraryDbContext.SaveChangesAsync();
+        }
+
+        public async Task<Guid> GetIdAsync(string firstName, string lastName)
+        {
+            var user = await libraryDbContext.Users.FirstOrDefaultAsync(u => u.FirstName == firstName && u.LastName == lastName);
+            if(user == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            return user.Id;
         }
     }
 }
