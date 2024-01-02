@@ -16,5 +16,6 @@ namespace BusinessLogicLayer
         Task CreateBookAsync(Book book);
         Task<Book> UpdateBookAsync(Guid id, BookUpdateDto book);
         Task<Book> DeleteBookAsync(Guid id);
+        Task<IEnumerable<Book>> GetBooksAsync(string name, string author, string category);
     }
 }

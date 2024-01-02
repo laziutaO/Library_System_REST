@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Entities;
+﻿using DataAccessLayer.DTOs;
+using DataAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace BusinessLogicLayer
     {
         Task<Author> GetAuthorAsync(Guid id);
 
-        Task CreateAuthorAsync(Author author);
-        Task<Author> UpdateAuthorAsync(Guid id, Author author);
+        Task CreateAuthorAsync(AuthorUpdateDto author);
+        Task<Author> UpdateAuthorAsync(Guid id, AuthorUpdateDto author);
         Task<Author> DeleteAuthorAsync(Guid id);
     }
 }

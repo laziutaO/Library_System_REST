@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Data;
+using DataAccessLayer.DTOs;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 
@@ -17,9 +18,12 @@ namespace BusinessLogicLayer
             _repository = repository;
         }
 
-        public async Task CreateAuthorAsync(Author author)
+        public async Task CreateAuthorAsync(AuthorUpdateDto author)
         {
-            await _repository.CreateAsync(author);
+            Author new_author = new Author();
+            new_author.FirstName = author.FirstName;
+            new_author.LastName = author.LastName;
+            await _repository.CreateAsync(new_author);
         }
 
         public async Task<Author> DeleteAuthorAsync(Guid id)
@@ -41,7 +45,7 @@ namespace BusinessLogicLayer
             return await _repository.GetAsync(id);
         }
 
-        public async Task<Author> UpdateAuthorAsync(Guid id, Author author_info)
+        public async Task<Author> UpdateAuthorAsync(Guid id, AuthorUpdateDto author_info)
         {
             var author = await _repository.GetAsync(id);
 

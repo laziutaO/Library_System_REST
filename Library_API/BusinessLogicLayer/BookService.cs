@@ -50,6 +50,10 @@ namespace BusinessLogicLayer
             return await _repository.GetAsync(id);
         }
 
+        public async Task<IEnumerable<Book>> GetBooksAsync(string name, string author, string category)
+        {
+            return await _repository.GetBooksAsync(name, author, category);
+        }
         public async Task<Book> UpdateBookAsync(Guid id, BookUpdateDto book_info)
         {
             var book = await _repository.GetAsync(id);

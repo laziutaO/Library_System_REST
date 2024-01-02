@@ -52,6 +52,39 @@ namespace Library_API.Controllers
             return Ok(bookGetDto);
         }
 
+        [HttpGet]
+        [Route("name/{name}")]
+        public async Task<IActionResult> GetBooksByName([FromRoute] string name = null)
+        {
+            name = name ?? string.Empty;
+       
+            var books = await _bookService.GetBooksAsync(name, null, null);
+
+            return Ok(books);
+        }
+
+        [HttpGet]
+        [Route("author/{lastName}")]
+        public async Task<IActionResult> GetBooksByAuthor([FromRoute] string lastName = null)
+        {
+            lastName = lastName ?? string.Empty;
+
+            var books = await _bookService.GetBooksAsync(null, lastName, null);
+
+            return Ok(books);
+        }
+
+        [HttpGet]
+        [Route("category/{category}")]
+        public async Task<IActionResult> GetBooksByCategory([FromRoute] string category = null)
+        {
+            category = category ?? string.Empty;
+
+            var books = await _bookService.GetBooksAsync(null, null, category);
+
+            return Ok(books);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddBook(BookCreateDto bookRequest)
         {

@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer;
+using DataAccessLayer.DTOs;
 using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,7 +31,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAuthor([FromBody] Author authorRequest)
+        public async Task<IActionResult> AddAuthor(AuthorUpdateDto authorRequest)
         {
             await _authorService.CreateAuthorAsync(authorRequest);
 
@@ -39,7 +40,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateAuthor([FromRoute] Guid id, Author authorUpdateRequest)
+        public async Task<IActionResult> UpdateAuthor([FromRoute] Guid id, AuthorUpdateDto authorUpdateRequest)
         {
             var author = await _authorService.UpdateAuthorAsync(id, authorUpdateRequest);
 
