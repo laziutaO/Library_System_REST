@@ -2,11 +2,13 @@
 using BusinessLogicLayer;
 using DataAccessLayer.Entities;
 using DataAccessLayer.DTOs;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class BooksController: Controller
     {
         private readonly IBookService _bookService;

@@ -78,3 +78,7 @@ C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\DataAccessLayer.dll
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\BusinessLogicLayer.pdb
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\JWT.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\Library_API\bin\Debug\net7.0\Newtonsoft.Json.dll
