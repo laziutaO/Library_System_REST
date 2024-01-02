@@ -21,5 +21,7 @@ namespace DataAccessLayer.Interfaces
         Task<Guid> GetIdAsync(string title);
 
         Task<IEnumerable<Book>> GetBooksAsync(string name, string authorName, string category);
+
+        Task UpdateSamplesNumber(Book book);
     }
 }

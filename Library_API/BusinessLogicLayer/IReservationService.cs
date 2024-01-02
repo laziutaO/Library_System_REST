@@ -13,7 +13,7 @@ namespace BusinessLogicLayer
         Task<IEnumerable<Reservation>> GetAllReservationsAsync();
         Task<Reservation> GetReservationAsync(Guid id);
 
-        Task CreateReservationAsync(ReservationAddDto reserv);
+        Task<bool> CreateReservationAsync(ReservationAddDto reserv);
         Task<Reservation> UpdateReservationAsync(Guid id, ReservationUpdateDto reserv);
         Task<Reservation> DeleteReservationAsync(Guid id);
     }

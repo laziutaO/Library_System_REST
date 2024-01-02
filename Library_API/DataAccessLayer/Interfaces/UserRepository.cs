@@ -57,5 +57,10 @@ namespace DataAccessLayer.Interfaces
 
             return user.Id;
         }
+
+        public async Task<bool> CheckReservationNumber(User user)
+        {
+            return false;
+        }
     }
 }

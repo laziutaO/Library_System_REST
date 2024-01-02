@@ -21,7 +21,7 @@ builder.Services.AddScoped<IReservationService,  ReservationService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBaseRepository<Author>, AuthorRepository>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
-builder.Services.AddScoped<IBaseRepository<Reservation>, ReserveRepository>();
+builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
 
 var app = builder.Build();
 

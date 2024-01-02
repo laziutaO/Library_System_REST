@@ -12,24 +12,35 @@ namespace BusinessLogicLayer
 {
     public class ReservationService : IReservationService
     {
-        private readonly IBaseRepository<Reservation> _repository;
+        private readonly IReserveRepository _repository;
         private readonly IUserRepository _userRepository;
         private readonly IBookRepository _bookRepository;
-        public ReservationService(IBaseRepository<Reservation> repository, IUserRepository userRepository, IBookRepository bookRepository)
+        public ReservationService(IReserveRepository repository, IUserRepository userRepository, IBookRepository bookRepository)
         {
             _repository = repository;
             _userRepository = userRepository;
             _bookRepository = bookRepository;
         }
-        public async Task CreateReservationAsync(ReservationAddDto reservationInfo)
+        public async Task<bool> CreateReservationAsync(ReservationAddDto reservationInfo)
         {
             var reserv = new Reservation();
-            reserv.UserId = await _userRepository.GetIdAsync(reservationInfo.UserInfo.FirstName, reservationInfo.UserInfo.LastName);
-            reserv.BookId = await _bookRepository.GetIdAsync(reservationInfo.BookInfo.Title);
-            reserv.ReserveDate = reservationInfo.ReserveDate;
-            reserv.ReturnDate = reservationInfo.ReturnDate;
-            reserv.IsClosed = false;
-            await _repository.CreateAsync(reserv);
+            var userId = await _userRepository.GetIdAsync(reservationInfo.UserInfo.FirstName, reservationInfo.UserInfo.LastName);
+            var bookId = await _bookRepository.GetIdAsync(reservationInfo.BookInfo.Title);
+            reserv.UserId = userId;
+            reserv.BookId = bookId;
+            var book = await _bookRepository.GetAsync(bookId);
+            var count = _repository.CheckReservationsCount(userId);
+            if(count < 10 && book.AvailableSamples > 0)
+            {
+                reserv.ReserveDate = reservationInfo.ReserveDate;
+                reserv.ReturnDate = reservationInfo.ReturnDate;
+                reserv.IsClosed = false;
+                await _bookRepository.UpdateSamplesNumber(book);
+                await _repository.CreateAsync(reserv);
+                return true;
+            }
+            
+            return false;
         }
 
         public async Task<Reservation> DeleteReservationAsync(Guid id)

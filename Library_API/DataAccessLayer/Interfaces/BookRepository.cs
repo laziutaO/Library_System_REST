@@ -88,5 +88,12 @@ namespace DataAccessLayer.Interfaces
 
             return book.Id;
         }
+
+        public async Task UpdateSamplesNumber(Book book)
+        {
+            var availableSamples = book.AvailableSamples;
+            book.AvailableSamples = availableSamples - 1;
+            await _libraryDbContext.SaveChangesAsync();
+        }
     }
 }

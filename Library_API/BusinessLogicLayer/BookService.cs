@@ -22,7 +22,6 @@ namespace BusinessLogicLayer
 
         public async Task CreateBookAsync(Book book)
         {
-            //book.Author = await _authorRepository.GetAsync(authorId);
             await _repository.CreateAsync(book);
         }
 

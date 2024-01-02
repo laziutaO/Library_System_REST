@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public class ReserveRepository : IBaseRepository<Reservation>
+    public class ReserveRepository : IReserveRepository
     {
         private readonly LibraryDbContext _libraryDbContext;
         public ReserveRepository(LibraryDbContext libraryDbContext) 
@@ -44,5 +44,13 @@ namespace DataAccessLayer.Interfaces
         {
             await _libraryDbContext.SaveChangesAsync();
         }
+
+        public int CheckReservationsCount(Guid userId)
+        {
+            var count = _libraryDbContext.Reservations.Where(u => u.UserId == userId && u.IsClosed == false).Count();
+            return count;
+        }
+
+        
     }
 }

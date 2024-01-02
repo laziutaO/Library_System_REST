@@ -86,7 +86,9 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddReservation(ReservationAddDto reservRequest)
         {
-            await _reservationService.CreateReservationAsync(reservRequest);
+            bool ableToReserve =  await _reservationService.CreateReservationAsync(reservRequest);
+            if (!ableToReserve)
+                return Ok("Cannot make reservation because either user has to much reservations or there are no available books");
 
             return Ok(reservRequest);
         }
