@@ -90,7 +90,6 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBook(BookCreateDto bookRequest)
         {
-            //[FromBody] 
             Book book = new Book
             {
                 Title = bookRequest.Title,
@@ -103,11 +102,6 @@ namespace Library_API.Controllers
                 FirstName = bookRequest.Author.FirstName,
                 LastName = bookRequest.Author.LastName,
             };
-            //if (author.Books == null){
-            //    author.Books = new List<Book>();
-            //}
-            //author.Books.Add(book);
-            //book.Author = author;
 
             await _bookService.CreateBookAsync(book);
 

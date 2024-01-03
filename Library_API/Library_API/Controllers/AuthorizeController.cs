@@ -9,6 +9,8 @@ using System.Text;
 
 namespace Library_API.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class AuthorizeController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -34,6 +36,8 @@ namespace Library_API.Controllers
                 await _signInManager.SignInAsync(user, isPersistent: false);
 
                 List<Claim> claims = new List<Claim>();
+                claims.Add(new Claim("Profession", "LibraryAdministrator"));
+                claims.Add(new Claim("SeniorManager", "true"));
                 claims.Add(new Claim(ClaimTypes.Email, adminUser.Email));
 
                 await _userManager.AddClaimsAsync(user, claims);
