@@ -7,16 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserRepository: IBaseRepository<User>
     {
-        Task<IEnumerable<User>> GetAllAsync();
-
-        Task<User> GetAsync(Guid id);
-
-        Task CreateAsync(User entity);
-        Task UpdateAsync();
-        Task DeleteAsync(User entity);
-
         Task<Guid> GetIdAsync(string firstName, string lastName);
     }
 }

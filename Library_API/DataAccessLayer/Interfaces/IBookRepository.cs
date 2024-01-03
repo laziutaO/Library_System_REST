@@ -8,16 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IBookRepository
+    public interface IBookRepository: IBaseRepository<Book>
     {
-        Task<IEnumerable<Book>> GetAllAsync();
-
-        Task<Book> GetAsync(Guid id);
-
-        Task CreateAsync(Book entity);
-        Task UpdateAsync();
-        Task DeleteAsync(Book entity);
-
         Task<Guid> GetIdAsync(string title);
 
         Task<IEnumerable<Book>> GetBooksAsync(string name, string authorName, string category);
