@@ -2,11 +2,13 @@
 using DataAccessLayer.Entities;
 using DataAccessLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ReservationsController:Controller
     {
         private readonly IReservationService _reservationService;

@@ -1,12 +1,14 @@
 ﻿using BusinessLogicLayer;
 using DataAccessLayer.DTOs;
 using DataAccessLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class AuthorsController: Controller
     {
         private readonly IAuthorService _authorService;
