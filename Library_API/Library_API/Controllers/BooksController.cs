@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using BusinessLogicLayer;
 using DataAccessLayer.Entities;
-using DataAccessLayer.DTOs;
+using BusinessLogicLayer.DTOs;
 using Microsoft.AspNetCore.Authorization;
+using BusinessLogicLayer.Interfaces;
 
 namespace Library_API.Controllers
 {
@@ -38,12 +38,12 @@ namespace Library_API.Controllers
                 return NotFound();
             }
             var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
-            BookGetDto bookGetDto = new BookGetDto
+            BookGetRequest bookGetDto = new BookGetRequest
             {
                 Title = bookRequest.Title,
                 Category = bookRequest.Category,
                 AvailableSamples = bookRequest.AvailableSamples,
-                AuthorInfo = new AuthorGetDto
+                AuthorInfo = new AuthorGetRequest
                 {
                     FirstName = author.FirstName,
                     LastName = author.LastName,
@@ -88,13 +88,13 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddBook(BookCreateDto bookRequest)
+        public async Task<IActionResult> AddBook(BookCreateRequest bookRequest)
         {
             Book book = new Book
             {
                 Title = bookRequest.Title,
                 Category = bookRequest.Category,
-                AvailableSamples = bookRequest.AvailableSamples,
+                TotalSamples = bookRequest.TotalSamples,
             };
 
             Author author = new Author
@@ -110,7 +110,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateBook([FromRoute] Guid id, BookUpdateDto bookUpdateRequest)
+        public async Task<IActionResult> UpdateBook([FromRoute] Guid id, [FromBody] BookUpdateRequest bookUpdateRequest)
         {
 
             var book = await _bookService.UpdateBookAsync(id, bookUpdateRequest);

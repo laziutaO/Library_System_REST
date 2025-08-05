@@ -14,6 +14,5 @@ namespace DataAccessLayer.Interfaces
 
         Task<IEnumerable<Book>> GetBooksAsync(string name, string authorName, string category);
 
-        Task UpdateSamplesNumber(Book book);
     }
 }

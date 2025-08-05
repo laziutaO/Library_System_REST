@@ -1,8 +1,8 @@
-﻿using BusinessLogicLayer;
-using DataAccessLayer.Entities;
-using DataAccessLayer.DTOs;
+﻿using DataAccessLayer.Entities;
+using BusinessLogicLayer.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using BusinessLogicLayer.Interfaces;
 
 namespace Library_API.Controllers
 {
@@ -29,18 +29,18 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            List<ReservationGetDto> reservation_output = new List<ReservationGetDto>();
+            List<ReservationGetRequest> reservation_output = new List<ReservationGetRequest>();
             foreach(var reservation in reservations)
             {
                 var bookinfo = await _bookService.GetBookAsync(reservation.BookId);
                 var userinfo = await _userService.GetUserAsync(reservation.UserId);
-                var reservation_info = new ReservationGetDto
+                var reservation_info = new ReservationGetRequest
                 {
-                    BookInfo = new BookGetShortDto
+                    BookInfo = new BookGetShortRequest
                     {
                         Title = bookinfo.Title,
                     },
-                    UserInfo = new UserGetDto
+                    UserInfo = new UserGetRequest
                     {
                         FirstName = userinfo.FirstName,
                         LastName = userinfo.LastName,
@@ -66,13 +66,13 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            var reservation_info = new ReservationGetDto
+            var reservation_info = new ReservationGetRequest
             {
-                BookInfo = new BookGetShortDto
+                BookInfo = new BookGetShortRequest
                 {
                     Title = bookinfo.Title,
                 },
-                UserInfo = new UserGetDto
+                UserInfo = new UserGetRequest
                 {
                     FirstName = userinfo.FirstName,
                     LastName = userinfo.LastName,
@@ -86,7 +86,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddReservation(ReservationAddDto reservRequest)
+        public async Task<IActionResult> AddReservation(ReservationAddRequest reservRequest)
         {
             bool ableToReserve =  await _reservationService.CreateReservationAsync(reservRequest);
             if (!ableToReserve)
@@ -97,7 +97,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateReservation([FromRoute] Guid id, ReservationUpdateDto reservUpdateRequest)
+        public async Task<IActionResult> UpdateReservation([FromRoute] Guid id, ReservationUpdateRequest reservUpdateRequest)
         {
             var reservation = await _reservationService.UpdateReservationAsync(id, reservUpdateRequest);
 

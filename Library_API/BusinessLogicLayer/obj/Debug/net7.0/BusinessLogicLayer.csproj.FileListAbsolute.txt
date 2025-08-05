@@ -8,8 +8,9 @@ C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\De
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.AssemblyInfoInputs.cache
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.AssemblyInfo.cs
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.csproj.CoreCompileInputs.cache
-C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.csproj.CopyComplete
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.dll
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\refint\BusinessLogicLayer.dll
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.pdb
 C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\ref\BusinessLogicLayer.dll
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\BusinessLogicLayer.sourcelink.json
+C:\Users\WellDone\Desktop\kpi\.Net_Library\Library_API\BusinessLogicLayer\obj\Debug\net7.0\Business.450209FB.Up2Date

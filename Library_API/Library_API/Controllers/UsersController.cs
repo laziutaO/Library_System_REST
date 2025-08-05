@@ -1,9 +1,9 @@
-﻿using BusinessLogicLayer;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DataAccessLayer.Entities;
-using DataAccessLayer.DTOs;
+using BusinessLogicLayer.DTOs;
 using Microsoft.AspNetCore.Authorization;
+using BusinessLogicLayer.Interfaces;
 
 namespace Library_API.Controllers
 {
@@ -27,7 +27,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUser([FromBody] UserAddDto userRequest)
+        public async Task<IActionResult> AddUser([FromBody] UserAddRequest userRequest)
         {
             await userService.CreateUserAsync(userRequest);
 
@@ -50,7 +50,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, UserAddDto userUpdateRequest)
+        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, UserAddRequest userUpdateRequest)
         {
             var user = await userService.UpdateUserAsync(id, userUpdateRequest);
 

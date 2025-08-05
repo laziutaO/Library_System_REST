@@ -1,4 +1,3 @@
-using BusinessLogicLayer;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using DataAccessLayer.Data;
@@ -9,6 +8,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using DataAccessLayer.Repositories;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

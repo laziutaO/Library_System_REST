@@ -745,7 +745,10 @@
           "DataAccessLayer": "1.0.0"
         },
         "runtime": {
-          "BusinessLogicLayer.dll": {}
+          "BusinessLogicLayer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DataAccessLayer/1.0.0": {
@@ -756,7 +759,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0"
         },
         "runtime": {
-          "DataAccessLayer.dll": {}
+          "DataAccessLayer.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
