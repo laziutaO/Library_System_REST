@@ -53,7 +53,7 @@ namespace DataAccessLayer.Repositories
 
             if (!string.IsNullOrWhiteSpace(authorName))
             {
-                var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.LastName == authorName);
+                var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name == authorName);
                 if (author != null)
                 {
                     var authorId = author.Id;
@@ -67,7 +67,7 @@ namespace DataAccessLayer.Repositories
 
             if (!string.IsNullOrWhiteSpace(category))
             {
-                bookQuery = bookQuery.Where(u => u.Category == category);
+                //bookQuery = bookQuery.Where(u => u.Category == category);
             }
 
             var books = await bookQuery.ToListAsync();

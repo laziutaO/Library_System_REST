@@ -41,12 +41,12 @@ namespace Library_API.Controllers
             BookGetRequest bookGetDto = new BookGetRequest
             {
                 Title = bookRequest.Title,
-                Category = bookRequest.Category,
+                Category = "bookRequest.Category",
                 AvailableSamples = bookRequest.AvailableSamples,
                 AuthorInfo = new AuthorGetRequest
                 {
-                    FirstName = author.FirstName,
-                    LastName = author.LastName,
+                    FirstName = author.Name,
+                    LastName = author.Name,
                 }
             };
             
@@ -93,14 +93,13 @@ namespace Library_API.Controllers
             Book book = new Book
             {
                 Title = bookRequest.Title,
-                Category = bookRequest.Category,
+                //Category = bookRequest.Category,
                 TotalSamples = bookRequest.TotalSamples,
             };
 
             Author author = new Author
             {
-                FirstName = bookRequest.Author.FirstName,
-                LastName = bookRequest.Author.LastName,
+                Name = bookRequest.Author.FirstName,
             };
 
             await _bookService.CreateBookAsync(book);
