@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct ReservationAddRequest(BookGetShortRequest BookInfo, UserGetRequest UserInfo, DateTime ReserveDate, DateTime ReturnDate);
+    public record struct ReservationAddRequest(BookGetShortRequest BookInfo, UserGetRequest UserInfo, DateOnly ReserveDate, DateOnly ReturnDate);
   
 }
