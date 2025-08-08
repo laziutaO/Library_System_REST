@@ -66,7 +66,7 @@ namespace BusinessLogicLayer.Services
 
             book.Title = book_info.Title;
             //book.Category = book_info.Category;
-            book.TotalSamples = book_info.TotalSamples;
+            //book.TotalSamples = book_info.TotalSamples;
       
 
             await _repository.UpdateAsync();

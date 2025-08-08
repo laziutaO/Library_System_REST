@@ -28,13 +28,13 @@ namespace BusinessLogicLayer.Services
             var userId = await _userRepository.GetIdAsync(reservationInfo.UserInfo.FirstName, reservationInfo.UserInfo.LastName);
             var bookId = await _bookRepository.GetIdAsync(reservationInfo.BookInfo.Title);
             reserv.UserId = userId;
-            reserv.BookId = bookId;
+            reserv.BookCopyId = bookId;
             var book = await _bookRepository.GetAsync(bookId);
             var count = _repository.CheckReservationsCount(userId);
-            if(count < 10 && book.AvailableSamples > 0)
+            if(count < 10)
             {
                 reserv.ReserveDate = reservationInfo.ReserveDate;
-                reserv.ReturnDate = reservationInfo.ReturnDate;
+                reserv.ExpiresAt = reservationInfo.ReturnDate;
                 reserv.IsClosed = false;
                 await _repository.CreateAsync(reserv);
                 return true;
@@ -79,7 +79,7 @@ namespace BusinessLogicLayer.Services
             }
 
             reservation.ReserveDate = reserv.ReserveDate;
-            reservation.ReturnDate = reserv.ReturnDate;
+            reservation.ExpiresAt = reserv.ReturnDate;
             reservation.IsClosed = reserv.IsClosed;
 
             await _repository.UpdateAsync();

@@ -12,24 +12,15 @@ namespace DataAccessLayer.Entities
     public class Book
     {
         public Guid Id { get; set; }
-        public Guid AuthorId { get; set; }
 
         [Required]
         [MaxLength(100)]
-        public string Title { get; set; }
-        [Required]
-
-        public int TotalSamples { get; set; }
-
-        [NotMapped]
-        public int AvailableSamples => TotalSamples - Reservations?.Count(r => !r.IsClosed) ?? 0;
-
-        public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
-        public DateTime UpdatedAt { get; set; }
-
-        [JsonIgnore]
-        public Author Author { get; set; }
-        [JsonIgnore]
-        public List<Reservation> Reservations { get; set; } = new();
+        public string Title { get; set; } = null!;
+        public string ISBN { get; set; } = string.Empty;
+        public string Publisher { get; set; } = string.Empty;
+        public int Year { get; set; }
+        public int PagesCount { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public string CoverImageUrl { get; set; } = string.Empty;
     }
 }

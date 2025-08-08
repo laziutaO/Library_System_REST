@@ -51,19 +51,19 @@ namespace DataAccessLayer.Repositories
                 bookQuery = bookQuery.Where(u => u.Title == name);
             }
 
-            if (!string.IsNullOrWhiteSpace(authorName))
-            {
-                var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name == authorName);
-                if (author != null)
-                {
-                    var authorId = author.Id;
-                    bookQuery = bookQuery.Where(u => u.AuthorId == authorId);
-                }
-                else
-                {
-                    return Enumerable.Empty<Book>();
-                }
-            }
+            //if (!string.IsNullOrWhiteSpace(authorName))
+            //{
+            //    var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name == authorName);
+            //    if (author != null)
+            //    {
+            //        var authorId = author.Id;
+            //        bookQuery = bookQuery.Where(u => u.AuthorId == authorId);
+            //    }
+            //    else
+            //    {
+            //        return Enumerable.Empty<Book>();
+            //    }
+            //}
 
             if (!string.IsNullOrWhiteSpace(category))
             {

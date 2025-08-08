@@ -37,16 +37,17 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
+            //Change this ASAP
+            //var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
             BookGetRequest bookGetDto = new BookGetRequest
             {
                 Title = bookRequest.Title,
                 Category = "bookRequest.Category",
-                AvailableSamples = bookRequest.AvailableSamples,
+                //AvailableSamples = bookRequest.AvailableSamples,
                 AuthorInfo = new AuthorGetRequest
                 {
-                    FirstName = author.Name,
-                    LastName = author.Name,
+                    FirstName = "author.Name",
+                    LastName = "author.Name",
                 }
             };
             
@@ -93,8 +94,9 @@ namespace Library_API.Controllers
             Book book = new Book
             {
                 Title = bookRequest.Title,
+                //Change this ASAP
                 //Category = bookRequest.Category,
-                TotalSamples = bookRequest.TotalSamples,
+                //TotalSamples = bookRequest.TotalSamples,
             };
 
             Author author = new Author

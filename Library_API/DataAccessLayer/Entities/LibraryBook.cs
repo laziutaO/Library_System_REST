@@ -8,6 +8,7 @@ namespace DataAccessLayer.Entities
 {
     public class LibraryBook
     {
+        public Guid Id { get; set; }
         public Guid LibraryId { get; set; }
         public Library Library { get; set; } = null!;
         public Guid BookCopyId { get; set; }

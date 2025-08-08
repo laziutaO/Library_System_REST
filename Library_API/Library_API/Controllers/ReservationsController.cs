@@ -32,7 +32,7 @@ namespace Library_API.Controllers
             List<ReservationGetRequest> reservation_output = new List<ReservationGetRequest>();
             foreach(var reservation in reservations)
             {
-                var bookinfo = await _bookService.GetBookAsync(reservation.BookId);
+                var bookinfo = await _bookService.GetBookAsync(reservation.BookCopyId);
                 var userinfo = await _userService.GetUserAsync(reservation.UserId);
                 var reservation_info = new ReservationGetRequest
                 {
@@ -46,7 +46,7 @@ namespace Library_API.Controllers
                         LastName = userinfo.LastName,
                     },
                     ReserveDate = reservation.ReserveDate,
-                    ReturnDate = reservation.ReturnDate,
+                    ReturnDate = reservation.ExpiresAt,
                     IsClosed = reservation.IsClosed,
 
                 };
@@ -60,7 +60,7 @@ namespace Library_API.Controllers
         public async Task<IActionResult> GetReservation([FromRoute] Guid id)
         {
             var reservation = await _reservationService.GetReservationAsync(id);
-            var bookinfo = await _bookService.GetBookAsync(reservation.BookId);
+            var bookinfo = await _bookService.GetBookAsync(reservation.BookCopyId);
             var userinfo = await _userService.GetUserAsync(reservation.UserId);
             if (reservation == null)
             {
@@ -78,7 +78,7 @@ namespace Library_API.Controllers
                     LastName = userinfo.LastName,
                 },
                 ReserveDate = reservation.ReserveDate,
-                ReturnDate = reservation.ReturnDate,
+                ReturnDate = reservation.ExpiresAt,
                 IsClosed = reservation.IsClosed,
 
             };

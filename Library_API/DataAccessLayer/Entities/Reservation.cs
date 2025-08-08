@@ -11,13 +11,10 @@ namespace DataAccessLayer.Entities
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
-        public Guid BookId { get; set; }
+        public Guid BookCopyId { get; set; }
         public DateOnly ReserveDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
-        public DateOnly ReturnDate { get; set; }
+        public DateOnly ExpiresAt { get; set; }
         public bool IsClosed { get; set; }
-        [JsonIgnore]
-        public User User { get; set; }
-        [JsonIgnore]
-        public Book Book { get; set; }
+
     }
 }
