@@ -14,6 +14,7 @@ namespace DataAccessLayer.Entities
 
         [Required]
         public string Name { get; set; } = null!;
+        public ICollection<BookAuthor> BookAuthors { get; set; }
 
     }
 }

@@ -22,5 +22,8 @@ namespace DataAccessLayer.Entities
         public int PagesCount { get; set; }
         public string Description { get; set; } = string.Empty;
         public string CoverImageUrl { get; set; } = string.Empty;
+        public ICollection<BookAuthor> BookAuthors { get; set; }
+        public ICollection<BookGenre> BookGenres { get; set; }
+        public ICollection<LibraryBook> LibraryBooks { get; set; }
     }
 }

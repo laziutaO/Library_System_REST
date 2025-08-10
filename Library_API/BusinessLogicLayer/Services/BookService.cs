@@ -53,7 +53,7 @@ namespace BusinessLogicLayer.Services
 
         public async Task<IEnumerable<Book>> GetBooksAsync(string name, string author, string category)
         {
-            return await _repository.GetBooksAsync(name, author, category);
+            return await _repository.GetBooksAsync(name);
         }
         public async Task<Book> UpdateBookAsync(Guid id, BookUpdateRequest book_info)
         {

@@ -42,32 +42,22 @@ namespace DataAccessLayer.Repositories
             return book;
         }
 
-        public async Task<IEnumerable<Book>> GetBooksAsync(string name, string authorName, string category)
+        public async Task<IEnumerable<Book>> GetBooksAsync(string searchText)
         {
+            if (string.IsNullOrEmpty(searchText)) return Enumerable.Empty<Book>();
+
             IQueryable<Book> bookQuery = _libraryDbContext.Books;
+            var searchTextNormalized = searchText.Trim().ToLower();
 
-            if (!string.IsNullOrWhiteSpace(name))
+            var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name == searchTextNormalized);
+            if (author != null)
             {
-                bookQuery = bookQuery.Where(u => u.Title == name);
+                var authorId = author.Id;
+                bookQuery = bookQuery.Where(b => b.Title == searchTextNormalized || b.BookAuthors.Any(ba => ba.AuthorId == authorId));
             }
-
-            //if (!string.IsNullOrWhiteSpace(authorName))
-            //{
-            //    var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name == authorName);
-            //    if (author != null)
-            //    {
-            //        var authorId = author.Id;
-            //        bookQuery = bookQuery.Where(u => u.AuthorId == authorId);
-            //    }
-            //    else
-            //    {
-            //        return Enumerable.Empty<Book>();
-            //    }
-            //}
-
-            if (!string.IsNullOrWhiteSpace(category))
+            else
             {
-                //bookQuery = bookQuery.Where(u => u.Category == category);
+                bookQuery = bookQuery.Where(b => b.Title == searchTextNormalized);
             }
 
             var books = await bookQuery.ToListAsync();

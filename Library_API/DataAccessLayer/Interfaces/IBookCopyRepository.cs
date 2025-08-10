@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    internal interface IBookCopyRepository
+    public interface IBookCopyRepository: IBookRepository
     {
     }
 }
