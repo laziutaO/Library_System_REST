@@ -38,8 +38,7 @@ namespace DataAccessLayer.Repositories
 
         public async Task<Book> GetAsync(Guid id)
         {
-            var book = await _libraryDbContext.Books.FirstOrDefaultAsync(u => u.Id == id);
-            return book;
+            return await _libraryDbContext.Books.FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public async Task<IEnumerable<Book>> GetBooksAsync(string searchText)

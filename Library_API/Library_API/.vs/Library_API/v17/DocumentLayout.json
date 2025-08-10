@@ -3,19 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\iborrowingrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\bookcopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -24,19 +24,22 @@
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\librarybook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ibookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookgenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -140,11 +143,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Book.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Book.cs",
@@ -157,32 +160,60 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "IBaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
               "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-08T10:58:33.373Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAMwBUAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T19:11:42.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T12:33:06.229Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IBorrowingRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBorrowingRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBorrowingRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBorrowingRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBorrowingRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABHAAAAAAAAAA==",
+              "Title": "BookCopyRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T18:53:36.624Z"
+              "WhenOpened": "2025-08-10T18:48:32.046Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "BookAuthor.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookAuthor.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\BookAuthor.cs",
@@ -190,11 +221,12 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookAuthor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T10:48:02.735Z"
+              "WhenOpened": "2025-08-08T10:48:02.735Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Genre.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Genre.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Genre.cs",
@@ -202,19 +234,21 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Genre.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T21:26:01.328Z"
+              "WhenOpened": "2025-08-07T21:26:01.328Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Library.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Library.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Library.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Library.cs",
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Library.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T18:10:23.106Z"
+              "WhenOpened": "2025-08-07T18:10:23.106Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -224,21 +258,23 @@
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\LibraryBook.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\LibraryBook.cs",
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\LibraryBook.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T18:10:20.853Z"
+              "WhenOpened": "2025-08-07T18:10:20.853Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "BookCopy.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookCopy.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\BookCopy.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookCopy.cs",
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookCopy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T13:00:35.856Z"
+              "WhenOpened": "2025-08-07T13:00:35.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -250,11 +286,12 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\BookService.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAvwDcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T12:33:52.815Z"
+              "WhenOpened": "2025-08-04T12:33:52.815Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "IBookRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBookRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBookRepository.cs",
@@ -262,24 +299,12 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBookRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T12:36:03.294Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAawDwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T12:33:06.229Z",
+              "WhenOpened": "2025-08-04T12:36:03.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "BookGenre.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookGenre.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\BookGenre.cs",
@@ -287,11 +312,12 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookGenre.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T12:57:09.581Z"
+              "WhenOpened": "2025-08-07T12:57:09.581Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
               "Title": "Author.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Author.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Author.cs",
@@ -299,11 +325,12 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Author.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T21:06:37.051Z"
+              "WhenOpened": "2025-08-05T21:06:37.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "IBookCopyRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBookCopyRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBookCopyRepository.cs",
@@ -315,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "ILibraryRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\ILibraryRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\ILibraryRepository.cs",
@@ -327,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "IReviewRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IReviewRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IReviewRepository.cs",
@@ -339,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "IEBookRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
@@ -351,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IGenreRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IGenreRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IGenreRepository.cs",
@@ -363,7 +390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IUserRepository.cs",
@@ -375,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "IReserveRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IReserveRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IReserveRepository.cs",
@@ -387,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "AuthorRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
@@ -399,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ReservationsController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\ReservationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
@@ -411,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Reservation.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Reservation.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Reservation.cs",
@@ -423,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "LibraryDbContext.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\LibraryDbContext.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\LibraryDbContext.cs",
@@ -435,7 +462,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "UserDbContext.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\UserDbContext.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\UserDbContext.cs",
@@ -447,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Ebook.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Ebook.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Ebook.cs",
@@ -459,7 +486,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "Borrowing.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Borrowing.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Borrowing.cs",
@@ -471,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "BooksController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\BooksController.cs",
               "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
@@ -483,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\ReservationService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\ReservationService.cs",
@@ -495,7 +522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "20250807113018_CreatedGenreTable.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Migrations\\20250807113018_CreatedGenreTable.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Migrations\\20250807113018_CreatedGenreTable.cs",
@@ -507,7 +534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ReservationAddRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\ReservationAddRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\ReservationAddRequest.cs",
@@ -519,7 +546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "BookStatus.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Enums\\BookStatus.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Enums\\BookStatus.cs",
@@ -531,7 +558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "BookAccessType.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Enums\\BookAccessType.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Enums\\BookAccessType.cs",
@@ -543,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\User.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\User.cs",
@@ -555,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Review.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Review.cs",
@@ -567,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\UserService.cs",
@@ -579,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "AuthorService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\AuthorService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
@@ -591,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "AuthorsController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\AuthorsController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
@@ -603,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -615,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "BookCreateRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\BookCreateRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\BookCreateRequest.cs",
@@ -627,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "BookUpdateRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\BookUpdateRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\BookUpdateRequest.cs",
@@ -639,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "BookGetShortRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\BookGetShortRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\BookGetShortRequest.cs",

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IBaseRepository<T>
+    public interface IBaseRepository<T> where T : class
     {
         Task<IEnumerable<T>> GetAllAsync();
 

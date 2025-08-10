@@ -12,6 +12,6 @@ namespace DataAccessLayer.Entities
         public string Name { get; set; } = null!;
         public string Address { get; set; } = null!;
         public string Phone { get; set; } = null!;
-        public ICollection<LibraryBook> LibraryBooks { get; set; }
+        public ICollection<LibraryBook> LibraryBooks { get; set; } = null!;
     }
 }
