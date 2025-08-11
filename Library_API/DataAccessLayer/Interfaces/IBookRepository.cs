@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IBookRepository: IBaseRepository<Book>
+    public interface IBookRepository<TBook> : IBaseRepository<TBook> where TBook : Book
     {
         Task<Guid> GetIdAsync(string title);
 
-        Task<IEnumerable<Book>> GetBooksAsync(string searchText);
+        Task<IEnumerable<TBook>> GetBooksAsync(string searchText);
 
     }
 }

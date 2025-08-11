@@ -11,6 +11,7 @@ namespace DataAccessLayer.Entities
 {
     public class Book
     {
+        [Key]
         public Guid Id { get; set; }
 
         [Required]

@@ -19,7 +19,6 @@ namespace DataAccessLayer.Repositories
         }
         public async Task CreateAsync(Author entity)
         {
-            entity.Id = Guid.NewGuid();
             await _libraryDbContext.Authors.AddAsync(entity);
             await _libraryDbContext.SaveChangesAsync();
         }

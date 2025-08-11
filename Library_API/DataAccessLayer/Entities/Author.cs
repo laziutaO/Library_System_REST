@@ -10,6 +10,7 @@ namespace DataAccessLayer.Entities
 {
     public class Author
     {
+        [Key]
         public Guid Id { get; set; }
 
         [Required]

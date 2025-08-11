@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Entities
 {
-    public class BookCopy
+    public class BookCopy: Book
     {
-        public Guid Id { get; set; }
-        public Guid BookId { get; set; }
         public int TotalSamples { get; set; }
 
         //[NotMapped]

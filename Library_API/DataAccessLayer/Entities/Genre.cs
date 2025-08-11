@@ -9,6 +9,7 @@ namespace DataAccessLayer.Entities
 {
     public class Genre
     {
+        [Key]
         public Guid Id { get; set; }
 
         [MaxLength(60)]

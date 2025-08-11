@@ -11,66 +11,35 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace DataAccessLayer.Repositories
 {
-    public class BookRepository : IBookRepository
+    public class BookRepository<TBook> : BaseRepository<TBook>, IBookRepository<TBook> where TBook : Book
     {
-        private readonly LibraryDbContext _libraryDbContext;
-        public BookRepository(LibraryDbContext libraryDbContext)
-        {
-            _libraryDbContext = libraryDbContext;
-        }
-        public async Task CreateAsync(Book entity)
-        {
-            entity.Id = Guid.NewGuid();
-            await _libraryDbContext.Books.AddAsync(entity);
-            await _libraryDbContext.SaveChangesAsync();
-        }
+        public BookRepository(LibraryDbContext libraryDbContext): base(libraryDbContext) {}
 
-        public async Task DeleteAsync(Book entity)
+        public async Task<IEnumerable<TBook>> GetBooksAsync(string searchText)
         {
-            _libraryDbContext.Books.Remove(entity);
-            await _libraryDbContext.SaveChangesAsync();
-        }
+            if (string.IsNullOrEmpty(searchText)) return Enumerable.Empty<TBook>();
 
-        public async Task<IEnumerable<Book>> GetAllAsync()
-        {
-            return await _libraryDbContext.Books.ToListAsync();
-        }
-
-        public async Task<Book> GetAsync(Guid id)
-        {
-            return await _libraryDbContext.Books.FirstOrDefaultAsync(u => u.Id == id);
-        }
-
-        public async Task<IEnumerable<Book>> GetBooksAsync(string searchText)
-        {
-            if (string.IsNullOrEmpty(searchText)) return Enumerable.Empty<Book>();
-
-            IQueryable<Book> bookQuery = _libraryDbContext.Books;
+            IQueryable<TBook> bookQuery = libraryDbContext.Set<TBook>();
             var searchTextNormalized = searchText.Trim().ToLower();
 
-            var author = await _libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name == searchTextNormalized);
+            var author = await libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name.ToLower() == searchTextNormalized);
             if (author != null)
             {
                 var authorId = author.Id;
-                bookQuery = bookQuery.Where(b => b.Title == searchTextNormalized || b.BookAuthors.Any(ba => ba.AuthorId == authorId));
+                bookQuery = bookQuery.Where(b => b.Title.ToLower() == searchTextNormalized || b.BookAuthors.Any(ba => ba.AuthorId == authorId));
             }
             else
             {
-                bookQuery = bookQuery.Where(b => b.Title == searchTextNormalized);
+                bookQuery = bookQuery.Where(b => b.Title.ToLower() == searchTextNormalized);
             }
 
             var books = await bookQuery.ToListAsync();
             return books;
         }
 
-        public async Task UpdateAsync()
-        {
-            await _libraryDbContext.SaveChangesAsync();
-        }
-
         public async Task<Guid> GetIdAsync(string title)
         {
-            var book = await _libraryDbContext.Books.FirstOrDefaultAsync(u => u.Title == title);
+            var book = await libraryDbContext.Books.FirstOrDefaultAsync(u => u.Title == title);
             if (book == null)
             {
                 throw new Exception("Book not found");
@@ -79,5 +48,6 @@ namespace DataAccessLayer.Repositories
             return book.Id;
         }
 
+       
     }
 }
