@@ -11,40 +11,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository :BaseRepository<User>, IUserRepository
     {
-        private readonly LibraryDbContext libraryDbContext;
 
-        public UserRepository(LibraryDbContext libraryDbContext)
+        public UserRepository(LibraryDbContext libraryDbContext): base(libraryDbContext)
         {
-            this.libraryDbContext = libraryDbContext;
-        }
-        public async Task CreateAsync(User entity)
-        {
-            await libraryDbContext.Users.AddAsync(entity);
-            await libraryDbContext.SaveChangesAsync();
-        }
 
-        public async Task DeleteAsync(User entity)
-        {
-            libraryDbContext.Users.Remove(entity);
-            await libraryDbContext.SaveChangesAsync();
-        }
-
-        public async Task<IEnumerable<User>> GetAllAsync()
-        {
-            return await libraryDbContext.Users.ToListAsync();
-        }
-
-        public async Task<User> GetAsync(Guid id)
-        {
-            var user = await libraryDbContext.Users.FirstOrDefaultAsync(u => u.Id == id);
-            return user;
-        }
-
-        public async Task UpdateAsync()
-        {
-            await libraryDbContext.SaveChangesAsync();
         }
 
         public async Task<Guid> GetIdAsync(string firstName, string lastName)

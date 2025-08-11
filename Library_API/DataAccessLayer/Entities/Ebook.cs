@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Entities
 {
-    public class Ebook
+    public class Ebook: Book
     {
-        [Key]
-        public Guid Id { get; set; }
-        public Guid BookId { get; set; }
         public string FileUrl { get; set; } = string.Empty;
         public BookAccessType BookAccessType { get; set; }
     }
