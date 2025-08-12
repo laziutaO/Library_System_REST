@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct AuthorUpdateRequest(string FirstName, string LastName);
+    public record struct AuthorUpdateRequest(string name);
     
 }

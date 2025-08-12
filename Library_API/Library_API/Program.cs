@@ -50,11 +50,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnStr")));
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
-builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IReservationService,  ReservationService>();
+builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
+builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBaseRepository<Author>, AuthorRepository>();
-builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
 builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
 
 var app = builder.Build();

@@ -22,8 +22,7 @@ namespace BusinessLogicLayer.Services
         public async Task CreateAuthorAsync(AuthorUpdateRequest author)
         {
             Author new_author = new Author();
-            new_author.Name = author.FirstName;
-            new_author.Name = author.LastName;
+            new_author.Name = author.name;
             await _repository.CreateAsync(new_author);
         }
 
@@ -55,8 +54,7 @@ namespace BusinessLogicLayer.Services
                 return null;
             }
 
-            author.Name = author_info.FirstName;
-            author.Name = author_info.LastName;
+            author.Name = author_info.name;
 
             await _repository.UpdateAsync();
 

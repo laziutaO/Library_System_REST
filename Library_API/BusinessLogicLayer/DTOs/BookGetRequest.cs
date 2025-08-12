@@ -6,5 +6,14 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct BookGetRequest(string Title, string Category, int AvailableSamples, AuthorGetRequest AuthorInfo);
+    public record struct BookGetRequest(string Title, 
+        string ISBN, 
+        string Publisher,
+        int Year,
+        int PagesCount,
+        string Description,
+        string CoverImageUrl,
+        List<Guid> AuthorIds,
+        List<Guid> GenreIds,
+        List<Guid> LibraryIds);
 }

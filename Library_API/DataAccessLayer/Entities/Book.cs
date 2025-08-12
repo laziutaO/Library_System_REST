@@ -25,6 +25,6 @@ namespace DataAccessLayer.Entities
         public string CoverImageUrl { get; set; } = string.Empty;
         public ICollection<BookAuthor> BookAuthors { get; set; }
         public ICollection<BookGenre> BookGenres { get; set; }
-        public ICollection<LibraryBook> LibraryBooks { get; set; }
+        
     }
 }

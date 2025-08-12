@@ -12,22 +12,22 @@ using BusinessLogicLayer.Interfaces;
 
 namespace BusinessLogicLayer.Services
 {
-    public class BookService: IBookService
+    public class BookService<TBook>: IBookService<TBook> where TBook : Book
     {
-        public readonly IBookRepository _repository;
+        public readonly IBookRepository<TBook> _repository;
         public readonly IBaseRepository<Author> _authorRepository;
-        public BookService (IBookRepository repository, IBaseRepository<Author> authorRepository) 
+        public BookService (IBookRepository<TBook> repository, IBaseRepository<Author> authorRepository) 
         { 
             _repository = repository;
             _authorRepository = authorRepository;
         }
 
-        public async Task CreateBookAsync(Book book)
+        public async Task CreateBookAsync(TBook book)
         {
             await _repository.CreateAsync(book);
         }
 
-        public async Task<Book> DeleteBookAsync(Guid id)
+        public async Task<TBook> DeleteBookAsync(Guid id)
         {
             var book = await _repository.GetAsync(id);
 
@@ -41,21 +41,21 @@ namespace BusinessLogicLayer.Services
             return book;
         }
 
-        public async Task<IEnumerable<Book>> GetAllBooksAsync()
+        public async Task<IEnumerable<TBook>> GetAllBooksAsync()
         {
             return await _repository.GetAllAsync();
         }
 
-        public async Task<Book> GetBookAsync(Guid id)
+        public async Task<TBook> GetBookAsync(Guid id)
         {
             return await _repository.GetAsync(id);
         }
 
-        public async Task<IEnumerable<Book>> GetBooksAsync(string name, string author, string category)
+        public async Task<IEnumerable<TBook>> GetBooksAsync(string name)
         {
             return await _repository.GetBooksAsync(name);
         }
-        public async Task<Book> UpdateBookAsync(Guid id, BookUpdateRequest book_info)
+        public async Task<TBook> UpdateBookAsync(Guid id, BookUpdateRequest book_info)
         {
             var book = await _repository.GetAsync(id);
            
@@ -65,10 +65,6 @@ namespace BusinessLogicLayer.Services
             }
 
             book.Title = book_info.Title;
-            //book.Category = book_info.Category;
-            //book.TotalSamples = book_info.TotalSamples;
-      
-
             await _repository.UpdateAsync();
 
             return book;

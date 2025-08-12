@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Interfaces
 {
-    public interface IBookService
+    public interface IBookService<TBook> where TBook : Book
     {
-        Task<IEnumerable<Book>> GetAllBooksAsync();
-        Task<Book> GetBookAsync(Guid id);
+        Task<IEnumerable<TBook>> GetAllBooksAsync();
+        Task<TBook> GetBookAsync(Guid id);
 
-        Task CreateBookAsync(Book book);
-        Task<Book> UpdateBookAsync(Guid id, BookUpdateRequest book);
-        Task<Book> DeleteBookAsync(Guid id);
-        Task<IEnumerable<Book>> GetBooksAsync(string name, string author, string category);
+        Task CreateBookAsync(TBook book);
+        Task<TBook> UpdateBookAsync(Guid id, BookUpdateRequest book);
+        Task<TBook> DeleteBookAsync(Guid id);
+        Task<IEnumerable<TBook>> GetBooksAsync(string name);
     }
 }

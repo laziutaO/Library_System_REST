@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Entities;
 
-namespace BusinessLogicLayer.DTOs
+namespace BusinessLogicLayer.Interfaces
 {
-    public record struct AuthorCreateRequest(string name);
+    public interface IEbookService: IBookService<Ebook>
+    {
+
+    }
 }
