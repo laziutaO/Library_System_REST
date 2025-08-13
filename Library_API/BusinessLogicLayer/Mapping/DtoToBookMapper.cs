@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Mapping
 {
-    public class DtoToBookMapper
+    public static class DtoToBookMapper
     {
-        public Book UpdateDtoToBook(BookUpdateRequest bookDto)
+        public static Book UpdateDtoToBook(this BookUpdateRequest bookDto)
         {
             return new Book
             {
@@ -25,7 +25,8 @@ namespace BusinessLogicLayer.Mapping
                 CoverImageUrl = bookDto.CoverImageUrl,
                 BookAuthors = bookDto.AuthorIds.Select(authorId => new BookAuthor
                 {
-                    AuthorId = authorId
+                    AuthorId = authorId,
+               
                 }).ToList(),
                 BookGenres = bookDto.GenreIds.Select(genreId => new BookGenre
                 {

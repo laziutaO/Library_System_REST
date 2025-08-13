@@ -11,9 +11,9 @@ namespace Library_API.Controllers
     [Authorize]
     public class BooksController: Controller
     {
-        private readonly IBookService _bookService;
+        private readonly IBookService<BookCopy> _bookService;
         private readonly IAuthorService _authorService;
-        public BooksController(IBookService bookService, IAuthorService authorService) 
+        public BooksController(IBookService<BookCopy> bookService, IAuthorService authorService) 
         { 
             _bookService = bookService;
             _authorService = authorService;

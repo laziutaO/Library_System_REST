@@ -16,8 +16,7 @@ namespace BusinessLogicLayer.DTOs
         string Description,
         string CoverImageUrl,
         List<Guid> AuthorIds,
-        List<Guid> GenreIds,
-        List<Guid> LibraryIds
+        List<Guid> GenreIds
         );
     
 }
