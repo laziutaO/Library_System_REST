@@ -1,19 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using DataAccessLayer.Entities;
-using BusinessLogicLayer.DTOs;
-using Microsoft.AspNetCore.Authorization;
+﻿using BusinessLogicLayer.DTOs;
 using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Services;
+using DataAccessLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-    public class BooksController: Controller
+    public class EBooksController: Controller
     {
-        private readonly IBookService<BookCopy> _bookService;
+        private readonly IEbookService _bookService;
         private readonly IAuthorService _authorService;
-        public BooksController(IBookService<BookCopy> bookService, IAuthorService authorService) 
+        public EBooksController(IEbookService bookService, IAuthorService authorService) 
         { 
             _bookService = bookService;
             _authorService = authorService;
@@ -111,7 +112,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateBook([FromRoute] Guid id, [FromBody] BookUpdateRequest bookUpdateRequest)
+        public async Task<IActionResult> UpdateBook([FromRoute] Guid id, [FromBody] EBookUpdateRequest bookUpdateRequest)
         {
 
             var book = await _bookService.UpdateBookAsync(id, bookUpdateRequest);

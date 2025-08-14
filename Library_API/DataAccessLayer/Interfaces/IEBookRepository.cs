@@ -9,5 +9,7 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IEBookRepository: IBookRepository<Ebook>
     {
+
+        Task UpdateAsync(Ebook book, List<string> authorNames, List<string> genreNames);
     }
 }

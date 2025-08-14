@@ -48,6 +48,23 @@ namespace DataAccessLayer.Repositories
             return book.Id;
         }
 
-       
+        public async Task<Book> GetAsync(Guid id) 
+        {
+            var book = await libraryDbContext.Books
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Author)
+                .Include(b => b.BookGenres)
+                .ThenInclude(ba => ba.Genre)
+                .FirstOrDefaultAsync(b => b.Id == id);
+            if (book == null)
+                return null;
+            return book;
+        }
+        public async Task UpdateAsync(TBook book)
+        {
+
+            await libraryDbContext.SaveChangesAsync();
+        }
+
     }
 }

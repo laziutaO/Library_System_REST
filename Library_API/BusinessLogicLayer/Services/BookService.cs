@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using DataAccessLayer.Data;
 using BusinessLogicLayer.DTOs;
 using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
 
 
 namespace BusinessLogicLayer.Services
@@ -54,20 +55,6 @@ namespace BusinessLogicLayer.Services
         public async Task<IEnumerable<TBook>> GetBooksAsync(string name)
         {
             return await _repository.GetBooksAsync(name);
-        }
-        public async Task<TBook> UpdateBookAsync(Guid id, BookUpdateRequest book_info)
-        {
-            var book = await _repository.GetAsync(id);
-           
-            if (book == null)
-            {
-                return null;
-            }
-
-            book.Title = book_info.Title;
-            await _repository.UpdateAsync();
-
-            return book;
         }
 
         
