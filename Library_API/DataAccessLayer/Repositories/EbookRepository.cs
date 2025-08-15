@@ -32,10 +32,10 @@ namespace DataAccessLayer.Repositories
             try
             {
                 var authorIds = await libraryDbContext.Authors
-                .Where(author => authorNames
-                .Contains(author.Name))
-                .Select(a => a.Id)
-                .ToListAsync();
+                    .Where(author => authorNames
+                    .Contains(author.Name))
+                    .Select(a => a.Id)
+                    .ToListAsync();
 
                 var genreIds = await libraryDbContext.Genres
                     .Where(genre => genreNames
@@ -71,6 +71,42 @@ namespace DataAccessLayer.Repositories
                 throw;
             }
             
+        }
+
+        public async Task CreateAsync(Ebook book, List<string> authorNames, List<string> genreNames)
+        {
+            var authorIds = await libraryDbContext.Authors
+                .Where(author => authorNames
+                .Contains(author.Name))
+                .Select(a => a.Id)
+                .ToListAsync();
+
+            var genreIds = await libraryDbContext.Genres
+                .Where(genre => genreNames
+                .Contains(genre.Name))
+                .Select(g => g.Id)
+                .ToListAsync();
+
+            foreach (var authorId in authorIds)
+            {
+                book.BookAuthors.Add(new BookAuthor
+                {
+                    AuthorId = authorId,
+                    BookId = book.Id
+                });
+            }
+
+            foreach (var genreId in genreIds)
+            {
+                book.BookGenres.Add(new BookGenre
+                {
+                    GenreId = genreId,
+                    BookId = book.Id
+                });
+            }
+
+            await libraryDbContext.Ebooks.AddAsync(book);
+            await libraryDbContext.SaveChangesAsync();
         }
     }
 }

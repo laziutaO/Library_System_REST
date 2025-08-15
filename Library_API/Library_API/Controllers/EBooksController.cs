@@ -90,22 +90,10 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddBook(BookCreateRequest bookRequest)
+        public async Task<IActionResult> AddBook(EBookCreateRequest bookRequest)
         {
-            Book book = new Book
-            {
-                Title = bookRequest.Title,
-                //Change this ASAP
-                //Category = bookRequest.Category,
-                //TotalSamples = bookRequest.TotalSamples,
-            };
 
-            Author author = new Author
-            {
-                Name = bookRequest.Author.FirstName,
-            };
-
-            await _bookService.CreateBookAsync(book);
+            await _bookService.CreateBookAsync(bookRequest);
 
             return Ok(bookRequest);
         }

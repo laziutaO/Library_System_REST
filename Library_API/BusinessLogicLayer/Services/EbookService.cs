@@ -12,15 +12,17 @@ namespace BusinessLogicLayer.Services
 {
     public class EbookService : BookService<Ebook>
     {
-        private readonly IEBookRepository eBookRepository;
-        public EbookService(IEBookRepository repository, IBaseRepository<Author> authorRepository) : base(repository, authorRepository)
+        private readonly IEBookRepository _eBookRepository;
+        private readonly IAuthorRepository _authorRepository;
+        private readonly IGenreRepository _genreRepository;
+        public EbookService(IEBookRepository repository) : base(repository)
         {
-            eBookRepository = repository;
+            _eBookRepository = repository;
         }
 
         public async Task<Ebook> UpdateBookAsync(Guid id, EBookUpdateRequest book_info)
         {
-            var book = await eBookRepository.GetAsync(id);
+            var book = await _eBookRepository.GetAsync(id);
 
             if (book == null)
             {
@@ -28,7 +30,19 @@ namespace BusinessLogicLayer.Services
             }
 
             book_info.UpdateDtoToEBook(book);
-            await eBookRepository.UpdateAsync(book, book_info.AuthorNames, book_info.GenreNames);
+            await _eBookRepository.UpdateAsync(book, book_info.AuthorNames, book_info.GenreNames);
+
+            return book;
+        }
+
+        public async Task<Ebook> CreateBookAsync(EBookCreateRequest book_info)
+        {
+            Ebook book = new Ebook();
+
+            book_info.CreateDtoToEBook(book);
+            await _authorRepository.CreateMissingAsync(book_info.AuthorNames);
+            await _genreRepository.CreateMissingAsync(book_info.GenreNames);
+            await _eBookRepository.CreateAsync(book, book_info.AuthorNames, book_info.GenreNames);
 
             return book;
         }

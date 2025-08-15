@@ -16,11 +16,9 @@ namespace BusinessLogicLayer.Services
     public class BookService<TBook>: IBookService<TBook> where TBook : Book
     {
         public readonly IBookRepository<TBook> _repository;
-        public readonly IBaseRepository<Author> _authorRepository;
-        public BookService (IBookRepository<TBook> repository, IBaseRepository<Author> authorRepository) 
+        public BookService (IBookRepository<TBook> repository) 
         { 
             _repository = repository;
-            _authorRepository = authorRepository;
         }
 
         public async Task CreateBookAsync(TBook book)

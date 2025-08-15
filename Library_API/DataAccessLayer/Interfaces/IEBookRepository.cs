@@ -11,5 +11,6 @@ namespace DataAccessLayer.Interfaces
     {
 
         Task UpdateAsync(Ebook book, List<string> authorNames, List<string> genreNames);
+        Task CreateAsync(Ebook book, List<string> authorNames, List<string> genreNames);
     }
 }

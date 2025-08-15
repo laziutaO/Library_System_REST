@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    public interface IGenreRepository: IBaseRepository<Genre>
+    public interface IAuthorRepository: IBaseRepository<Author>
     {
-        public Task CreateMissingAsync(List<string> genreNames);
+        public Task CreateMissingAsync(List<string> authorNames);
     }
 }
