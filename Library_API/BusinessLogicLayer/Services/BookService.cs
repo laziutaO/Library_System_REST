@@ -50,9 +50,14 @@ namespace BusinessLogicLayer.Services
             return await _repository.GetAsync(id);
         }
 
-        public async Task<IEnumerable<TBook>> GetBooksAsync(string name)
+        public async Task<IEnumerable<TBook>> GetBooksAsync(string keyword)
         {
-            return await _repository.GetBooksAsync(name);
+            return await _repository.GetBooksAsync(keyword);
+        }
+
+        public async Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genres)
+        {
+            return await _repository.GetBooksByGenreAsync(genres);
         }
 
         

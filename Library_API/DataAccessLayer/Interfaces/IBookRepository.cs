@@ -14,6 +14,6 @@ namespace DataAccessLayer.Interfaces
 
         Task<IEnumerable<TBook>> GetBooksAsync(string searchText);
 
-
+        Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genre);
     }
 }

@@ -2,6 +2,7 @@
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,17 @@ namespace DataAccessLayer.Repositories
 
             var books = await bookQuery.ToListAsync();
             return books;
+        }
+        public async Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genres)
+        {
+            if (genres.IsNullOrEmpty()) return Enumerable.Empty<TBook>();
+
+            IQueryable<TBook> bookQuery = libraryDbContext.Set<TBook>();
+
+            return await bookQuery.Where(book =>
+                genres.All(g => book.BookGenres
+                .Any(bg => bg.Genre.Name == g)))
+                .ToListAsync();
         }
 
         public async Task<Guid> GetIdAsync(string title)

@@ -11,5 +11,6 @@ namespace BusinessLogicLayer.Interfaces
     public interface IEbookService: IBookService<Ebook>
     {
         Task<Ebook> UpdateBookAsync(Guid id, EBookUpdateRequest book);
+        Task<Ebook> CreateBookAsync(EBookCreateRequest book);
     }
 }

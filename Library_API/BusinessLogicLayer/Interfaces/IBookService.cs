@@ -12,6 +12,7 @@ namespace BusinessLogicLayer.Interfaces
     {
         Task<IEnumerable<TBook>> GetAllBooksAsync();
         Task<TBook> GetBookAsync(Guid id);
+        Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genre);
 
         Task CreateBookAsync(TBook book);
         Task<TBook> DeleteBookAsync(Guid id);

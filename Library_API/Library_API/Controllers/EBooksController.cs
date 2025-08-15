@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Mapping;
 using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.Services;
 using DataAccessLayer.Entities;
@@ -13,11 +14,9 @@ namespace Library_API.Controllers
     public class EBooksController: Controller
     {
         private readonly IEbookService _bookService;
-        private readonly IAuthorService _authorService;
-        public EBooksController(IEbookService bookService, IAuthorService authorService) 
+        public EBooksController(IEbookService bookService) 
         { 
             _bookService = bookService;
-            _authorService = authorService;
         }
 
         [HttpGet]
@@ -38,53 +37,27 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            //Change this ASAP
-            //var author = await _authorService.GetAuthorAsync(bookRequest.AuthorId);
-            BookGetRequest bookGetDto = new BookGetRequest
-            {
-                Title = bookRequest.Title,
-                Category = "bookRequest.Category",
-                //AvailableSamples = bookRequest.AvailableSamples,
-                AuthorInfo = new AuthorGetRequest
-                {
-                    FirstName = "author.Name",
-                    LastName = "author.Name",
-                }
-            };
-            
 
-            return Ok(bookGetDto);
+            return Ok(bookRequest.EbookToGetResponce());
         }
-
+        // to imporove
         [HttpGet]
-        [Route("name/{name}")]
-        public async Task<IActionResult> GetBooksByName([FromRoute] string name = null)
+        [Route("search")]
+        public async Task<IActionResult> GetBooksByKeyword([FromBody] string keyword)
         {
-            name = name ?? string.Empty;
+            keyword = keyword ?? string.Empty;
        
-            var books = await _bookService.GetBooksAsync(name, null, null);
+            var books = await _bookService.GetBooksAsync(keyword);
 
             return Ok(books);
         }
 
-        [HttpGet]
-        [Route("author/{lastName}")]
-        public async Task<IActionResult> GetBooksByAuthor([FromRoute] string lastName = null)
-        {
-            lastName = lastName ?? string.Empty;
-
-            var books = await _bookService.GetBooksAsync(null, lastName, null);
-
-            return Ok(books);
-        }
 
         [HttpGet]
-        [Route("category/{category}")]
-        public async Task<IActionResult> GetBooksByCategory([FromRoute] string category = null)
+        [Route("genres")]
+        public async Task<IActionResult> GetBooksByCategory([FromBody] List<string> genre)
         {
-            category = category ?? string.Empty;
-
-            var books = await _bookService.GetBooksAsync(null, null, category);
+            var books = await _bookService.GetBooksByGenreAsync(genre);
 
             return Ok(books);
         }
@@ -92,10 +65,9 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBook(EBookCreateRequest bookRequest)
         {
+            var book = await _bookService.CreateBookAsync(bookRequest);
 
-            await _bookService.CreateBookAsync(bookRequest);
-
-            return Ok(bookRequest);
+            return Ok(book);
         }
 
         [HttpPut]
@@ -113,7 +85,7 @@ namespace Library_API.Controllers
             return Ok(book);
 
         }
-
+        // to do
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteBook([FromRoute] Guid id)
