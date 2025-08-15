@@ -12,9 +12,9 @@ namespace Library_API.Controllers
     public class ReservationsController:Controller
     {
         private readonly IReservationService _reservationService;
-        private readonly IBookService _bookService;
+        private readonly IBookService<Ebook> _bookService;
         private readonly IUserService _userService;
-        public ReservationsController(IReservationService reservationService, IBookService bookService, IUserService userService)
+        public ReservationsController(IReservationService reservationService, IBookService<Ebook> bookService, IUserService userService)
         {
             _reservationService = reservationService;
             _bookService = bookService;

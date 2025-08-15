@@ -40,7 +40,7 @@ namespace Library_API.Controllers
 
             return Ok(bookRequest.EbookToGetResponce());
         }
-        // to imporove
+        // to improve
         [HttpGet]
         [Route("search")]
         public async Task<IActionResult> GetBooksByKeyword([FromBody] string keyword)
@@ -85,7 +85,7 @@ namespace Library_API.Controllers
             return Ok(book);
 
         }
-        // to do
+
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteBook([FromRoute] Guid id)

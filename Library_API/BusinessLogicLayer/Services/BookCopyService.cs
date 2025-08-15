@@ -10,7 +10,7 @@ namespace BusinessLogicLayer.Services
 {
     public class BookCopyService : BookService<BookCopy>
     {
-        public BookCopyService(IBookRepository<BookCopy> repository, IBaseRepository<Author> authorRepository) : base(repository, authorRepository)
+        public BookCopyService(IBookRepository<BookCopy> repository) : base(repository)
         {
         }
     }
