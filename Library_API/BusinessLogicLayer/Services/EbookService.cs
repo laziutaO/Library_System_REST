@@ -1,7 +1,8 @@
 ﻿using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
-using BusinessLogicLayer.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Services
 {
-    public class EbookService : BookService<Ebook>
+    public class EbookService : BookService<Ebook>, IEbookService
     {
         private readonly IEBookRepository _eBookRepository;
         private readonly IAuthorRepository _authorRepository;

@@ -51,10 +51,17 @@ builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
-builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
+builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IEbookService, EbookService>();
+builder.Services.AddScoped<IBookCopyService, BookCopyService>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IBaseRepository<Author>, AuthorRepository>();
-builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<IBookCopyRepository, BookCopyRepository>();
+builder.Services.AddScoped<IEBookRepository, EbookRepository>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+builder.Services.AddScoped(typeof(IBookRepository<>), typeof(BookRepository<>));
 builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
 
 var app = builder.Build();

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Repositories
 {
-    public class AuthorRepository : BaseRepository<Author>
+    public class AuthorRepository : BaseRepository<Author>, IAuthorRepository
     {
         public AuthorRepository(LibraryDbContext libraryDbContext): base(libraryDbContext)
         {

@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Entities;
+﻿using BusinessLogicLayer.Interfaces;
+using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Services
 {
-    public class BookCopyService : BookService<BookCopy>
+    public class BookCopyService : BookService<BookCopy>, IBookCopyService
     {
         public BookCopyService(IBookRepository<BookCopy> repository) : base(repository)
         {

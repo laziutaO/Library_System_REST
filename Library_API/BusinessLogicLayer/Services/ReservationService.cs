@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Services
 {
-    public class ReservationService<TBook> : IReservationService where TBook: Book
+    public class ReservationService : IReservationService 
     {
         private readonly IReserveRepository _repository;
         private readonly IUserRepository _userRepository;
-        private readonly IBookRepository<TBook> _bookRepository;
-        public ReservationService(IReserveRepository repository, IUserRepository userRepository, IBookRepository<TBook> bookRepository)
+        private readonly IBookRepository<BookCopy> _bookRepository;
+        public ReservationService(IReserveRepository repository, IUserRepository userRepository, IBookRepository<BookCopy> bookRepository)
         {
             _repository = repository;
             _userRepository = userRepository;
