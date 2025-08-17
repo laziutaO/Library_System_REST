@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Entities;
+using DataAccessLayer.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLayer.Data
@@ -42,6 +43,8 @@ namespace DataAccessLayer.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
+
+            
         }
 
     }

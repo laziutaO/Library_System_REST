@@ -1,15 +1,16 @@
-using DataAccessLayer.Entities;
-using DataAccessLayer.Interfaces;
-using DataAccessLayer.Data;
-using Microsoft.EntityFrameworkCore;
-using Library_API;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.AspNetCore.Identity;
-using DataAccessLayer.Repositories;
 using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.Services;
+using DataAccessLayer;
+using DataAccessLayer.Data;
+using DataAccessLayer.Entities;
+using DataAccessLayer.Interfaces;
+using DataAccessLayer.Repositories;
+using Library_API;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -65,6 +66,12 @@ builder.Services.AddScoped(typeof(IBookRepository<>), typeof(BookRepository<>));
 builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
+    await DatabaseSeeder.SeedAsync(db);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
