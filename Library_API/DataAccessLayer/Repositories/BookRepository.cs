@@ -39,7 +39,7 @@ namespace DataAccessLayer.Repositories
         }
         public async Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genres)
         {
-            if (genres.IsNullOrEmpty()) return Enumerable.Empty<TBook>();
+            if (genres==null || !genres.Any()) return Enumerable.Empty<TBook>();
 
             IQueryable<TBook> bookQuery = libraryDbContext.Set<TBook>();
 

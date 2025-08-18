@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace DataAccessLayer.Repositories
 {
@@ -24,6 +25,68 @@ namespace DataAccessLayer.Repositories
             if (book == null)
                 return null;
             return book;
+        }
+
+        public async Task<IEnumerable<Ebook>> GetBooksAsync(string searchText)
+        {
+            if (string.IsNullOrEmpty(searchText)) return Enumerable.Empty<Ebook>();
+
+            IQueryable<Ebook> bookQuery = libraryDbContext.Set<Ebook>();
+            var searchTextNormalized = searchText.Trim().ToLower();
+
+            var author = await libraryDbContext.Authors.FirstOrDefaultAsync(u => u.Name.ToLower() == searchTextNormalized);
+            if (author != null)
+            {
+                var authorId = author.Id;
+                bookQuery = bookQuery
+                    .Where(b => b.Title.ToLower() == searchTextNormalized ||
+                    b.BookAuthors.Any(ba => ba.AuthorId == authorId))
+                    .Include(b => b.BookAuthors)
+                    .ThenInclude(ba => ba.Author)
+                    .Include(b => b.BookGenres)
+                    .ThenInclude(ba => ba.Genre);
+            }
+            else
+            {
+                bookQuery = bookQuery.Where(b => b.Title.ToLower() == searchTextNormalized)
+                    .Include(b => b.BookAuthors)
+                    .ThenInclude(ba => ba.Author)
+                    .Include(b => b.BookGenres)
+                    .ThenInclude(ba => ba.Genre);
+            }
+
+            var books = await bookQuery.ToListAsync();
+            return books;
+        }
+
+        public async Task<IEnumerable<Ebook>> GetBooksByGenreAsync(List<string> genres)
+        {
+            if (genres == null || !genres.Any()) return Enumerable.Empty<Ebook>();
+
+            IQueryable<Ebook> bookQuery = libraryDbContext.Set<Ebook>();
+
+            return await bookQuery.Where(book =>
+                genres.All(g => book.BookGenres
+                .Any(bg => bg.Genre.Name == g)))
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Author)
+                .Include(b => b.BookGenres)
+                .ThenInclude(ba => ba.Genre)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Ebook>> GetAllAsync()
+        {
+            List<Ebook> ebooks = await libraryDbContext.Ebooks
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Author)
+                .Include(b => b.BookGenres)
+                .ThenInclude(ba => ba.Genre)
+                .ToListAsync();
+            if (ebooks == null)
+                return null;
+            
+            return ebooks;
         }
 
         public async Task UpdateAsync(Ebook book, List<string> authorNames, List<string> genreNames)
@@ -108,5 +171,7 @@ namespace DataAccessLayer.Repositories
             await libraryDbContext.Ebooks.AddAsync(book);
             await libraryDbContext.SaveChangesAsync();
         }
+
+        
     }
 }

@@ -12,5 +12,8 @@ namespace BusinessLogicLayer.Interfaces
     {
         Task<Ebook> UpdateBookAsync(Guid id, EBookUpdateRequest book);
         Task<Ebook> CreateBookAsync(EBookCreateRequest book);
+        new Task<IEnumerable<EBookGetResponce>> GetAllBooksAsync();
+        new Task<IEnumerable<EBookGetResponce>> GetBooksAsync(string keyword);
+        new Task<IEnumerable<EBookGetResponce>> GetBooksByGenreAsync(List<string> genres);
     }
 }
