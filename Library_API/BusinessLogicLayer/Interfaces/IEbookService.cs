@@ -10,8 +10,8 @@ namespace BusinessLogicLayer.Interfaces
 {
     public interface IEbookService: IBookService<Ebook>
     {
-        Task<Ebook> UpdateBookAsync(Guid id, EBookUpdateRequest book);
-        Task<Ebook> CreateBookAsync(EBookCreateRequest book);
+        Task<EBookGetResponce?> UpdateBookAsync(Guid id, EBookUpdateRequest book);
+        Task<EBookGetResponce> CreateBookAsync(EBookCreateRequest book);
         new Task<IEnumerable<EBookGetResponce>> GetAllBooksAsync();
         new Task<IEnumerable<EBookGetResponce>> GetBooksAsync(string keyword);
         new Task<IEnumerable<EBookGetResponce>> GetBooksByGenreAsync(List<string> genres);

@@ -170,6 +170,13 @@ namespace DataAccessLayer.Repositories
 
             await libraryDbContext.Ebooks.AddAsync(book);
             await libraryDbContext.SaveChangesAsync();
+
+            book = await libraryDbContext.Ebooks
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Author)
+                .Include(b => b.BookGenres)
+                .ThenInclude(bg => bg.Genre)
+                .FirstAsync(b => b.Id == book.Id);
         }
 
         

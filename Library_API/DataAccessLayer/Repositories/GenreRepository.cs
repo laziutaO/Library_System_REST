@@ -20,7 +20,7 @@ namespace DataAccessLayer.Repositories
         {
             var oldGenresNames = await libraryDbContext.Genres.Where(g => genresNames.Contains(g.Name)).Select(g => g.Name).ToListAsync();
             var newGenresNames = genresNames.Except(oldGenresNames);
-
+           
             foreach (var genreName in newGenresNames)
             {
                 await CreateAsync(new Genre { Name = genreName });
