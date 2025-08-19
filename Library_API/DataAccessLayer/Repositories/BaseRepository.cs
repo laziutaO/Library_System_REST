@@ -31,7 +31,7 @@ namespace DataAccessLayer.Repositories
         public async Task<IEnumerable<TEntity>> GetAllAsync() => 
             await libraryDbContext.Set<TEntity>().ToListAsync();
 
-        public async Task<TEntity> GetAsync(Guid id) => 
+        public async Task<TEntity?> GetAsync(Guid id) => 
             await libraryDbContext.Set<TEntity>().FindAsync(id);
         
 

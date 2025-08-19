@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct AuthorUpdateRequest(string name);
+    public record struct AuthorUpdateRequest(string name, List<string> books);
     
 }

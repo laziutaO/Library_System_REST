@@ -1,29 +1,32 @@
-﻿using System;
+﻿using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
+using DataAccessLayer.Data;
+using DataAccessLayer.Entities;
+using DataAccessLayer.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BusinessLogicLayer.Interfaces;
-using DataAccessLayer.Data;
-using BusinessLogicLayer.DTOs;
-using DataAccessLayer.Entities;
-using DataAccessLayer.Interfaces;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BusinessLogicLayer.Services
 {
     public class AuthorService : IAuthorService
     {
-        public readonly IBaseRepository<Author> _repository;
-        public AuthorService(IBaseRepository<Author> repository)
+        public readonly IAuthorRepository _repository;
+        public AuthorService(IAuthorRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task CreateAuthorAsync(AuthorUpdateRequest author)
+        public async Task<AuthorGetRequest> CreateAuthorAsync(AuthorUpdateRequest author)
         {
             Author new_author = new Author();
             new_author.Name = author.name;
-            await _repository.CreateAsync(new_author);
+            await _repository.CreateAsync(new_author, author.books);
+            return new_author.AuthorToGetDto();
         }
 
         public async Task<Author> DeleteAuthorAsync(Guid id)
@@ -40,12 +43,13 @@ namespace BusinessLogicLayer.Services
             return author;
         }
 
-        public async Task<Author> GetAuthorAsync(Guid id)
+        public async Task<AuthorGetRequest?> GetAuthorAsync(Guid id)
         {
-            return await _repository.GetAsync(id);
+            var author = await _repository.GetAsync(id);
+            return author == null ? null : author.AuthorToGetDto();
         }
 
-        public async Task<Author> UpdateAuthorAsync(Guid id, AuthorUpdateRequest author_info)
+        public async Task<AuthorGetRequest?> UpdateAuthorAsync(Guid id, AuthorUpdateRequest author_info)
         {
             var author = await _repository.GetAsync(id);
 
@@ -56,9 +60,9 @@ namespace BusinessLogicLayer.Services
 
             author.Name = author_info.name;
 
-            await _repository.UpdateAsync();
+            await _repository.UpdateAsync(author, author_info.books);
 
-            return author;
+            return author.AuthorToGetDto();
         }
 
     }

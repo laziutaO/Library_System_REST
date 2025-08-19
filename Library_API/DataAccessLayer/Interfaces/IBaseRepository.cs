@@ -11,7 +11,7 @@ namespace DataAccessLayer.Interfaces
     {
         Task<IEnumerable<T>> GetAllAsync();
 
-        Task<T> GetAsync(Guid id);
+        Task<T?> GetAsync(Guid id);
 
         Task CreateAsync(T entity);
         Task UpdateAsync();

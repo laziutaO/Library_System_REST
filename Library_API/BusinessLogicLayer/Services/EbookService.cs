@@ -50,7 +50,7 @@ namespace BusinessLogicLayer.Services
             return book.EbookToGetResponce();
         }
 
-        public async Task<IEnumerable<EBookGetResponce>> GetAllBooksAsync()
+        public new async Task<IEnumerable<EBookGetResponce>> GetAllBooksAsync()
         {
             var ebooks = await _eBookRepository.GetAllAsync();
             var booksDto = ebooks.Select(b => b.EbookToGetResponce());
@@ -58,14 +58,14 @@ namespace BusinessLogicLayer.Services
 
         }
 
-        public async Task<IEnumerable<EBookGetResponce>> GetBooksAsync(string keyword)
+        public new async Task<IEnumerable<EBookGetResponce>> GetBooksAsync(string keyword)
         {
             var ebooks = await _eBookRepository.GetBooksAsync(keyword);
             var booksDto = ebooks.Select(b => b.EbookToGetResponce());
             return booksDto;
         }
 
-        public async Task<IEnumerable<EBookGetResponce>> GetBooksByGenreAsync(List<string> genres)
+        public new async Task<IEnumerable<EBookGetResponce>> GetBooksByGenreAsync(List<string> genres)
         {
             var ebooks = await _eBookRepository.GetBooksByGenreAsync(genres);
             var booksDto = ebooks.Select(b => b.EbookToGetResponce());

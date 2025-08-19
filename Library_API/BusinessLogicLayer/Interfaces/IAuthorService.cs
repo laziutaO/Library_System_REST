@@ -10,10 +10,10 @@ namespace BusinessLogicLayer.Interfaces
 {
     public interface IAuthorService
     {
-        Task<Author> GetAuthorAsync(Guid id);
+        Task<AuthorGetRequest?> GetAuthorAsync(Guid id);
 
-        Task CreateAuthorAsync(AuthorUpdateRequest author);
-        Task<Author> UpdateAuthorAsync(Guid id, AuthorUpdateRequest author);
+        Task<AuthorGetRequest> CreateAuthorAsync(AuthorUpdateRequest author);
+        Task<AuthorGetRequest?> UpdateAuthorAsync(Guid id, AuthorUpdateRequest author);
         Task<Author> DeleteAuthorAsync(Guid id);
     }
 }

@@ -14,7 +14,7 @@ namespace DataAccessLayer.Repositories
     public class EbookRepository: BookRepository<Ebook>, IEBookRepository
     {
         public EbookRepository(LibraryDbContext libraryDbContext) : base(libraryDbContext) { }
-        public async Task<Ebook> GetAsync(Guid id)
+        public new async Task<Ebook?> GetAsync(Guid id)
         {
             var book = await libraryDbContext.Ebooks
                 .Include(b => b.BookAuthors)
@@ -27,7 +27,7 @@ namespace DataAccessLayer.Repositories
             return book;
         }
 
-        public async Task<IEnumerable<Ebook>> GetBooksAsync(string searchText)
+        public new async Task<IEnumerable<Ebook>> GetBooksAsync(string searchText)
         {
             if (string.IsNullOrEmpty(searchText)) return Enumerable.Empty<Ebook>();
 
@@ -59,7 +59,7 @@ namespace DataAccessLayer.Repositories
             return books;
         }
 
-        public async Task<IEnumerable<Ebook>> GetBooksByGenreAsync(List<string> genres)
+        public new async Task<IEnumerable<Ebook>> GetBooksByGenreAsync(List<string> genres)
         {
             if (genres == null || !genres.Any()) return Enumerable.Empty<Ebook>();
 
@@ -75,7 +75,7 @@ namespace DataAccessLayer.Repositories
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Ebook>> GetAllAsync()
+        public new async Task<IEnumerable<Ebook>> GetAllAsync()
         {
             List<Ebook> ebooks = await libraryDbContext.Ebooks
                 .Include(b => b.BookAuthors)

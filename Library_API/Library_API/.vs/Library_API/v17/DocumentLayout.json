@@ -3,26 +3,66 @@
   "WorkspaceRootPath": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\ebookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\ebookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\ebookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\ebooktodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\ebookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\interfaces\\iauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\authortodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\dtotoebookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\bookcopytodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\ebookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\authorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\iauthorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\dtos\\authorupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\iebookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\librarybook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -34,16 +74,7 @@
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\borrowing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookcopy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\bookauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\dtos\\ebookcreaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -52,25 +83,10 @@
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\genrerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\authorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\interfaces\\iebookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\bookcopyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\iebookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\bookrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -98,17 +114,7 @@
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\bookcopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\interfaces\\ibookcopyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\interfaces\\iauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\iauthorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -121,12 +127,6 @@
       "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\bookcopytodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\dtotoebookmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\interfaces\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -136,16 +136,10 @@
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ibookcopyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\dtos\\bookupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\dtos\\bookcopygetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\dtos\\authorgetrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\reserverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -164,11 +158,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Book.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Book.cs",
@@ -177,67 +171,25 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAqwBkAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T12:07:03.911Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EBooksController.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EBooksController.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
-              "RelativeToolTip": "Controllers\\EBooksController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowEMAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T20:38:57.099Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EbookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\EbookRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\EbookRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\EbookRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\EbookRepository.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAcwKgAAAANAAAAAAAAAA==",
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "Controllers\\AuthorsController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwD4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T15:38:51.979Z",
+              "WhenOpened": "2025-08-16T08:17:24.795Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EbookService.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\EbookService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\EbookService.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\EbookService.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\EbookService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAIwDEAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T15:40:35.456Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Genre.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Genre.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Genre.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Genre.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:49:32.461Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "Author.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Author.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Author.cs",
@@ -246,11 +198,210 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T10:53:11.14Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\AuthorService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\AuthorService.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAowCgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T07:48:59.366Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IAuthorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T07:53:02.192Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T07:54:46.656Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EbookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\EbookRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\EbookRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\EbookRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\EbookRepository.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAnwFYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T15:38:51.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EBooksController.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EBooksController.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
+              "RelativeToolTip": "Controllers\\EBooksController.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAuwFwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T20:38:57.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\BookService.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\BookService.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\BookService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T09:30:17.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T10:24:02.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthorToDto.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\AuthorToDto.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\AuthorToDto.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\AuthorToDto.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\AuthorToDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T08:14:24.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DtoToEBookMapper.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T18:57:49.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BookCopyToDto.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAnwBgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T18:33:47.49Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "EbookService.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\EbookService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\EbookService.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\EbookService.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\EbookService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAApwCIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T15:40:35.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T15:41:48.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwBAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T09:03:25.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthorUpdateRequest.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\AuthorUpdateRequest.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\AuthorUpdateRequest.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\AuthorUpdateRequest.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\AuthorUpdateRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T10:56:03.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IEBookRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T15:36:04.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "BookAuthor.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookAuthor.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\BookAuthor.cs",
@@ -263,20 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BookCopy.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookCopy.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\BookCopy.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\BookCopy.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookCopy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T13:00:35.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "LibraryBook.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\LibraryBook.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\LibraryBook.cs",
@@ -284,38 +422,23 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\LibraryBook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T19:44:10.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T19:44:10.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Reservation.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Reservation.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Reservation.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Reservation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Genre.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Genre.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Genre.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Genre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T07:48:50.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T20:49:32.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EbookToDto.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\EbookToDto.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\EbookToDto.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\EbookToDto.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\EbookToDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T21:50:42.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "Borrowing.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Borrowing.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Borrowing.cs",
@@ -323,12 +446,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Borrowing.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:50:22.599Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T20:50:22.599Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 18,
               "Title": "Library.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Library.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Library.cs",
@@ -336,12 +458,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Library.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:50:29.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T20:50:29.623Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 24,
               "Title": "EBookCreateRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\EBookCreateRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\EBookCreateRequest.cs",
@@ -349,12 +470,11 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\EBookCreateRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T09:08:09.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T09:08:09.138Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "Ebook.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Ebook.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Ebook.cs",
@@ -362,12 +482,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Ebook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T15:35:36.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-11T15:35:36.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "GenreRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\GenreRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\GenreRepository.cs",
@@ -375,25 +494,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\GenreRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAowBcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T11:54:46.65Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T11:54:46.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AuthorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\AuthorRepository.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAowBMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T15:41:48.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "IEbookService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IEbookService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Interfaces\\IEbookService.cs",
@@ -401,25 +506,11 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IEbookService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T13:44:57.805Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:44:57.805Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "BookService.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\BookService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\BookService.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\BookService.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\BookService.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwDwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T09:30:17.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "BookCopyService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\BookCopyService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\BookCopyService.cs",
@@ -427,51 +518,11 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\BookCopyService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T08:14:10.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-12T08:14:10.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AuthorService.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\AuthorService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\AuthorService.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T07:48:59.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T10:24:02.398Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "IEBookRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T15:36:04.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "BookRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
@@ -479,12 +530,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAcwC8AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T10:09:28.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:09:28.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 29,
               "Title": "EBookGetResponce.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\EBookGetResponce.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\EBookGetResponce.cs",
@@ -492,12 +542,11 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\EBookGetResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T21:40:34.374Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T21:40:34.374Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "DatabaseSeeder.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\DatabaseSeeder.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\DatabaseSeeder.cs",
@@ -505,12 +554,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\DatabaseSeeder.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAQwD4AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T15:34:45.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-17T15:34:45.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "EBookUpdateRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\EBookUpdateRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\EBookUpdateRequest.cs",
@@ -522,7 +570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "LibraryDbContext.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\LibraryDbContext.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\LibraryDbContext.cs",
@@ -534,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "IBookRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBookRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBookRepository.cs",
@@ -546,7 +594,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "BookCopyRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
@@ -558,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -570,19 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "AuthorsController.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\AuthorsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\AuthorsController.cs",
-              "RelativeToolTip": "Controllers\\AuthorsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T08:17:24.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "IBookCopyService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IBookCopyService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Interfaces\\IBookCopyService.cs",
@@ -594,43 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "IAuthorService.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T07:54:46.656Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "IAuthorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IAuthorRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T07:53:02.192Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "BookCopyToDto.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\BookCopyToDto.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAnwBgAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T18:33:47.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\ReservationService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\ReservationService.cs",
@@ -642,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "UserDbContext.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\UserDbContext.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\UserDbContext.cs",
@@ -654,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "ReservationsController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\ReservationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
@@ -663,18 +663,6 @@
               "ViewState": "AgIAAAIAAAAAAAAAAAAEwBAAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-15T22:16:48.355Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "DtoToEBookMapper.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBsAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T18:57:49.043Z"
             },
             {
               "$type": "Document",
@@ -715,18 +703,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 43,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T09:03:25.952Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
               "Title": "BookUpdateRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\BookUpdateRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\BookUpdateRequest.cs",
@@ -738,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 44,
               "Title": "BookCopyGetRequest.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\BookCopyGetRequest.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\BookCopyGetRequest.cs",
@@ -751,18 +727,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 46,
-              "Title": "AuthorGetRequest.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\AuthorGetRequest.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\DTOs\\AuthorGetRequest.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\DTOs\\AuthorGetRequest.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\AuthorGetRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T07:49:38.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\User.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\User.cs",
@@ -774,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 45,
               "Title": "ReserveRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\ReserveRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\ReserveRepository.cs",
@@ -786,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 47,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\UserRepository.cs",

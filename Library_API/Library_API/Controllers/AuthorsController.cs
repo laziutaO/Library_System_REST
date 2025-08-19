@@ -3,6 +3,7 @@ using BusinessLogicLayer.DTOs;
 using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using BusinessLogicLayer.Mapping;
 
 namespace Library_API.Controllers
 {
@@ -22,14 +23,14 @@ namespace Library_API.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetAuthor([FromRoute] Guid id)
         {
-            var author = await _authorService.GetAuthorAsync(id);
+            var authorDto = await _authorService.GetAuthorAsync(id);
 
-            if (author == null)
+            if (authorDto == null)
             {
                 return NotFound();
             }
 
-            return Ok(author);
+            return Ok(authorDto);
         }
 
         [HttpPost]
