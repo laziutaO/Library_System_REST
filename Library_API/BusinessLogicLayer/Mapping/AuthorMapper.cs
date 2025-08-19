@@ -8,7 +8,7 @@ using DataAccessLayer.Entities;
 
 namespace BusinessLogicLayer.Mapping
 {
-    public static class AuthorToDto
+    public static class AuthorMapper
     {
         public static AuthorGetRequest AuthorToGetDto(this Author author)
         {

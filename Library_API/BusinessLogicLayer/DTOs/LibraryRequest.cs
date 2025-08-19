@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLayer.Entities;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct AuthorCreateRequest(string name, List<string> books);
+    public record struct LibraryRequest(
+        string Name,
+        string Address,
+        string Phone,
+        List<string> Books);
+
 }

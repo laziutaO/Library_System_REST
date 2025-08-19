@@ -21,7 +21,7 @@ namespace BusinessLogicLayer.Services
             _repository = repository;
         }
 
-        public async Task<AuthorGetRequest> CreateAuthorAsync(AuthorUpdateRequest author)
+        public async Task<AuthorGetRequest> CreateAuthorAsync(AuthorCreateRequest author)
         {
             Author new_author = new Author();
             new_author.Name = author.name;
@@ -29,7 +29,7 @@ namespace BusinessLogicLayer.Services
             return new_author.AuthorToGetDto();
         }
 
-        public async Task<Author> DeleteAuthorAsync(Guid id)
+        public async Task<AuthorGetRequest?> DeleteAuthorAsync(Guid id)
         {
             var author = await _repository.GetAsync(id);
 
@@ -40,7 +40,7 @@ namespace BusinessLogicLayer.Services
 
             await _repository.DeleteAsync(author);
 
-            return author;
+            return author.AuthorToGetDto();
         }
 
         public async Task<AuthorGetRequest?> GetAuthorAsync(Guid id)

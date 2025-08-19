@@ -34,7 +34,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAuthor(AuthorUpdateRequest authorRequest)
+        public async Task<IActionResult> AddAuthor(AuthorCreateRequest authorRequest)
         {
             await _authorService.CreateAuthorAsync(authorRequest);
 

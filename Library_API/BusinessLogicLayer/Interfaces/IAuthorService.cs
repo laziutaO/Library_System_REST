@@ -12,8 +12,8 @@ namespace BusinessLogicLayer.Interfaces
     {
         Task<AuthorGetRequest?> GetAuthorAsync(Guid id);
 
-        Task<AuthorGetRequest> CreateAuthorAsync(AuthorUpdateRequest author);
+        Task<AuthorGetRequest> CreateAuthorAsync(AuthorCreateRequest author);
         Task<AuthorGetRequest?> UpdateAuthorAsync(Guid id, AuthorUpdateRequest author);
-        Task<Author> DeleteAuthorAsync(Guid id);
+        Task<AuthorGetRequest?> DeleteAuthorAsync(Guid id);
     }
 }

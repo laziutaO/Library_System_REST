@@ -8,7 +8,7 @@ using DataAccessLayer.Entities;
 
 namespace BusinessLogicLayer.Mapping
 {
-    public static class BookCopyToDto
+    public static class BookCopyMapper
     {
         public static BookCopyGetRequest GetBookCopyToDto(this BookCopy bookCopy)
         {

@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Interfaces
 {
-    internal interface ILibraryRepository: IBaseRepository<Library>
+    public interface ILibraryRepository: IBaseRepository<Library>
     {
+        public Task CreateAsync(Library library, List<string> books);
+
+        public Task UpdateAsync(Library library, List<string> books);
     }
 }
