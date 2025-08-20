@@ -12,6 +12,6 @@ namespace DataAccessLayer.Entities
     public class BookCopy: Book
     {
         public BookStatus Status { get; set; } = BookStatus.Available;
-        public ICollection<LibraryBook> LibraryBooks { get; set; } = null!;
+        public ICollection<LibraryBook> LibraryBooks { get; set; } = new List<LibraryBook>();
     }
 }

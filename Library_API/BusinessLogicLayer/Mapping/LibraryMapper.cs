@@ -16,7 +16,7 @@ namespace BusinessLogicLayer.Mapping
                 library.Name,
                 library.Address,
                 library.Phone,
-                library.LibraryBooks.Select(lb => lb.BookCopy.Title).ToList());
+                library.LibraryBooks.Select(lb => lb.BookCopy?.Title ?? string.Empty).ToList());
         }
 
         public static void DtoToLibrary(this LibraryRequest request, Library library)

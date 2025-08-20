@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Mapping;
 
 namespace Library_API.Controllers
 {
@@ -17,19 +18,19 @@ namespace Library_API.Controllers
 
         [HttpGet]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> GetBookCopyAsync([FromRoute] Guid id)
+        public async Task<IActionResult> GetBookCopy([FromRoute] Guid id)
         {
             var book = await _bookCopyService.GetBookAsync(id);
             if (book == null)
             {
                 return NotFound();
             }
-            return Ok(book);
+            return Ok(book.BookCopyToGetDto());
         }
 
         [HttpGet]
         [Route("search")]
-        public async Task<IActionResult> GetBookCopyByKeywordAsync([FromQuery] string keyword)
+        public async Task<IActionResult> GetBookCopyByKeyword([FromQuery] string keyword)
         {
             var book = await _bookCopyService.GetBooksAsync(keyword);
             if (book == null)

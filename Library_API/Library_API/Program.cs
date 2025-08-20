@@ -55,7 +55,7 @@ builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IEbookService, EbookService>();
 builder.Services.AddScoped<IBookCopyService, BookCopyService>();
-builder.Services.AddScoped<ILibraryRepository, LibraryRepository>();
+builder.Services.AddScoped<ILibraryService, LibraryService>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();

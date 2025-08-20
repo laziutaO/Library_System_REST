@@ -79,7 +79,9 @@ namespace DataAccessLayer.Repositories
                 });
             }
 
+            await libraryDbContext.BookCopies.AddAsync(book);
             await libraryDbContext.SaveChangesAsync();
+
             book = await libraryDbContext.BookCopies
                .Include(b => b.BookAuthors)
                .ThenInclude(ba => ba.Author)

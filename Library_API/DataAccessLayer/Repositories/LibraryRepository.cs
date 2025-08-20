@@ -17,7 +17,7 @@ namespace DataAccessLayer.Repositories
         {
             var library = await libraryDbContext.Libraries
                 .Include(b => b.LibraryBooks)
-                .ThenInclude(lb => lb.BookCopy.Title)
+                .ThenInclude(lb => lb.BookCopy)
                 .FirstOrDefaultAsync(b => b.Id == id);
 
             return library == null ? null : library;
