@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct EBookUpdateRequest(string Title,
+    public record EBookUpdateRequest(string Title,
         string ISBN,
         string Publisher,
         int Year,

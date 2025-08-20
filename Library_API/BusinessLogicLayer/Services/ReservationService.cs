@@ -26,10 +26,10 @@ namespace BusinessLogicLayer.Services
         {
             var reserv = new Reservation();
             var userId = await _userRepository.GetIdAsync(reservationInfo.UserInfo.FirstName, reservationInfo.UserInfo.LastName);
-            var bookId = await _bookRepository.GetIdAsync(reservationInfo.BookInfo.Title);
-            reserv.UserId = userId;
-            reserv.BookCopyId = bookId;
-            var book = await _bookRepository.GetAsync(bookId);
+            //var bookId = await _bookRepository.GetIdAsync(reservationInfo.BookInfo.Title);
+            //reserv.UserId = userId;
+            //reserv.BookCopyId = bookId;
+            //var book = await _bookRepository.GetAsync(bookId);
             var count = _repository.CheckReservationsCount(userId);
             if(count < 10)
             {

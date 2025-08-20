@@ -12,11 +12,9 @@ namespace BusinessLogicLayer.Mapping
     {
         public static AuthorGetRequest AuthorToGetDto(this Author author)
         {
-            return new AuthorGetRequest
-            {
-                name = author.Name,
-                books = author.BookAuthors.Select(ba => ba.Book.Title).ToList()
-            };
+            return new(
+                author.Name,
+                author.BookAuthors.Select(ba => ba.Book.Title).ToList());
         }
     }
 }

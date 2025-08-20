@@ -7,5 +7,5 @@ using DataAccessLayer.Entities;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct AuthorCreateRequest(string name, List<string> books);
+    public record AuthorCreateRequest(string name, List<string> books);
 }

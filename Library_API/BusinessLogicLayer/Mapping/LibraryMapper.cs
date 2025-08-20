@@ -12,13 +12,11 @@ namespace BusinessLogicLayer.Mapping
     {
         public static LibraryRequest LibraryToGetDto(this Library library)
         {
-            return new LibraryRequest
-            {
-                Name = library.Name,
-                Address = library.Address,
-                Phone = library.Phone,
-                Books = library.LibraryBooks.Select(lb => lb.BookCopy.Title).ToList()
-            };
+            return new(
+                library.Name,
+                library.Address,
+                library.Phone,
+                library.LibraryBooks.Select(lb => lb.BookCopy.Title).ToList());
         }
 
         public static void DtoToLibrary(this LibraryRequest request, Library library)

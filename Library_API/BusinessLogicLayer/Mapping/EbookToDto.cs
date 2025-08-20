@@ -13,20 +13,19 @@ namespace BusinessLogicLayer.Mapping
     {
         public static EBookGetResponce EbookToGetResponce(this Ebook ebook)
         {
-            return new EBookGetResponce
-            {
-                Title = ebook.Title,
-                ISBN = ebook.ISBN,
-                Publisher = ebook.Publisher,
-                Year = ebook.Year,
-                PagesCount = ebook.PagesCount,
-                Description = ebook.Description,
-                CoverImageUrl = ebook.CoverImageUrl,
-                FileUrl = ebook.FileUrl,
-                BookAccessType = ebook.BookAccessType,
-                AuthorNames = ebook.BookAuthors.Select(ba => ba.Author.Name).ToList(),
-                GenreNames = ebook.BookGenres.Select(ba => ba.Genre.Name).ToList()
-            };
+           return new (
+                ebook.Title,
+                ebook.ISBN,
+                ebook.Publisher,
+                ebook.Year,
+                ebook.PagesCount,
+                ebook.Description,
+                ebook.CoverImageUrl,
+                ebook.FileUrl,
+                ebook.BookAccessType,
+                ebook.BookAuthors.Select(ba => ba.Author.Name).ToList(),
+                ebook.BookGenres.Select(ba => ba.Genre.Name).ToList())
+            ;
         }
     }
 }

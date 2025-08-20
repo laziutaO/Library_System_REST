@@ -12,20 +12,18 @@ namespace BusinessLogicLayer.Mapping
     {
         public static BookCopyGetRequest GetBookCopyToDto(this BookCopy bookCopy)
         {
-            return new BookCopyGetRequest()
-            {
-                Title = bookCopy.Title,
-                ISBN = bookCopy.ISBN,
-                Publisher = bookCopy.Publisher,
-                Year = bookCopy.Year,
-                PagesCount = bookCopy.PagesCount,
-                Description = bookCopy.Description,
-                CoverImageUrl = bookCopy.CoverImageUrl,
-                TotalSamples = bookCopy.TotalSamples,
-                AuthorIds = bookCopy.BookAuthors.Select(bC => bC.AuthorId).ToList(),
-                GenreIds = bookCopy.BookGenres.Select(bC => bC.GenreId).ToList(),
-                LibraryIds = bookCopy.LibraryBooks.Select(bC => bC.LibraryId).ToList()
-            };
+            return new (
+                bookCopy.Title,
+                bookCopy.ISBN,
+                bookCopy.Publisher,
+                bookCopy.Year,
+                bookCopy.PagesCount,
+                bookCopy.Description,
+                bookCopy.CoverImageUrl,
+                bookCopy.Status,
+                bookCopy.BookAuthors.Select(bC => bC.AuthorId).ToList(),
+                bookCopy.BookGenres.Select(bC => bC.GenreId).ToList(),
+                bookCopy.LibraryBooks.Select(bC => bC.LibraryId).ToList());
         }
     }
 }

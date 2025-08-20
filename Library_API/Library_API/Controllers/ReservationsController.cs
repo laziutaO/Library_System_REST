@@ -34,22 +34,15 @@ namespace Library_API.Controllers
             {
                 var bookinfo = await _bookService.GetBookAsync(reservation.BookCopyId);
                 var userinfo = await _userService.GetUserAsync(reservation.UserId);
-                var reservation_info = new ReservationGetRequest
-                {
-                    BookInfo = new BookGetShortRequest
-                    {
-                        Title = bookinfo.Title,
-                    },
-                    UserInfo = new UserGetRequest
-                    {
-                        FirstName = userinfo.FirstName,
-                        LastName = userinfo.LastName,
-                    },
-                    ReserveDate = reservation.ReserveDate,
-                    ReturnDate = reservation.ExpiresAt,
-                    IsClosed = reservation.IsClosed,
-
-                };
+                var reservation_info = new ReservationGetRequest(
+                    new (
+                        userinfo.FirstName,
+                        userinfo.LastName
+                    ),
+                    reservation.ReserveDate,
+                    reservation.ExpiresAt,
+                    reservation.IsClosed
+                );
                 reservation_output.Add(reservation_info);
             }
             return Ok(reservation_output);
@@ -66,22 +59,12 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            var reservation_info = new ReservationGetRequest
-            {
-                BookInfo = new BookGetShortRequest
-                {
-                    Title = bookinfo.Title,
-                },
-                UserInfo = new UserGetRequest
-                {
-                    FirstName = userinfo.FirstName,
-                    LastName = userinfo.LastName,
-                },
-                ReserveDate = reservation.ReserveDate,
-                ReturnDate = reservation.ExpiresAt,
-                IsClosed = reservation.IsClosed,
-
-            };
+            var reservation_info = new ReservationGetRequest(
+                new(userinfo.FirstName,
+                    userinfo.LastName),
+                reservation.ReserveDate,
+                reservation.ExpiresAt,
+                reservation.IsClosed);
             return Ok(reservation_info);
         }
 

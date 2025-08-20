@@ -7,7 +7,7 @@ using DataAccessLayer.Enums;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct EBookCreateRequest(
+    public record EBookCreateRequest(
         string Title,
         string ISBN,
         string Publisher,

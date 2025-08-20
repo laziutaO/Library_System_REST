@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct UserGetRequest(string FirstName, string LastName);
+    public record UserGetRequest(string FirstName, string LastName);
     
 }

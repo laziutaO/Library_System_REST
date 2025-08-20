@@ -55,6 +55,7 @@ builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IEbookService, EbookService>();
 builder.Services.AddScoped<IBookCopyService, BookCopyService>();
+builder.Services.AddScoped<ILibraryRepository, LibraryRepository>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
@@ -64,6 +65,7 @@ builder.Services.AddScoped<IEBookRepository, EbookRepository>();
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 builder.Services.AddScoped(typeof(IBookRepository<>), typeof(BookRepository<>));
 builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
+builder.Services.AddScoped<ILibraryRepository, LibraryRepository>();
 
 var app = builder.Build();
 

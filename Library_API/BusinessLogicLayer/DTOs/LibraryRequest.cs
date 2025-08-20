@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct LibraryRequest(
+    public record LibraryRequest(
         string Name,
         string Address,
         string Phone,

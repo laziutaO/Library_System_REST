@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record struct BookCopyGetRequest(string Title,
+    public record BookCopyGetRequest(string Title,
         string ISBN,
         string Publisher,
         int Year,
         int PagesCount,
         string Description,
         string CoverImageUrl,
-        int TotalSamples,
-        BookStatus BookStatus,
+        BookStatus Status,
         List<Guid> AuthorIds,
         List<Guid> GenreIds,
         List<Guid> LibraryIds);

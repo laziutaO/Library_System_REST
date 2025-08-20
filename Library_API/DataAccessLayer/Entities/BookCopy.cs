@@ -11,10 +11,6 @@ namespace DataAccessLayer.Entities
 {
     public class BookCopy: Book
     {
-        public int TotalSamples { get; set; }
-
-        //[NotMapped]
-        //public int AvailableSamples => TotalSamples - Reservations?.Count(r => !r.IsClosed) ?? 0;
         public BookStatus Status { get; set; } = BookStatus.Available;
         public ICollection<LibraryBook> LibraryBooks { get; set; } = null!;
     }
