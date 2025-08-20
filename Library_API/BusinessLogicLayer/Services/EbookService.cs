@@ -16,7 +16,9 @@ namespace BusinessLogicLayer.Services
         private readonly IEBookRepository _eBookRepository;
         private readonly IAuthorRepository _authorRepository;
         private readonly IGenreRepository _genreRepository;
-        public EbookService(IEBookRepository repository, IAuthorRepository authorRepository, IGenreRepository genreRepository) : base(repository)
+        public EbookService(IEBookRepository repository, 
+            IAuthorRepository authorRepository, 
+            IGenreRepository genreRepository) : base(repository)
         {
             _eBookRepository = repository;
             _authorRepository = authorRepository;

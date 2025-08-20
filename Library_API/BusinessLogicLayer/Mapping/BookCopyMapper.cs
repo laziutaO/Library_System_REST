@@ -10,7 +10,7 @@ namespace BusinessLogicLayer.Mapping
 {
     public static class BookCopyMapper
     {
-        public static BookCopyGetRequest GetBookCopyToDto(this BookCopy bookCopy)
+        public static BookCopyGetRequest BookCopyToGetDto(this BookCopy bookCopy)
         {
             return new (
                 bookCopy.Title,
@@ -24,6 +24,30 @@ namespace BusinessLogicLayer.Mapping
                 bookCopy.BookAuthors.Select(bC => bC.AuthorId).ToList(),
                 bookCopy.BookGenres.Select(bC => bC.GenreId).ToList(),
                 bookCopy.LibraryBooks.Select(bC => bC.LibraryId).ToList());
+        }
+
+        public static void CreateRequestToBookCopy(this BookCopyCreateRequest request, BookCopy book)
+        {
+            book.Title = request.Title;
+            book.ISBN = request.ISBN;
+            book.Publisher = request.Publisher;
+            book.Year = request.Year;
+            book.PagesCount = request.PagesCount;
+            book.Description = request.Description;
+            book.CoverImageUrl = request.CoverImageUrl;
+            book.Status = request.Status;
+        }
+
+        public static void UpdateRequestToBookCopy(this BookCopyUpdateRequest request, BookCopy book)
+        {
+            book.Title = request.Title;
+            book.ISBN = request.ISBN;
+            book.Publisher = request.Publisher;
+            book.Year = request.Year;
+            book.PagesCount = request.PagesCount;
+            book.Description = request.Description;
+            book.CoverImageUrl = request.CoverImageUrl;
+            book.Status = request.Status;
         }
     }
 }
