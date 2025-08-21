@@ -14,5 +14,8 @@ namespace DataAccessLayer.Interfaces
         new Task<Reservation?> GetAsync(Guid id);
 
         Task<bool> CheckIfCanReserveAsync(Guid userId, Guid bookId);
+
+        Task<List<Reservation>> GetByUserAsync(Guid userId);
+        Task<List<Reservation>> GetByBookAsync(Guid userId);
     }
 }

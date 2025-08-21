@@ -1,5 +1,6 @@
-﻿using DataAccessLayer.Entities;
-using BusinessLogicLayer.DTOs;
+﻿using BusinessLogicLayer.DTOs;
+using DataAccessLayer.Entities;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,8 @@ namespace BusinessLogicLayer.Interfaces
         Task<ReservationGetRequest> DeleteReservationAsync(Guid id);
 
         Task<bool> CheckIfCanReserve(Guid userId, Guid bookId);
+
+        Task<List<ReservationGetRequest>> GetReservationsByUserAsync(Guid userId);
+        Task<List<ReservationGetRequest>> GetReservationsByBookAsync(Guid bookId);
     }
 }

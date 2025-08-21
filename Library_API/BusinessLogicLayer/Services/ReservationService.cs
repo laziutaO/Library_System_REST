@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Services
 {
-    public class ReservationService : IReservationService 
+    public class ReservationService : IReservationService
     {
         private readonly IReserveRepository _repository;
         private readonly IUserRepository _userRepository;
@@ -65,7 +65,7 @@ namespace BusinessLogicLayer.Services
         public async Task<ReservationGetRequest?> GetReservationAsync(Guid id)
         {
             var reservation = await _repository.GetAsync(id);
-            return reservation == null ? null : reservation.ReservationToGetDto(); 
+            return reservation == null ? null : reservation.ReservationToGetDto();
         }
 
         public async Task<ReservationGetRequest?> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv)
@@ -80,6 +80,28 @@ namespace BusinessLogicLayer.Services
             await _repository.UpdateAsync();
 
             return reservation.ReservationToGetDto();
+        }
+
+        public async Task<List<ReservationGetRequest>> GetReservationsByUserAsync(Guid userId)
+        {
+            var reservations = await _repository.GetByUserAsync(userId);
+            if (reservations == null)
+            {
+                return null;
+            }
+            var reservationsList = reservations.Select(r=>r.ReservationToGetDto()).ToList();
+            return reservationsList;
+        }
+
+        public async Task<List<ReservationGetRequest>> GetReservationsByBookAsync(Guid bookId)
+        {
+            var reservations = await _repository.GetByBookAsync(bookId);
+            if (reservations == null)
+            {
+                return null;
+            }
+            var reservationsList = reservations.Select(r => r.ReservationToGetDto()).ToList();
+            return reservationsList;
         }
     }
 }

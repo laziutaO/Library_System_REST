@@ -42,6 +42,30 @@ namespace Library_API.Controllers
             return Ok(reservation);
         }
 
+        [HttpGet]
+        [Route("user")]
+        public async Task<IActionResult> GetReservationsByUser([FromQuery] Guid userId)
+        {
+            var reservations = await _reservationService.GetReservationsByUserAsync(userId);
+            if(reservations == null)
+            {
+                return NotFound();
+            }
+            return Ok(reservations);
+        }
+
+        [HttpGet]
+        [Route("book")]
+        public async Task<IActionResult> GetReservationsByBook([FromQuery]Guid bookId)
+        {
+            var reservations = await _reservationService.GetReservationsByBookAsync(bookId);
+            if (reservations == null)
+            {
+                return NotFound();
+            }
+            return Ok(reservations);
+        }
+
         //to finish
         [HttpPost]
         public async Task<IActionResult> AddReservation([FromBody]ReservationCreateRequest reservRequest)

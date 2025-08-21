@@ -42,6 +42,23 @@ namespace DataAccessLayer.Repositories
                 .FirstOrDefaultAsync();
             return reservation;
         }
+        public async Task<List<Reservation>> GetByUserAsync(Guid userId)
+        {
+            List<Reservation> reservationList = await _libraryDbContext.Reservations
+                .Where(r => r.UserId == userId)
+                .Include(r=> r.User)
+                .Include(r => r.BookCopy).ToListAsync();
+            return reservationList;
+        }
+
+        public async Task<List<Reservation>> GetByBookAsync(Guid bookId)
+        {
+            List<Reservation> reservationList = await _libraryDbContext.Reservations
+                .Where(r => r.BookCopyId == bookId)
+                .Include(r => r.User)
+                .Include(r => r.BookCopy).ToListAsync();
+            return reservationList;
+        }
 
         //to finish
         public async Task<bool> CheckIfCanReserveAsync(Guid userId, Guid bookId)
