@@ -22,8 +22,6 @@ namespace DataAccessLayer.Repositories
                 .Include(b => b.BookGenres)
                 .ThenInclude(ba => ba.Genre)
                 .FirstOrDefaultAsync(b => b.Id == id);
-            if (book == null)
-                return null;
             return book;
         }
 
@@ -83,9 +81,6 @@ namespace DataAccessLayer.Repositories
                 .Include(b => b.BookGenres)
                 .ThenInclude(ba => ba.Genre)
                 .ToListAsync();
-            if (ebooks == null)
-                return null;
-            
             return ebooks;
         }
 

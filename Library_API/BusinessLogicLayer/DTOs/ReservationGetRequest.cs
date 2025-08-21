@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record ReservationGetRequest( UserGetRequest UserInfo, DateOnly ReserveDate, DateOnly ReturnDate, bool IsClosed);
+    public record ReservationGetRequest(
+        string UserName, 
+        string BookTitle, 
+        DateOnly ReserveDate, 
+        DateOnly ExpiresAt, 
+        bool IsClosed);
     
 }

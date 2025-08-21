@@ -12,13 +12,10 @@ namespace Library_API.Controllers
     public class ReservationsController:Controller
     {
         private readonly IReservationService _reservationService;
-        private readonly IBookService<Ebook> _bookService;
-        private readonly IUserService _userService;
-        public ReservationsController(IReservationService reservationService, IBookService<Ebook> bookService, IUserService userService)
+
+        public ReservationsController(IReservationService reservationService)
         {
             _reservationService = reservationService;
-            _bookService = bookService;
-            _userService = userService;
         }
 
         [HttpGet]
@@ -29,23 +26,8 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            List<ReservationGetRequest> reservation_output = new List<ReservationGetRequest>();
-            foreach(var reservation in reservations)
-            {
-                var bookinfo = await _bookService.GetBookAsync(reservation.BookCopyId);
-                var userinfo = await _userService.GetUserAsync(reservation.UserId);
-                var reservation_info = new ReservationGetRequest(
-                    new (
-                        userinfo.FirstName,
-                        userinfo.LastName
-                    ),
-                    reservation.ReserveDate,
-                    reservation.ExpiresAt,
-                    reservation.IsClosed
-                );
-                reservation_output.Add(reservation_info);
-            }
-            return Ok(reservation_output);
+            
+            return Ok();
         }
 
         [HttpGet]
@@ -53,34 +35,27 @@ namespace Library_API.Controllers
         public async Task<IActionResult> GetReservation([FromRoute] Guid id)
         {
             var reservation = await _reservationService.GetReservationAsync(id);
-            var bookinfo = await _bookService.GetBookAsync(reservation.BookCopyId);
-            var userinfo = await _userService.GetUserAsync(reservation.UserId);
-            if (reservation == null)
-            {
-                return NotFound();
+            if(reservation == null)   
+            { 
+                return NotFound(); 
             }
-            var reservation_info = new ReservationGetRequest(
-                new(userinfo.FirstName,
-                    userinfo.LastName),
-                reservation.ReserveDate,
-                reservation.ExpiresAt,
-                reservation.IsClosed);
-            return Ok(reservation_info);
+            return Ok(reservation);
         }
 
+        //to finish
         [HttpPost]
-        public async Task<IActionResult> AddReservation(ReservationAddRequest reservRequest)
+        public async Task<IActionResult> AddReservation([FromBody]ReservationCreateRequest reservRequest)
         {
-            bool ableToReserve =  await _reservationService.CreateReservationAsync(reservRequest);
+            bool ableToReserve = await _reservationService.CheckIfCanReserve(reservRequest.UserId, reservRequest.BookCopyId);
             if (!ableToReserve)
-                return Ok("Cannot make reservation because either user has to much reservations or there are no available books");
-
+                return Ok("Cannot make reservation because either user is blocked or there are no available books");
+            var reservation =  await _reservationService.CreateReservationAsync(reservRequest);
             return Ok(reservRequest);
         }
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateReservation([FromRoute] Guid id, ReservationUpdateRequest reservUpdateRequest)
+        public async Task<IActionResult> UpdateReservation([FromRoute] Guid id, [FromBody]ReservationUpdateRequest reservUpdateRequest)
         {
             var reservation = await _reservationService.UpdateReservationAsync(id, reservUpdateRequest);
 
@@ -92,5 +67,18 @@ namespace Library_API.Controllers
             return Ok(reservUpdateRequest);
 
         }
+
+        [HttpDelete]
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> DeleteReservation([FromRoute] Guid id)
+        {
+            var reservation = await _reservationService.DeleteReservationAsync(id);
+            if(reservation == null)
+            {
+                return NotFound();
+            }
+            return Ok(reservation);
+        }
+
     }
 }

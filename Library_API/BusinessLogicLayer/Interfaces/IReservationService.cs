@@ -10,11 +10,13 @@ namespace BusinessLogicLayer.Interfaces
 {
     public interface IReservationService
     {
-        Task<IEnumerable<Reservation>> GetAllReservationsAsync();
-        Task<Reservation> GetReservationAsync(Guid id);
+        Task<IEnumerable<ReservationGetRequest>> GetAllReservationsAsync();
+        Task<ReservationGetRequest?> GetReservationAsync(Guid id);
 
-        Task<bool> CreateReservationAsync(ReservationAddRequest reserv);
-        Task<Reservation> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv);
-        Task<Reservation> DeleteReservationAsync(Guid id);
+        Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reserv);
+        Task<ReservationGetRequest?> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv);
+        Task<ReservationGetRequest> DeleteReservationAsync(Guid id);
+
+        Task<bool> CheckIfCanReserve(Guid userId, Guid bookId);
     }
 }

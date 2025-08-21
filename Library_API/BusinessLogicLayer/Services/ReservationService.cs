@@ -2,6 +2,7 @@
 using BusinessLogicLayer.DTOs;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,28 +23,25 @@ namespace BusinessLogicLayer.Services
             _userRepository = userRepository;
             _bookRepository = bookRepository;
         }
-        public async Task<bool> CreateReservationAsync(ReservationAddRequest reservationInfo)
+
+        public async Task<bool> CheckIfCanReserve(Guid userId, Guid bookId)
         {
-            var reserv = new Reservation();
-            var userId = await _userRepository.GetIdAsync(reservationInfo.UserInfo.FirstName, reservationInfo.UserInfo.LastName);
-            //var bookId = await _bookRepository.GetIdAsync(reservationInfo.BookInfo.Title);
-            //reserv.UserId = userId;
-            //reserv.BookCopyId = bookId;
-            //var book = await _bookRepository.GetAsync(bookId);
-            var count = _repository.CheckReservationsCount(userId);
-            if(count < 10)
+            return await _repository.CheckIfCanReserveAsync(userId, bookId);
+        }
+        public async Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reservationInfo)
+        {
+            Reservation reservation = new Reservation();
+            reservationInfo.CreateDtoToReservation(reservation);
+            await _repository.CreateAsync(reservation);
+            var fetchedReservation = await _repository.GetAsync(reservation.Id);
+            if (fetchedReservation == null)
             {
-                reserv.ReserveDate = reservationInfo.ReserveDate;
-                reserv.ExpiresAt = reservationInfo.ReturnDate;
-                reserv.IsClosed = false;
-                await _repository.CreateAsync(reserv);
-                return true;
+                throw new InvalidOperationException("Reservation could not be retrieved after creation.");
             }
-            
-            return false;
+            return fetchedReservation.ReservationToGetDto();
         }
 
-        public async Task<Reservation> DeleteReservationAsync(Guid id)
+        public async Task<ReservationGetRequest> DeleteReservationAsync(Guid id)
         {
             var reservation = await _repository.GetAsync(id);
 
@@ -54,22 +52,23 @@ namespace BusinessLogicLayer.Services
 
             await _repository.DeleteAsync(reservation);
 
-            return reservation;
+            return reservation.ReservationToGetDto();
         }
 
-        public async Task<IEnumerable<Reservation>> GetAllReservationsAsync()
+        public async Task<IEnumerable<ReservationGetRequest>> GetAllReservationsAsync()
         {
-            return await _repository.GetAllAsync();
+            var reservations = await _repository.GetAllAsync();
+            var reservationsResponce = reservations.Select(r => r.ReservationToGetDto()).ToList();
+            return reservationsResponce;
         }
 
-        public async Task<Reservation> GetReservationAsync(Guid id)
+        public async Task<ReservationGetRequest?> GetReservationAsync(Guid id)
         {
             var reservation = await _repository.GetAsync(id);
-
-            return await _repository.GetAsync(id);
+            return reservation == null ? null : reservation.ReservationToGetDto(); 
         }
 
-        public async Task<Reservation> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv)
+        public async Task<ReservationGetRequest?> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv)
         {
             var reservation = await _repository.GetAsync(id);
 
@@ -77,14 +76,10 @@ namespace BusinessLogicLayer.Services
             {
                 return null;
             }
-
-            reservation.ReserveDate = reserv.ReserveDate;
-            reservation.ExpiresAt = reserv.ReturnDate;
-            reservation.IsClosed = reserv.IsClosed;
-
+            reserv.UpdateDtoToReservation(reservation);
             await _repository.UpdateAsync();
 
-            return reservation;
+            return reservation.ReservationToGetDto();
         }
     }
 }
