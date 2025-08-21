@@ -20,7 +20,7 @@ namespace BusinessLogicLayer.Interfaces
 
         Task<bool> CheckIfCanReserve(Guid userId, Guid bookId);
 
-        Task<List<ReservationGetRequest>> GetReservationsByUserAsync(Guid userId);
-        Task<List<ReservationGetRequest>> GetReservationsByBookAsync(Guid bookId);
+        Task<List<ReservationGetRequest>?> GetReservationsByUserAsync(Guid userId);
+        Task<List<ReservationGetRequest>?> GetReservationsByBookAsync(Guid bookId);
     }
 }

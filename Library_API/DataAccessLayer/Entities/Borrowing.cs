@@ -18,5 +18,8 @@ namespace DataAccessLayer.Entities
         public DateOnly ReturnedAt { get; set; }
         public bool IsOverdue { get; set; }
 
+        public User User { get; set; } = null!;
+        public BookCopy BookCopy { get; set; } = null!;
+
     }
 }

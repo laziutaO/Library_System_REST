@@ -74,7 +74,7 @@ namespace Library_API.Controllers
             if (!ableToReserve)
                 return Ok("Cannot make reservation because either user is blocked or there are no available books");
             var reservation =  await _reservationService.CreateReservationAsync(reservRequest);
-            return Ok(reservRequest);
+            return Ok(reservation);
         }
 
         [HttpPut]
@@ -88,7 +88,7 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(reservUpdateRequest);
+            return Ok(reservation);
 
         }
 

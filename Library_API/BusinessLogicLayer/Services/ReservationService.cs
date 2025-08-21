@@ -15,13 +15,11 @@ namespace BusinessLogicLayer.Services
     public class ReservationService : IReservationService
     {
         private readonly IReserveRepository _repository;
-        private readonly IUserRepository _userRepository;
-        private readonly IBookRepository<BookCopy> _bookRepository;
-        public ReservationService(IReserveRepository repository, IUserRepository userRepository, IBookRepository<BookCopy> bookRepository)
+        public ReservationService(IReserveRepository repository, 
+            IUserRepository userRepository, 
+            IBookRepository<BookCopy> bookRepository)
         {
             _repository = repository;
-            _userRepository = userRepository;
-            _bookRepository = bookRepository;
         }
 
         public async Task<bool> CheckIfCanReserve(Guid userId, Guid bookId)
@@ -82,7 +80,7 @@ namespace BusinessLogicLayer.Services
             return reservation.ReservationToGetDto();
         }
 
-        public async Task<List<ReservationGetRequest>> GetReservationsByUserAsync(Guid userId)
+        public async Task<List<ReservationGetRequest>?> GetReservationsByUserAsync(Guid userId)
         {
             var reservations = await _repository.GetByUserAsync(userId);
             if (reservations == null)
@@ -93,7 +91,7 @@ namespace BusinessLogicLayer.Services
             return reservationsList;
         }
 
-        public async Task<List<ReservationGetRequest>> GetReservationsByBookAsync(Guid bookId)
+        public async Task<List<ReservationGetRequest>?> GetReservationsByBookAsync(Guid bookId)
         {
             var reservations = await _repository.GetByBookAsync(bookId);
             if (reservations == null)
