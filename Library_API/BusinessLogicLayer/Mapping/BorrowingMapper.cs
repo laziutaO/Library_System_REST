@@ -31,8 +31,6 @@ namespace BusinessLogicLayer.Mapping
 
         public static void UpdateDtoToBorrowing(this BorrowingUpdateRequest request, Borrowing borrowing)
         {
-            borrowing.UserId = request.UserId;
-            borrowing.BookCopyId = request.BookCopyId;
             borrowing.DueDate = request.DueDate;
             borrowing.ReturnedAt = request.ReturnedAt;
         }

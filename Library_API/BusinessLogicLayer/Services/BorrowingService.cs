@@ -59,7 +59,7 @@ namespace BusinessLogicLayer.Services
 
         public async Task<List<BorrowingGetRequest>?> GetBorrowingsByBookAsync(Guid bookId)
         {
-            var borrowings = await _repository.GetByUserAsync(bookId);
+            var borrowings = await _repository.GetByBookAsync(bookId);
             if (borrowings == null)
             {
                 return null;

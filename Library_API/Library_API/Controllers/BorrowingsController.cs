@@ -18,7 +18,7 @@ namespace Library_API.Controllers
         }
 
         [HttpGet]
-        [Route("{id: Guid}")]
+        [Route("{id:Guid}")]
         public async Task<IActionResult> GetBorrowingById([FromRoute]Guid id)
         {
             var borrowing = await _borrowingService.GetBorrowingAsync(id);
@@ -45,7 +45,7 @@ namespace Library_API.Controllers
         [Route("book")]
         public async Task<IActionResult> GetBorrowingsByBook([FromQuery] Guid bookId)
         {
-            var borrowing = await _borrowingService.GetBorrowingsByUserAsync(bookId);
+            var borrowing = await _borrowingService.GetBorrowingsByBookAsync(bookId);
             if (borrowing == null)
             {
                 return NotFound();
@@ -64,8 +64,8 @@ namespace Library_API.Controllers
         }
 
         [HttpPut]
-        [Route("{id: Guid}")]
-        public async Task<IActionResult> UpdateBorrowing([FromRoute] Guid id, BorrowingUpdateRequest request)
+        [Route("{id:Guid}")]
+        public async Task<IActionResult> UpdateBorrowing([FromRoute] Guid id, [FromBody]BorrowingUpdateRequest request)
         {
             var borrowing = await _borrowingService.UpdateBorrowingAsync(id, request);
             if (borrowing == null)
@@ -76,7 +76,7 @@ namespace Library_API.Controllers
         }
 
         [HttpDelete]
-        [Route("{id: Guid}")]
+        [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteBorrowing([FromRoute]Guid id)
         {
             var borrowing = await _borrowingService.DeleteBorrowingAsync(id);

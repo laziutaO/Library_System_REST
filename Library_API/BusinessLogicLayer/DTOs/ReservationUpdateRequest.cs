@@ -7,7 +7,5 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record ReservationUpdateRequest(
-        Guid UserId, 
-        Guid BookCopyId, 
         bool IsClosed);
 }

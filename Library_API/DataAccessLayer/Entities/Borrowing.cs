@@ -15,8 +15,11 @@ namespace DataAccessLayer.Entities
         public Guid BookCopyId { get; set; }
         public DateOnly BorrowedDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
         public DateOnly DueDate { get; set; }
-        public DateOnly ReturnedAt { get; set; }
-        public bool IsOverdue { get; set; }
+        public DateOnly? ReturnedAt { get; set; }
+        public bool IsOverdue 
+        { 
+            get => !ReturnedAt.HasValue && DueDate < DateOnly.FromDateTime(DateTime.UtcNow); 
+        }
 
         public User User { get; set; } = null!;
         public BookCopy BookCopy { get; set; } = null!;

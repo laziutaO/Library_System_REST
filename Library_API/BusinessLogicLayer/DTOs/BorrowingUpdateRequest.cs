@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record BorrowingUpdateRequest(
-        Guid UserId,
-        Guid BookCopyId,
         DateOnly DueDate,
-        DateOnly ReturnedAt);
+        DateOnly? ReturnedAt);
 }

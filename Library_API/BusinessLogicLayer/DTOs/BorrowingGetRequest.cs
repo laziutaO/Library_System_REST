@@ -11,6 +11,6 @@ namespace BusinessLogicLayer.DTOs
         string BookTitle,
         DateOnly BorrowedDate,
         DateOnly DueDate,
-        DateOnly ReturnedAt,
+        DateOnly? ReturnedAt,
         bool IsOverdue);
 }

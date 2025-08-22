@@ -29,8 +29,6 @@ namespace BusinessLogicLayer.Mapping
 
         public static void UpdateDtoToReservation(this ReservationUpdateRequest request, Reservation reservation)
         {
-            reservation.UserId = request.UserId;
-            reservation.BookCopyId = request.BookCopyId;
             reservation.IsClosed = request.IsClosed;
         }
     }
