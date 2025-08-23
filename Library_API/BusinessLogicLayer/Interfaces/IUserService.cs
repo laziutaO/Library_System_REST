@@ -14,7 +14,7 @@ namespace BusinessLogicLayer.Interfaces
         Task<UserGetRequest?> GetUserAsync(Guid id);
 
         Task CreateUserAsync(UserCreateRequest user);
-        Task<UserGetRequest?> UpdateUserAsync(Guid id, UserCreateRequest user);
+        Task<UserGetRequest?> UpdateUserAsync(Guid id, UserUpdateRequest user);
         Task<UserGetRequest?> DeleteUserAsync(Guid id);
     }
 }

@@ -50,7 +50,7 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, UserCreateRequest userUpdateRequest)
+        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, [FromBody]UserUpdateRequest userUpdateRequest)
         {
             var user = await _userService.UpdateUserAsync(id, userUpdateRequest);
 

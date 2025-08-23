@@ -9,5 +9,10 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IReviewRepository: IBaseRepository<Review>
     {
+        new Task<IEnumerable<Review>> GetAllAsync();
+        new Task<Review?> GetAsync(Guid id);
+
+        Task<List<Review>> GetByUserAsync(Guid userId);
+        Task<List<Review>> GetByBookAsync(Guid userId);
     }
 }
