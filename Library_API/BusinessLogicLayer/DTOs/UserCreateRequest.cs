@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record UserGetRequest(
-        string FirstName, 
+    public record UserCreateRequest(
+        string FirstName,
         string LastName,
         string Phone,
         string Email,
+        string Password,
         bool IsBlocked);
-    
 }

@@ -6,5 +6,10 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record UserAddRequest(string FirstName, string LastName, long Phone);
+    public record UserUpdateRequest(
+        string FirstName,
+        string LastName,
+        string Phone,
+        string Email,
+        bool IsBlocked);
 }

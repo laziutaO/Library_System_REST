@@ -10,11 +10,11 @@ namespace BusinessLogicLayer.Interfaces
 {
     public interface IUserService
     {
-        Task<IEnumerable<User>> GetAllUsersAsync();
-        Task<User> GetUserAsync(Guid id);
+        Task<IEnumerable<UserGetRequest>> GetAllUsersAsync();
+        Task<UserGetRequest?> GetUserAsync(Guid id);
 
-        Task CreateUserAsync(UserAddRequest user);
-        Task<User> UpdateUserAsync(Guid id, UserAddRequest user);
-        Task<User> DeleteUserAsync(Guid id);
+        Task CreateUserAsync(UserCreateRequest user);
+        Task<UserGetRequest?> UpdateUserAsync(Guid id, UserCreateRequest user);
+        Task<UserGetRequest?> DeleteUserAsync(Guid id);
     }
 }

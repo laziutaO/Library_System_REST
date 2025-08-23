@@ -222,6 +222,10 @@
               "target": "Package",
               "version": "[35.6.3, )"
             },
+            "Identity": {
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
             "JWT": {
               "target": "Package",
               "version": "[11.0.0, )"

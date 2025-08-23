@@ -57,6 +57,8 @@ builder.Services.AddScoped<IEbookService, EbookService>();
 builder.Services.AddScoped<IBookCopyService, BookCopyService>();
 builder.Services.AddScoped<ILibraryService, LibraryService>();
 builder.Services.AddScoped<IBorrowingService, BorrowingService>();
+builder.Services.AddScoped<IPasswordHelper, PasswordHelper>();
+builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();

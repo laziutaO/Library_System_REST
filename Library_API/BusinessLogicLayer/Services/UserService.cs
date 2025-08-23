@@ -1,6 +1,8 @@
-﻿using BusinessLogicLayer.Interfaces;
-using DataAccessLayer.Data;
+﻿using Azure.Core;
 using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
+using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using System;
@@ -14,24 +16,23 @@ namespace BusinessLogicLayer.Services
     public class UserService: IUserService
     {
         public readonly IUserRepository _repository;
+        private readonly IPasswordHelper _passwordHelper;
 
-        public UserService(IUserRepository repository) 
+        public UserService(IUserRepository repository, IPasswordHelper passwordHelper) 
         { 
             _repository = repository;
+            _passwordHelper = passwordHelper;
         }
 
-        public async Task CreateUserAsync(UserAddRequest user)
+        public async Task CreateUserAsync(UserCreateRequest request)
         {
-            User new_user = new User
-            {
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                Phone = user.Phone,
-            };
-            await _repository.CreateAsync(new_user);
+            User user = new User();
+            request.CreateRequestToUser(user);
+            user.HashedPassword = _passwordHelper.GeneratePassword(user, request.Password);
+            await _repository.CreateAsync(user);
         }
 
-        public async Task<User> DeleteUserAsync(Guid id)
+        public async Task<UserGetRequest?> DeleteUserAsync(Guid id)
         {
             var user = await _repository.GetAsync(id);
 
@@ -42,20 +43,23 @@ namespace BusinessLogicLayer.Services
 
             await _repository.DeleteAsync(user);
 
-            return user;
+            return user.UserToGetDto();
         }
 
-        public async Task<IEnumerable<User>> GetAllUsersAsync()
+        public async Task<IEnumerable<UserGetRequest>> GetAllUsersAsync()
         {
-            return await _repository.GetAllAsync();
+            var users =  await _repository.GetAllAsync();
+            var userDtos = users.Select(u => u.UserToGetDto()).ToList();
+            return userDtos;
         }
 
-        public async Task<User> GetUserAsync(Guid id)
+        public async Task<UserGetRequest?> GetUserAsync(Guid id)
         {
-            return await _repository.GetAsync(id);
+            var user = await _repository.GetAsync(id);
+            return user == null ? null : user.UserToGetDto();
         }
 
-        public async Task<User> UpdateUserAsync(Guid id, UserAddRequest user_info)
+        public async Task<UserGetRequest?> UpdateUserAsync(Guid id, UserUpdateRequest user_info)
         {
             var user = await _repository.GetAsync(id);
 
@@ -64,19 +68,11 @@ namespace BusinessLogicLayer.Services
                 return null;
             }
 
-            user.FirstName = user_info.FirstName;
-            user.LastName = user_info.LastName;
-            user.Phone = user_info.Phone;
-
+            user_info.UpdateRequestToUser(user);
             await _repository.UpdateAsync();
 
-            return user;
+            return user.UserToGetDto();
         }
 
-        //public async Task<Guid> GetUserIdAsync(string FirstName, string LastName)
-        //{
-        //    Guid id = await _repository.GetUserIdAsync(FirstName, LastName);
-        //    return id;
-        //}
     }
 }

@@ -73,6 +73,18 @@
           }
         }
       },
+      "Identity/1.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Identity.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Identity.dll": {}
+        }
+      },
       "JWT/11.0.0": {
         "type": "package",
         "dependencies": {
@@ -1900,6 +1912,18 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Identity/1.0.3": {
+      "sha512": "GG+rj9dqnsM908P2a2bu8m2s6obKLvkN5vXFiOyWphsdHidmcgY0QdedOcjQtN+WmvJHWD3VNcCDAo/dYehysg==",
+      "type": "package",
+      "path": "identity/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "identity.1.0.3.nupkg.sha512",
+        "identity.nuspec",
+        "lib/netstandard2.0/Identity.dll"
       ]
     },
     "JWT/11.0.0": {
@@ -5230,6 +5254,7 @@
       "Bogus >= 35.6.3",
       "BusinessLogicLayer >= 1.0.0",
       "DataAccessLayer >= 1.0.0",
+      "Identity >= 1.0.3",
       "JWT >= 11.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.8",
@@ -5300,6 +5325,10 @@
           "Bogus": {
             "target": "Package",
             "version": "[35.6.3, )"
+          },
+          "Identity": {
+            "target": "Package",
+            "version": "[1.0.3, )"
           },
           "JWT": {
             "target": "Package",

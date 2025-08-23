@@ -13,23 +13,23 @@ namespace Library_API.Controllers
     public class UsersController : Controller
     {
 
-        private readonly IUserService userService;
+        private readonly IUserService _userService;
         public UsersController(IUserService userService) 
         {
-            this.userService = userService;
+            _userService = userService;
         }
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
-            var users = await userService.GetAllUsersAsync();
+            var users = await _userService.GetAllUsersAsync();
 
             return Ok(users);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUser([FromBody] UserAddRequest userRequest)
+        public async Task<IActionResult> AddUser([FromBody] UserCreateRequest userRequest)
         {
-            await userService.CreateUserAsync(userRequest);
+            await _userService.CreateUserAsync(userRequest);
 
             return Ok(userRequest);
         }
@@ -38,7 +38,7 @@ namespace Library_API.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetUser([FromRoute] Guid id)
         {
-            var user = await userService.GetUserAsync(id);
+            var user = await _userService.GetUserAsync(id);
 
             if (user == null)
             {
@@ -50,9 +50,9 @@ namespace Library_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, UserAddRequest userUpdateRequest)
+        public async Task<IActionResult> UpdateUser([FromRoute] Guid id, UserCreateRequest userUpdateRequest)
         {
-            var user = await userService.UpdateUserAsync(id, userUpdateRequest);
+            var user = await _userService.UpdateUserAsync(id, userUpdateRequest);
 
             if (user == null)
             {
@@ -67,7 +67,7 @@ namespace Library_API.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteUser([FromRoute] Guid id)
         {
-            var user = await userService.DeleteUserAsync(id);
+            var user = await _userService.DeleteUserAsync(id);
 
             if (user == null)
             {
