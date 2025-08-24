@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
+using BusinessLogicLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace DataAccessLayer
 {
     public static class DatabaseSeeder
     {
-        public static async Task SeedAsync(LibraryDbContext context)
+        public static async Task SeedEbooksAsync(LibraryDbContext context)
         {
             if (context.Ebooks.Any()) return;
 
@@ -75,6 +76,20 @@ namespace DataAccessLayer
             context.Ebooks.AddRange(books);
 
             await context.SaveChangesAsync();
+        }
+
+        public static void SeedUsers(LibraryDbContext context, IPasswordHelper passwordHasher)
+        {
+            if (!context.Users.Any())
+            {
+                var users = DataGenerator.GetBogusUserData()
+                    .Select(u => {
+                        u.HashedPassword = passwordHasher.GeneratePassword(u, u.HashedPassword);
+                        return u; 
+                    }).ToList();
+                context.Users.AddRange(users);
+                context.SaveChanges();
+            }
         }
     }
 }

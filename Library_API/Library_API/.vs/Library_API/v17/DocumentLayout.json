@@ -3,33 +3,33 @@
   "WorkspaceRootPath": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\datagenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:databaseseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\reviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\data\\librarydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\data\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\services\\reservationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\interfaces\\ireviewrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\mapping\\reviewmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7213D98C-FA35-40D8-B634-DB4FB08388A9}|..\\BusinessLogicLayer\\BusinessLogicLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\businesslogiclayer\\dtos\\authorupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -66,99 +66,95 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Review.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
+              "Title": "DataGenerator.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\DataGenerator.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\DataGenerator.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\DataGenerator.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\DataGenerator.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:32:29.891Z",
+              "WhenOpened": "2025-08-24T10:24:20.02Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewsController.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\ReviewsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReviewsController.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\ReviewsController.cs",
-              "RelativeToolTip": "Controllers\\ReviewsController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAA0wE0AAABgAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\User.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Entities\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:55:37.829Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\ReviewService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\ReviewService.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\ReviewService.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\ReviewService.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAcwCIAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:52:39.174Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReviewRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\ReviewRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\ReviewRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\ReviewRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\ReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwCMAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:47:25.262Z",
+              "WhenOpened": "2025-08-24T10:30:49.461Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "IReviewService.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IReviewService.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Interfaces\\IReviewService.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Interfaces\\IReviewService.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IReviewService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAeAAAAAAAAAA==",
+              "Title": "LibraryDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\LibraryDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\LibraryDbContext.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\LibraryDbContext.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Data\\LibraryDbContext.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA8wCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:53:07.13Z",
+              "WhenOpened": "2025-08-24T11:04:44.383Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\DatabaseSeeder.cs",
+              "RelativeDocumentMoniker": "DatabaseSeeder.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\DatabaseSeeder.cs",
+              "RelativeToolTip": "DatabaseSeeder.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAgwFgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T11:30:01.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T11:21:24.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T11:21:08.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IReviewRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IReviewRepository.cs",
-              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Interfaces\\IReviewRepository.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Interfaces\\IReviewRepository.cs",
-              "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IReviewRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAVAAAAAAAAAA==",
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccessLayer\\Data\\UserDbContext.cs",
+              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Data\\UserDbContext.cs",
+              "RelativeToolTip": "..\\DataAccessLayer\\Data\\UserDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:47:49.816Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ReviewMapping.cs",
-              "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\ReviewMapping.cs",
-              "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Mapping\\ReviewMapping.cs",
-              "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Mapping\\ReviewMapping.cs",
-              "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\ReviewMapping.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwAwAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:41:05.439Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-08-24T11:04:41.773Z",
               "EditorCaption": ""
             },
             {
@@ -169,7 +165,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAEkAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAvwFAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-23T13:00:06.801Z",
               "EditorCaption": ""
@@ -184,12 +180,11 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\AuthorUpdateRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:49:18.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:49:18.833Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\ReservationService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\ReservationService.cs",
@@ -197,8 +192,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\ReservationService.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAA0wE0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:47:27.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:47:27.959Z"
             },
             {
               "$type": "Document",
@@ -210,8 +204,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\AuthorGetRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:49:16.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:49:16.836Z"
             },
             {
               "$type": "Document",
@@ -223,8 +216,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\AuthorCreateRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:49:13.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:49:13.895Z"
             },
             {
               "$type": "Document",
@@ -236,8 +228,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowBsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:48:42.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:48:42.175Z"
             },
             {
               "$type": "Document",
@@ -249,8 +240,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\ReserveRepository.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAcwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:44:45.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:44:45.504Z"
             },
             {
               "$type": "Document",
@@ -262,8 +252,7 @@
               "RelativeToolTip": "Controllers\\ReservationsController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:59:28.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T09:59:28.943Z"
             },
             {
               "$type": "Document",
@@ -275,8 +264,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\ReviewGetRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:36:05.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T09:36:05.052Z"
             }
           ]
         }

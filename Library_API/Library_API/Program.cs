@@ -78,7 +78,9 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
-    await DatabaseSeeder.SeedAsync(db);
+    var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHelper>();
+    await DatabaseSeeder.SeedEbooksAsync(db);
+    DatabaseSeeder.SeedUsers(db, hasher);
 }
 
 // Configure the HTTP request pipeline.

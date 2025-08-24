@@ -11,13 +11,9 @@ namespace DataAccessLayer.Data
         }
 
         public DbSet<User> Users { get; set; }
-
         public DbSet<Author> Authors { get; set; }
-
         public DbSet<Book> Books { get; set; }
-
         public DbSet<Reservation> Reservations { get; set; }
-
         public DbSet<BookCopy> BookCopies { get; set; }
         public DbSet<Borrowing> Borrowings { get; set; }
         public DbSet<BookAuthor> BookAuthors { get; set; }
