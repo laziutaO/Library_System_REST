@@ -13,7 +13,7 @@ namespace BusinessLogicLayer.Mapping
         public static ReviewGetRequest ReviewToGetRequest(this Review review)
         {
             return new(
-                review.User.FirstName + " " + review.User.LastName,
+                new string($"{review.User.FirstName} {review.User.LastName}"),
                 review.Book.Title,
                 review.Rating,
                 review.Comment,

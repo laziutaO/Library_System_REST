@@ -52,7 +52,7 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(author);
+            return NoContent();
 
         }
 

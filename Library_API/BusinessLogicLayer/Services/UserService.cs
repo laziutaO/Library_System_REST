@@ -5,6 +5,7 @@ using BusinessLogicLayer.Mapping;
 using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
+using Facet.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,20 +44,20 @@ namespace BusinessLogicLayer.Services
 
             await _repository.DeleteAsync(user);
 
-            return user.UserToGetDto();
+            return user.ToFacet<User, UserGetRequest>();
         }
 
         public async Task<IEnumerable<UserGetRequest>> GetAllUsersAsync()
         {
             var users =  await _repository.GetAllAsync();
-            var userDtos = users.Select(u => u.UserToGetDto()).ToList();
+            var userDtos = users.Select(u => u.ToFacet<User, UserGetRequest>()).ToList();
             return userDtos;
         }
 
         public async Task<UserGetRequest?> GetUserAsync(Guid id)
         {
             var user = await _repository.GetAsync(id);
-            return user == null ? null : user.UserToGetDto();
+            return user == null ? null : user.ToFacet<User, UserGetRequest>();
         }
 
         public async Task<UserGetRequest?> UpdateUserAsync(Guid id, UserUpdateRequest user_info)
@@ -69,9 +70,10 @@ namespace BusinessLogicLayer.Services
             }
 
             user_info.UpdateRequestToUser(user);
+       
             await _repository.UpdateAsync();
 
-            return user.UserToGetDto();
+            return user.ToFacet<User, UserGetRequest>();
         }
 
     }

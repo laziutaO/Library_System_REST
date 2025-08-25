@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.6.3" />
+    <PackageReference Include="Facet" Version="2.3.0" />
+    <PackageReference Include="Facet.Extensions" Version="2.3.0" />
+    <PackageReference Include="Facet.Extensions.EFCore" Version="2.3.0" />
     <PackageReference Include="Identity" Version="1.0.3" />
     <PackageReference Include="JWT" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.8" />

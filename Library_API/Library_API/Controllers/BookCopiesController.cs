@@ -68,7 +68,7 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(request);
+            return NoContent();
         }
 
         [HttpDelete]

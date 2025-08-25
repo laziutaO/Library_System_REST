@@ -55,6 +55,18 @@
               "target": "Package",
               "version": "[35.6.3, )"
             },
+            "Facet": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Facet.Extensions": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Facet.Extensions.EFCore": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.8, )"

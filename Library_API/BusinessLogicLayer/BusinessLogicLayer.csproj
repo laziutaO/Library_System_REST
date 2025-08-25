@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="Facet" Version="2.3.0" />
+	  <PackageReference Include="Facet.Extensions" Version="2.3.0" />
+	  <PackageReference Include="Facet.Extensions.EFCore" Version="2.3.0" />
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
   </ItemGroup>
 

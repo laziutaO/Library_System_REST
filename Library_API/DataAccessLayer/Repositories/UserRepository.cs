@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Data;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
+using Facet.Extensions.EFCore;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -30,9 +31,5 @@ namespace DataAccessLayer.Repositories
             return user.Id;
         }
 
-        public async Task<bool> CheckReservationNumber(User user)
-        {
-            return false;
-        }
     }
 }

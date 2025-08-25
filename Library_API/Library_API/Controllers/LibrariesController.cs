@@ -45,7 +45,7 @@ namespace Library_API.Controllers
                 return NotFound(request);
             }
             var libraryDto = await _libraryService.UpdateLibraryAsync(id, request);
-            return Ok(libraryDto);
+            return NoContent();
         }
 
         [HttpDelete]

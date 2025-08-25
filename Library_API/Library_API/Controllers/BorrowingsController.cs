@@ -72,7 +72,7 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(borrowing);
+            return NoContent();
         }
 
         [HttpDelete]

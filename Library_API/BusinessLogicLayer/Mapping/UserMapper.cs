@@ -10,17 +10,17 @@ namespace BusinessLogicLayer.Mapping
 {
     public static class UserMapper
     {
-        public static UserGetRequest UserToGetDto(this User user)
-        {
-            return new(
-                user.FirstName,
-                user.LastName,
-                user.Phone,
-                user.Email,
-                user.IsBlocked);
-        }
+        //public static UserGetRequest UserToGetDto(this User user)
+        //{
+        //    return new(
+        //        user.FirstName,
+        //        user.LastName,
+        //        user.Phone,
+        //        user.Email,
+        //        user.IsBlocked);
+        //}
 
-        public static void CreateRequestToUser(this UserCreateRequest request, User user) 
+        public static void CreateRequestToUser(this UserCreateRequest request, User user)
         {
             user.FirstName = request.FirstName;
             user.LastName = request.LastName;

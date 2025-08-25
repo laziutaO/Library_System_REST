@@ -60,6 +60,40 @@
           }
         }
       },
+      "Facet/2.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Facet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Facet.dll": {}
+        }
+      },
+      "Facet.Extensions/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Facet": "2.3.0"
+        },
+        "compile": {
+          "lib/net9.0/Facet.Extensions.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0/Facet.Extensions.dll": {}
+        }
+      },
+      "Facet.Extensions.EFCore/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Facet.Extensions": "2.3.0",
+          "Microsoft.EntityFrameworkCore": "9.0.0"
+        },
+        "compile": {
+          "lib/net9.0/Facet.Extensions.EFCore.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0/Facet.Extensions.EFCore.dll": {}
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1786,6 +1820,48 @@
         "lib/netstandard1.3/Bogus.xml",
         "lib/netstandard2.0/Bogus.dll",
         "lib/netstandard2.0/Bogus.xml"
+      ]
+    },
+    "Facet/2.3.0": {
+      "sha512": "u7sff7deMT12m3quJu9l5SsMkywbBvfu/fQhb69heE9FiEnca+tiGZtyQC2+adqcGFZ6FIU/2adG6rQO2+RCqA==",
+      "type": "package",
+      "path": "facet/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/cs/Facet.dll",
+        "facet.2.3.0.nupkg.sha512",
+        "facet.nuspec",
+        "lib/netstandard2.0/Facet.dll"
+      ]
+    },
+    "Facet.Extensions/2.3.0": {
+      "sha512": "eQ52o43KOm7dWS/UhtZTDfhziQxByfRElm+O7Ul5L4HC1LFzSw6uRymhs8oullI2HO6RzlmfGF4EUYg+ygFO3Q==",
+      "type": "package",
+      "path": "facet.extensions/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "facet.extensions.2.3.0.nupkg.sha512",
+        "facet.extensions.nuspec",
+        "lib/net8.0/Facet.Extensions.dll",
+        "lib/net9.0/Facet.Extensions.dll"
+      ]
+    },
+    "Facet.Extensions.EFCore/2.3.0": {
+      "sha512": "VNOT9STtM2MPkWguXFzpWnIC1mPEGz35uoSyGQ2sZ83ypYifWejAyFBsgeN0mDnKlpEglUzpoX5K7R0Fq6o92g==",
+      "type": "package",
+      "path": "facet.extensions.efcore/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "facet.extensions.efcore.2.3.0.nupkg.sha512",
+        "facet.extensions.efcore.nuspec",
+        "lib/net8.0/Facet.Extensions.EFCore.dll",
+        "lib/net9.0/Facet.Extensions.EFCore.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -4976,6 +5052,9 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "Bogus >= 35.6.3",
+      "Facet >= 2.3.0",
+      "Facet.Extensions >= 2.3.0",
+      "Facet.Extensions.EFCore >= 2.3.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 9.0.8",
       "Microsoft.AspNetCore.OpenApi >= 9.0.8",
       "Microsoft.EntityFrameworkCore >= 9.0.8",
@@ -5037,6 +5116,18 @@
           "Bogus": {
             "target": "Package",
             "version": "[35.6.3, )"
+          },
+          "Facet": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
+          "Facet.Extensions": {
+            "target": "Package",
+            "version": "[2.3.0, )"
+          },
+          "Facet.Extensions.EFCore": {
+            "target": "Package",
+            "version": "[2.3.0, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",

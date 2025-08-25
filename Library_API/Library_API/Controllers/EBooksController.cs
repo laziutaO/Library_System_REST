@@ -82,7 +82,7 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(book);
+            return NoContent();
 
         }
 

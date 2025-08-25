@@ -59,8 +59,8 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(user);
-    
+            return NoContent();
+
         }
 
         [HttpDelete]

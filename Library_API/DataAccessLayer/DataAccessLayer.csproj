@@ -7,6 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="Facet" Version="2.3.0" />
+	  <PackageReference Include="Facet.Extensions" Version="2.3.0" />
+	  <PackageReference Include="Facet.Extensions.EFCore" Version="2.3.0" />
     <PackageReference Include="Bogus" Version="35.6.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
