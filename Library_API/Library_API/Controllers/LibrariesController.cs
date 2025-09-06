@@ -25,14 +25,22 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(libraryDto);
+            var output = new Dictionary<string, LibraryRequest>()
+            {
+                ["library"] = libraryDto
+            };
+            return Ok(output);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddLibrary([FromBody] LibraryRequest request)
         {
             var libraryDto = await _libraryService.CreateLibraryAsync(request);
-            return Ok(libraryDto);
+            var output = new Dictionary<string, LibraryRequest>()
+            {
+                ["library"] = libraryDto
+            };
+            return CreatedAtAction(nameof(output), output);
         }
 
         [HttpPut]
@@ -57,7 +65,7 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(library);
+            return NoContent();
         }
     }
 }

@@ -25,38 +25,54 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(book.BookCopyToGetDto());
+            var output = new Dictionary<string, BookCopyGetRequest>()
+            {
+                ["bookCopy"] = book.BookCopyToGetDto()
+            };
+            return Ok(output);
         }
 
         [HttpGet]
         [Route("search")]
         public async Task<IActionResult> GetBookCopyByKeyword([FromQuery] string keyword)
         {
-            var book = await _bookCopyService.GetBooksAsync(keyword);
-            if (book == null)
+            var books = await _bookCopyService.GetBooksAsync(keyword);
+            if (books == null)
             {
                 return NotFound();
             }
-            return Ok(book);
+            var output = new Dictionary<string, IEnumerable<BookCopyGetRequest>>()
+            {
+                ["bookCopies"] = books
+            };
+            return Ok(output);
         }
 
         [HttpGet]
         [Route("genres")]
         public async Task<IActionResult> GetBookCopyByGenre([FromBody] List<string> genres)
         {
-            var book = await _bookCopyService.GetBooksByGenreAsync(genres);
-            if (book == null)
+            var books = await _bookCopyService.GetBooksByGenreAsync(genres);
+            if (books == null)
             {
                 return NotFound();
             }
-            return Ok(book);
+            var output = new Dictionary<string, IEnumerable<BookCopyGetRequest>>()
+            {
+                ["bookCopies"] = books
+            };
+            return Ok(output);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddBookCopy([FromBody] BookCopyCreateRequest request)
         {
             var book = await _bookCopyService.CreateBookAsync(request);
-            return Ok(book);
+            var output = new Dictionary<string, BookCopyGetRequest>()
+            {
+                ["bookCopy"] = book
+            };
+            return CreatedAtAction(nameof(AddBookCopy), output);
         }
 
         [HttpPut]
@@ -80,8 +96,8 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            
-            return Ok();
+
+            return NoContent();
         }
     }
 }

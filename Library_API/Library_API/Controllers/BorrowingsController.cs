@@ -26,7 +26,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(borrowing);
+            var output = new Dictionary<string, BorrowingGetRequest>()
+            {
+                ["borrowing"] = borrowing
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -38,7 +42,11 @@ namespace Library_API.Controllers
             {  
                 return NotFound(); 
             }
-            return Ok(borrowing);
+            var output = new Dictionary<string, IEnumerable<BorrowingGetRequest>>()
+            {
+                ["borrowings"] = borrowing
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -50,7 +58,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(borrowing);
+            var output = new Dictionary<string, IEnumerable<BorrowingGetRequest>>()
+            {
+                ["borrowings"] = borrowing
+            };
+            return Ok(output);
         }
 
         [HttpPost]
@@ -60,7 +72,11 @@ namespace Library_API.Controllers
             if (!ableToReserve)
                 return Ok("Cannot make borrowing because either user is blocked or there are no available books");
             var borrowing = await _borrowingService.CreateBorrowingAsync(request);
-            return Ok(borrowing);
+            var output = new Dictionary<string, BorrowingGetRequest>()
+            {
+                ["borrowing"] = borrowing
+            };
+            return CreatedAtAction(nameof(AddBorrowing), output);
         }
 
         [HttpPut]
@@ -84,7 +100,7 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(borrowing);
+            return NoContent();
         }
     }
 }

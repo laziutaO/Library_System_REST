@@ -26,8 +26,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            
-            return Ok();
+            var output = new Dictionary<string, IEnumerable<ReservationGetRequest>>()
+            {
+                ["reservations"] = reservations
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -39,7 +42,11 @@ namespace Library_API.Controllers
             { 
                 return NotFound(); 
             }
-            return Ok(reservation);
+            var output = new Dictionary<string, ReservationGetRequest>()
+            {
+                ["reservation"] = reservation
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -51,7 +58,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(reservations);
+            var output = new Dictionary<string, IEnumerable<ReservationGetRequest>>()
+            {
+                ["reservations"] = reservations
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -63,7 +74,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(reservations);
+            var output = new Dictionary<string, IEnumerable<ReservationGetRequest>>()
+            {
+                ["reservations"] = reservations
+            };
+            return Ok(output);
         }
 
         //to finish
@@ -74,7 +89,11 @@ namespace Library_API.Controllers
             if (!ableToReserve)
                 return Ok("Cannot make reservation because either user is blocked or there are no available books");
             var reservation =  await _reservationService.CreateReservationAsync(reservRequest);
-            return Ok(reservation);
+            var output = new Dictionary<string, ReservationGetRequest>()
+            {
+                ["reservations"] = reservation
+            };
+            return CreatedAtAction(nameof(AddReservation), output);
         }
 
         [HttpPut]
@@ -89,7 +108,6 @@ namespace Library_API.Controllers
             }
 
             return NoContent();
-
         }
 
         [HttpDelete]
@@ -101,7 +119,7 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(reservation);
+            return NoContent();
         }
 
     }

@@ -22,16 +22,18 @@ namespace Library_API.Controllers
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();
-
-            return Ok(users);
+            var output = new Dictionary<string, IEnumerable<UserGetRequest>>()
+            {
+                ["users"] = users
+            };
+            return Ok(output);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddUser([FromBody] UserCreateRequest userRequest)
         {
             await _userService.CreateUserAsync(userRequest);
-
-            return Ok(userRequest);
+            return Created();
         }
 
         [HttpGet]
@@ -44,8 +46,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(user);
+            var output = new Dictionary<string, UserGetRequest>()
+            {
+                ["user"] = user
+            };
+            return Ok(output);
         }
 
         [HttpPut]
@@ -74,7 +79,7 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(user);
+            return NoContent();
         }
     }
 }

@@ -29,16 +29,22 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(authorDto);
+            var output = new Dictionary<string, AuthorGetRequest>()
+            {
+                ["author"] = authorDto
+            };
+            return Ok(output);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddAuthor(AuthorCreateRequest authorRequest)
         {
-            await _authorService.CreateAuthorAsync(authorRequest);
-
-            return Ok(authorRequest);
+            var author = await _authorService.CreateAuthorAsync(authorRequest);
+            var output = new Dictionary<string, AuthorGetRequest>()
+            {
+                ["author"] = author
+            };
+            return CreatedAtAction(nameof(AddAuthor), output);
         }
 
         [HttpPut]
@@ -67,7 +73,7 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(author);
+            return NoContent();
         }
     }
 }

@@ -26,8 +26,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(reviews);
+            var output = new Dictionary<string, IEnumerable<ReviewGetRequest>>()
+            {
+                ["reviews"] = reviews
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -39,7 +42,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(review);
+            var output = new Dictionary<string, ReviewGetRequest>()
+            {
+                ["review"] = review
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -51,7 +58,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(reviews);
+            var output = new Dictionary<string, IEnumerable<ReviewGetRequest>>()
+            {
+                ["reviews"] = reviews
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -63,14 +74,22 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(reviews);
+            var output = new Dictionary<string, IEnumerable<ReviewGetRequest>>()
+            {
+                ["reviews"] = reviews
+            };
+            return Ok(output);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddReview([FromBody] ReviewCreateRequest reservRequest)
         {
             var review = await _reviewService.CreateReviewAsync(reservRequest);
-            return Ok(review);
+            var output = new Dictionary<string, ReviewGetRequest>()
+            {
+                ["reviews"] = review
+            };
+            return CreatedAtAction(nameof(AddReview), output);  
         }
 
         [HttpPut]
@@ -85,7 +104,6 @@ namespace Library_API.Controllers
             }
 
             return NoContent();
-
         }
 
         [HttpDelete]
@@ -97,7 +115,7 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-            return Ok(review);
+            return NoContent();
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using BusinessLogicLayer.DTOs;
-using BusinessLogicLayer.Mapping;
 using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
 using BusinessLogicLayer.Services;
 using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Library_API.Controllers
 {
@@ -23,8 +24,11 @@ namespace Library_API.Controllers
         public async Task<IActionResult> GetAllBooks()
         {
             var books = await _bookService.GetAllBooksAsync();
-
-            return Ok(books);
+            var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
+            {
+                ["ebooks"] = books
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -37,8 +41,11 @@ namespace Library_API.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(bookRequest.EbookToGetResponce());
+            var output = new Dictionary<string, EBookGetResponce>()
+            {
+                ["ebook"] = bookRequest.EbookToGetResponce()
+            };
+            return Ok(output);
         }
         // to improve
         [HttpGet]
@@ -48,8 +55,11 @@ namespace Library_API.Controllers
             keyword = keyword ?? string.Empty;
        
             var books = await _bookService.GetBooksAsync(keyword);
-
-            return Ok(books);
+            var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
+            {
+                ["ebooks"] = books
+            };
+            return Ok(output);
         }
 
 
@@ -58,23 +68,28 @@ namespace Library_API.Controllers
         public async Task<IActionResult> GetBooksByCategory([FromBody] List<string> genre)
         {
             var books = await _bookService.GetBooksByGenreAsync(genre);
-
-            return Ok(books);
+            var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
+            {
+                ["ebooks"] = books
+            };
+            return Ok(output);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddBook(EBookCreateRequest bookRequest)
         {
             var book = await _bookService.CreateBookAsync(bookRequest);
-
-            return Ok(book);
+            var output = new Dictionary<string, EBookGetResponce>()
+            {
+                ["ebook"] = book
+            };
+            return CreatedAtAction(nameof(AddBook), output);
         }
 
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateBook([FromRoute] Guid id, [FromBody] EBookUpdateRequest bookUpdateRequest)
         {
-
             var book = await _bookService.UpdateBookAsync(id, bookUpdateRequest);
 
             if (book == null)
@@ -83,7 +98,6 @@ namespace Library_API.Controllers
             }
 
             return NoContent();
-
         }
 
         [HttpDelete]
@@ -97,7 +111,7 @@ namespace Library_API.Controllers
                 return NotFound();
             }
 
-            return Ok(book);
+            return NoContent();
         }
     }
 }
