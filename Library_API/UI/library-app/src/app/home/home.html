@@ -1,0 +1,8 @@
+<section>
+    <form>
+        <input type="text" placeholder="Search books, authors...">
+        <button class="primary" type="'button">Search</button>
+    </form>
+    @for (book of bookList; track book.id){
+    <app-book-panel [bookPanel]="book"></app-book-panel>}
+</section>
