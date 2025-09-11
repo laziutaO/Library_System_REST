@@ -1,6 +1,16 @@
 <main>
   <header>
-    <img class="brand-logo" src="logo_small.svg" alt="logo" aria-hidden="true">
+    <img class="brand-logo" src="logo_smallx3.svg" alt="logo" aria-hidden="true">
+    <form class="search-bar">
+        <input type="text" placeholder="Search books, authors...">
+        <button class="primary" type="'button">Search</button>
+    </form>
+    <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/browse">Browse</a>
+    <a routerLink="/categories">Categories</a>
+    <a routerLink="/libraries">Libraries</a>
+  </nav>
   </header>
   <section>
     <router-outlet></router-outlet>

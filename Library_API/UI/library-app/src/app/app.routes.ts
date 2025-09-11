@@ -4,5 +4,8 @@ import { BookDetails } from './book-details/book-details';
 
 export const routes: Routes = [
     { path: '', component: Home },
-    { path: 'details/:id', component: BookDetails }
+    { path: 'details/:id', component: BookDetails },
+    { path: 'browse', component: Home},
+    { path: 'categories', component: Home},
+    { path: 'libraries', component: Home},
 ];
