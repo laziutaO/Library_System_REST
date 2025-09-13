@@ -1,11 +1,71 @@
-<article>
-    <img class="listing-img" [src]="bookData?.coverImageUrl">
-    <section class="listing-discription">
-        <h2 class="listing-heading">{{bookData?.title}}</h2>
-        <p class="listing-discription">{{bookData?.description}}</p>
+<main>
+    <section id="book-section">
+        <section class="get-book">
+            <img class="book-img" [src]="bookData?.coverImageUrl">
+            @if(bookData?.libraries !== undefined){
+            <a class="get-book-button">Reserve Now</a>}
+            @if(bookData?.fileUrl !== undefined){
+            <button class="get-book-button" type="button">Free Download</button>}
+            @else if(bookData?.libraries === undefined && bookData?.fileUrl === undefined){
+                <p>This book is currently not available.</p>
+            }
+        </section>
+        <section class="description">
+            <h2 class="book-title">{{bookData?.title}}</h2>
+            <h4>By author name</h4>
+            <ul>
+                <li>4/5 rating(0 reviews)</li>
+                <li>published in {{bookData?.year}}</li>
+                <li>{{bookData?.pagesCount}} pages</li>
+            </ul>
+            <b>categorie1</b>
+            <b>categorie2</b>
+            <h2>About This Book</h2>
+            <p class="book-description">{{bookData?.description}}</p>
+            <h2>Book Details</h2>
+            <section class="details">
+                <dl>
+                    <div>
+                        <dt>ISBN</dt>
+                        <dd>{{bookData?.isbn}}</dd>
+                    </div>
+                    <div>
+                        <dt>Published</dt>
+                        <dd>{{bookData?.year}}</dd>
+                    </div>
+                    <div>
+                        <dt>Pages</dt>
+                        <dd>{{bookData?.pagesCount}}</dd>
+                    </div>
+                </dl>
+                <dl>
+                    <div>
+                        <dt>Rating</dt>
+                        <dd>4/5</dd>
+                    </div>
+                    <div>
+                        <dt>Availability</dt>
+                        <dd>Available</dd>
+                    </div>
+                    <div>
+                        <dt>Format</dt>
+                        <dd>Digital & Physical</dd>
+                    </div>
+                </dl>
+            </section>
+            @if(bookData?.libraries === undefined){
+            <h2>No Available Locaitons</h2>
+            }
+            @else {
+            <h2>Available Locaitons</h2>
+            <section class="libraries">
+                @for(library of bookData?.libraries; track bookData?.id){
+                <b>{{library.name}}</b>}
+            </section>
+            }
+        </section>
     </section>
-    <section class="listing-read">
-        <h2 class="section-heading">Read now</h2>
-        <button class="primary" type="button">Download</button>
+    <section id="comment-section">
+
     </section>
-</article>
+</main>

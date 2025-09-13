@@ -1,0 +1,78 @@
+#book-section {
+    font-size: large;
+    padding-left: 20rem;
+    padding-top: 5rem;
+    display: flex;
+}
+
+.description {
+    padding-left: 5rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.details dl {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  column-gap: 2rem;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 350px;
+}
+
+.details dt {
+  font-weight: normal;
+  color: #555;
+}
+
+.details dd {
+  font-weight: bold;
+  margin: 0;
+}
+
+.details div{
+    width: 18rem;
+    display: flex;
+    justify-content:space-between;
+}
+
+.get-book{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+
+.get-book-button {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  margin-top: 1rem;
+
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.get-book-button:hover {
+  background-color: #333;
+}

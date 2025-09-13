@@ -1,59 +1,38 @@
 <body>
-<main>
-    <section class="welcome">
-        <h1>Welcome to Libra</h1>
-        <p>Discover your next great read from our collection of {{bookList.length}} books</p>
-        <ul id="stats">
-            <li>3 books available</li>
-            <li>3 categories</li>
-            <li>Updated daily</li>
-        </ul>
-    </section>
-    <h2>New Books</h2>
-    <section class="bookLayout">
-        @for (book of bookList; track book.id){
-        <app-book-panel [bookPanel]="book"></app-book-panel>}
-    </section>
-    <h2>Popular This Week</h2>
-    <section class="bookLayout">
-        @for (book of bookList; track book.id){
-        <app-book-panel [bookPanel]="book"></app-book-panel>}
-    </section>
-    <h2>Popular This Month</h2>
-    <section class="bookLayout">
-        @for (book of bookList; track book.id){
-        <app-book-panel [bookPanel]="book"></app-book-panel>}
-    </section>
-    <h2>All-Time Popular</h2>
-    <section class="bookLayout">
-        @for (book of bookList; track book.id){
-        <app-book-panel [bookPanel]="book"></app-book-panel>}
-    </section>
-    <h2>Highest Rated Books</h2>
-    <section class="bookLayout">
-        @for (book of bookList; track book.id){
-        <app-book-panel [bookPanel]="book"></app-book-panel>}
-    </section>
-</main>
-<footer>
-    <div class="descriptionDiv">
-        <h3>Libra</h3>
-        <p>Your digital gateway to thousands of books. Discover, read, and explore literature from around the world.</p>
-    </div>
-    <div class="descriptionDiv">
-        <h3>Quick Links</h3>
-        <nav>
-            <a [routerLink]="'/browse'">Browse Books</a>
-            <a [routerLink]="'/libraries'">Find Libraries</a>
-            <a [routerLink]="'/'">My Account</a>
-        </nav>
-    </div>
-    <div class="descriptionDiv">
-        <h3>Support</h3>
-        <nav>
-            <a href="https://github.com/laziutaO">Help Center</a>
-            <a href="https://github.com/laziutaO">Contact Us</a>
-        </nav>
-    </div>
-</footer>
+    <main>
+        <section class="welcome">
+            <h1>Welcome to Libra</h1>
+            <p>Discover your next great read from our collection of {{bookList.length}} books</p>
+            <ul id="stats">
+                <li>3 books available</li>
+                <li>3 categories</li>
+                <li>Updated daily</li>
+            </ul>
+        </section>
+        <h2>New Books</h2>
+        <section class="bookLayout">
+            @for (book of bookList; track book.id){
+            <app-book-panel [bookPanel]="book"></app-book-panel>}
+        </section>
+        <h2>Popular This Week</h2>
+        <section class="bookLayout">
+            @for (book of bookList; track book.id){
+            <app-book-panel [bookPanel]="book"></app-book-panel>}
+        </section>
+        <h2>Popular This Month</h2>
+        <section class="bookLayout">
+            @for (book of bookList; track book.id){
+            <app-book-panel [bookPanel]="book"></app-book-panel>}
+        </section>
+        <h2>All-Time Popular</h2>
+        <section class="bookLayout">
+            @for (book of bookList; track book.id){
+            <app-book-panel [bookPanel]="book"></app-book-panel>}
+        </section>
+        <h2>Highest Rated Books</h2>
+        <section class="bookLayout">
+            @for (book of bookList; track book.id){
+            <app-book-panel [bookPanel]="book"></app-book-panel>}
+        </section>
+    </main>
 </body>

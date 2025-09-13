@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\ebookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\ebookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C495A04-E76B-4142-A7E6-6B9F9AC0CCA7}|..\\DataAccessLayer\\DataAccessLayer.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\dataaccesslayer\\entities\\ebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -26,10 +30,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\librariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\librariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\ebookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|solutionrelative:controllers\\ebookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D2FA0D5-435C-4FE7-88F2-24392703DB80}|Library_API.csproj|c:\\users\\welldone\\desktop\\kpi\\.net_library\\library_api\\library_api\\controllers\\borrowingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,11 +110,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Book.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Book.cs",
@@ -122,12 +122,11 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Book.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwBMAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T20:39:41.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T20:39:41.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Ebook.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\DataAccessLayer\\Entities\\Ebook.cs",
               "RelativeDocumentMoniker": "..\\DataAccessLayer\\Entities\\Ebook.cs",
@@ -140,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "LibrariesController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\LibrariesController.cs",
               "RelativeDocumentMoniker": "Controllers\\LibrariesController.cs",
@@ -152,15 +151,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "EBooksController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
               "RelativeDocumentMoniker": "Controllers\\EBooksController.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
               "RelativeToolTip": "Controllers\\EBooksController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAwwEkAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAwwDIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T20:02:30.313Z"
+              "WhenOpened": "2025-09-06T20:02:30.313Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -200,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ReservationsController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\ReservationsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
@@ -212,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ReviewsController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\ReviewsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReviewsController.cs",
@@ -224,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
@@ -232,12 +232,11 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAowDIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T19:48:23.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T19:48:23.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\BusinessLogicLayer\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLogicLayer\\Services\\UserService.cs",

@@ -1,3 +1,5 @@
+import { LibraryData } from "./library-data"
+
 export interface BookData {
     id: string,
     title: string,
@@ -7,6 +9,7 @@ export interface BookData {
     pagesCount: number,
     description: string,
     coverImageUrl: string,
-    fileUrl: string,
+    fileUrl?: string,
     bookAccessType: number
+    libraries?: LibraryData[]
 }

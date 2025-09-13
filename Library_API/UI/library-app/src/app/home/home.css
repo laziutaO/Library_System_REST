@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .bookLayout form {
@@ -70,10 +71,5 @@ body {
   gap: 2rem;
 }
 
-footer {
-  width: 100%;            
-  display: block;         
-  background: #ddd;      
-  padding: 1rem;          
-}
+
 
