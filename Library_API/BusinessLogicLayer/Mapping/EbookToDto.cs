@@ -14,6 +14,7 @@ namespace BusinessLogicLayer.Mapping
         public static EBookGetResponce EbookToGetResponce(this Ebook ebook)
         {
            return new (
+                ebook.Id.ToString(),
                 ebook.Title,
                 ebook.ISBN,
                 ebook.Publisher,

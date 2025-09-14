@@ -10,6 +10,8 @@ export interface BookData {
     description: string,
     coverImageUrl: string,
     fileUrl?: string,
-    bookAccessType: number
+    bookAccessType?: number
+    authorNames?: string[],
+    genreNames?: string[]
     libraries?: LibraryData[]
 }

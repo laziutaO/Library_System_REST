@@ -18,8 +18,11 @@
                 <li>published in {{bookData?.year}}</li>
                 <li>{{bookData?.pagesCount}} pages</li>
             </ul>
-            <b>categorie1</b>
-            <b>categorie2</b>
+            <section>
+                @for(genre of bookData?.genreNames; track bookData?.id){
+                    <b>{{genre}}</b>
+            }
+            </section>
             <h2>About This Book</h2>
             <p class="book-description">{{bookData?.description}}</p>
             <h2>Book Details</h2>

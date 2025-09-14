@@ -11,7 +11,7 @@ namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class EBooksController: Controller
     {
         private readonly IEbookService _bookService;
@@ -26,7 +26,7 @@ namespace Library_API.Controllers
             var books = await _bookService.GetAllBooksAsync();
             var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
             {
-                ["ebooks"] = books
+                ["books"] = books
             };
             return Ok(output);
         }
@@ -43,7 +43,7 @@ namespace Library_API.Controllers
             }
             var output = new Dictionary<string, EBookGetResponce>()
             {
-                ["ebook"] = bookRequest.EbookToGetResponce()
+                ["book"] = bookRequest.EbookToGetResponce()
             };
             return Ok(output);
         }
@@ -57,7 +57,7 @@ namespace Library_API.Controllers
             var books = await _bookService.GetBooksAsync(keyword);
             var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
             {
-                ["ebooks"] = books
+                ["books"] = books
             };
             return Ok(output);
         }
@@ -70,7 +70,7 @@ namespace Library_API.Controllers
             var books = await _bookService.GetBooksByGenreAsync(genre);
             var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
             {
-                ["ebooks"] = books
+                ["books"] = books
             };
             return Ok(output);
         }
@@ -81,7 +81,7 @@ namespace Library_API.Controllers
             var book = await _bookService.CreateBookAsync(bookRequest);
             var output = new Dictionary<string, EBookGetResponce>()
             {
-                ["ebook"] = book
+                ["book"] = book
             };
             return CreatedAtAction(nameof(AddBook), output);
         }

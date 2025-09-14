@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.DTOs
 {
-    public record EBookGetResponce(string Title,
-        string ISBN,
-        string Publisher,
-        int Year,
-        int PagesCount,
-        string Description,
-        string CoverImageUrl,
-        string FileUrl,
-        BookAccessType BookAccessType,
-        List<string> AuthorNames,
-        List<string> GenreNames);
+    public record EBookGetResponce(
+        string id,
+        string title,
+        string isbn,
+        string publisher,
+        int year,
+        int pagesCount,
+        string description,
+        string coverImageUrl,
+        string fileUrl,
+        BookAccessType bookAccessType,
+        List<string> authorNames,
+        List<string> genreNames);
 
 }
