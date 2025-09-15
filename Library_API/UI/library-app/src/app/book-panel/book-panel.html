@@ -2,5 +2,5 @@
     <img class="listing-img" [src]="bookPanel.coverImageUrl">
     <h2 class="listing-heading">{{bookPanel.title}}</h2>
     <p class="listing-discription">{{bookPanel.description}}</p>
-    <a [routerLink]="['/details', bookPanel.id]">View details</a>
+    <a [routerLink]="['/details', bookPanel.id]" [queryParams]="{ type: bookPanel.type }">View details</a>
 </section>

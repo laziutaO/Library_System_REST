@@ -2,11 +2,11 @@
     <section id="book-section">
         <section class="get-book">
             <img class="book-img" [src]="bookData?.coverImageUrl">
-            @if(bookData?.libraries !== undefined){
+            @if(bookData?.libraryNames !== undefined){
             <a class="get-book-button">Reserve Now</a>}
             @if(bookData?.fileUrl !== undefined){
             <button class="get-book-button" type="button">Free Download</button>}
-            @else if(bookData?.libraries === undefined && bookData?.fileUrl === undefined){
+            @else if(bookData?.libraryNames === undefined && bookData?.fileUrl === undefined){
                 <p>This book is currently not available.</p>
             }
         </section>
@@ -20,7 +20,7 @@
             </ul>
             <section>
                 @for(genre of bookData?.genreNames; track bookData?.id){
-                    <b>{{genre}}</b>
+                    <b>{{genre}} </b>
             }
             </section>
             <h2>About This Book</h2>
@@ -56,14 +56,14 @@
                     </div>
                 </dl>
             </section>
-            @if(bookData?.libraries === undefined){
+            @if(bookData?.libraryNames === undefined){
             <h2>No Available Locaitons</h2>
             }
             @else {
             <h2>Available Locaitons</h2>
             <section class="libraries">
-                @for(library of bookData?.libraries; track bookData?.id){
-                <b>{{library.name}}</b>}
+                @for(library of bookData?.libraryNames; track bookData?.id){
+                <b>{{library}}</b>}
             </section>
             }
         </section>

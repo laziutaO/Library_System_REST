@@ -38,6 +38,14 @@ namespace DataAccessLayer.Data
                 .HasForeignKey(bg => bg.BookId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<BookCopy>()
+                .Property(b => b.Status)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Ebook>()
+                .Property(b => b.BookAccessType)
+                .HasConversion<string>();
+
             base.OnModelCreating(modelBuilder);
 
             

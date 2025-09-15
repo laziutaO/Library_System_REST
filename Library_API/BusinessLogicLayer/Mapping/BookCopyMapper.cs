@@ -13,6 +13,7 @@ namespace BusinessLogicLayer.Mapping
         public static BookCopyGetRequest BookCopyToGetDto(this BookCopy bookCopy)
         {
             return new (
+                bookCopy.Id.ToString(),
                 bookCopy.Title,
                 bookCopy.ISBN,
                 bookCopy.Publisher,
@@ -21,9 +22,9 @@ namespace BusinessLogicLayer.Mapping
                 bookCopy.Description,
                 bookCopy.CoverImageUrl,
                 bookCopy.Status,
-                bookCopy.BookAuthors.Select(bC => bC.AuthorId).ToList(),
-                bookCopy.BookGenres.Select(bC => bC.GenreId).ToList(),
-                bookCopy.LibraryBooks.Select(bC => bC.LibraryId).ToList());
+                bookCopy.BookAuthors.Select(bC => bC.Author.Name).ToList(),
+                bookCopy.BookGenres.Select(bC => bC.Genre.Name).ToList(),
+                bookCopy.LibraryBooks.Select(bC => bC.Library.Name).ToList());
         }
 
         public static void CreateRequestToBookCopy(this BookCopyCreateRequest request, BookCopy book)

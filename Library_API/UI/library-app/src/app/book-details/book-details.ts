@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookData } from '../interfaces/book-data';
-import { BooksService } from '../services/books-service';
 import { BookResponce } from '../interfaces/book-responce';
+import { BooksFacadeService } from '../services/books-facade-service';
 
 @Component({
   selector: 'app-book-details',
@@ -15,16 +15,15 @@ export class BookDetails implements OnInit{
   bookResponce: BookResponce = {};
   bookPanelId: string= "";
 
-  constructor(private route: ActivatedRoute, private booksService: BooksService){
-    route = inject(ActivatedRoute)
-    booksService = inject(BooksService)
-    this.bookPanelId = <string>this.route.snapshot.params['id'];
+  constructor(private route: ActivatedRoute, 
+    private booksFacade: BooksFacadeService){
+    this.bookPanelId = this.route.snapshot.paramMap.get('id')!;
   }
 
   ngOnInit(): void {
-    this.booksService.getBookById(this.bookPanelId).subscribe(data => {
-      this.bookResponce = data;
-      this.bookData = this.bookResponce["book"];
+    const type = this.route.snapshot.queryParamMap.get('type') as "ebook" | "copy";
+    this.booksFacade.getBookById(this.bookPanelId, type).subscribe(data => {
+      this.bookData = data;
     })
   }
 

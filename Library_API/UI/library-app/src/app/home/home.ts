@@ -1,9 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { BookPanel } from '../book-panel/book-panel';
 import { BookData } from '../interfaces/book-data';
-import { BooksService } from '../services/books-service';
+import { EbooksService } from '../services/ebooks-service';
+import { BookCopiesService } from '../services/book-copies-service';
 import { RouterLink } from '@angular/router';
 import { BooksResponce } from '../interfaces/books-responce';
+
 
 @Component({
   selector: 'app-home',
@@ -14,15 +16,20 @@ import { BooksResponce } from '../interfaces/books-responce';
 export class Home implements OnInit{
   bookList: BookData[] = [];
   booksResponce: BooksResponce = {};
-  constructor(private booksService: BooksService){
-    booksService = inject(BooksService)
+
+  constructor(private ebooksService: EbooksService, 
+    private booksCopyService: BookCopiesService){
+
   }
 
   ngOnInit(): void {
-      this.booksService.getAllBooks().subscribe((data)=>{
-        this.booksResponce = data;
-        console.log(this.booksResponce)
-        this.bookList = this.booksResponce["books"];
+      this.ebooksService.getAllEbooks().subscribe((data)=>{
+        this.bookList.push(...data);
+      }
+      )
+
+      this.booksCopyService.getAllBooks().subscribe((data)=>{
+        this.bookList.push(...data);
       }
       )
   }

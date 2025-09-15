@@ -8,12 +8,28 @@ namespace Library_API.Controllers
 {
     [Controller]
     [Route("api/[controller]")]
+    //[Authorize]
     public class BookCopiesController : Controller
     {
         IBookCopyService _bookCopyService;
         public BookCopiesController(IBookCopyService bookCopyService) 
         {
             _bookCopyService = bookCopyService;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetBookCopies()
+        {
+            var books = await _bookCopyService.GetAllBooksAsync();
+            if (books == null)
+            {
+                return NotFound();
+            }
+            var output = new Dictionary<string, IEnumerable<BookCopyGetRequest>>()
+            {
+                ["books"] = books
+            };
+            return Ok(output);
         }
 
         [HttpGet]
@@ -27,7 +43,7 @@ namespace Library_API.Controllers
             }
             var output = new Dictionary<string, BookCopyGetRequest>()
             {
-                ["bookCopy"] = book.BookCopyToGetDto()
+                ["book"] = book.BookCopyToGetDto()
             };
             return Ok(output);
         }
@@ -43,7 +59,7 @@ namespace Library_API.Controllers
             }
             var output = new Dictionary<string, IEnumerable<BookCopyGetRequest>>()
             {
-                ["bookCopies"] = books
+                ["books"] = books
             };
             return Ok(output);
         }
@@ -59,7 +75,7 @@ namespace Library_API.Controllers
             }
             var output = new Dictionary<string, IEnumerable<BookCopyGetRequest>>()
             {
-                ["bookCopies"] = books
+                ["books"] = books
             };
             return Ok(output);
         }
@@ -70,7 +86,7 @@ namespace Library_API.Controllers
             var book = await _bookCopyService.CreateBookAsync(request);
             var output = new Dictionary<string, BookCopyGetRequest>()
             {
-                ["bookCopy"] = book
+                ["book"] = book
             };
             return CreatedAtAction(nameof(AddBookCopy), output);
         }
