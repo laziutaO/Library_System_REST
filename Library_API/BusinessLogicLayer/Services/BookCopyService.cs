@@ -47,6 +47,8 @@ namespace BusinessLogicLayer.Services
             }
 
             book_info.UpdateRequestToBookCopy(book);
+            await _authorRepository.CreateMissingAsync(book_info.AuthorNames);
+            await _genreRepository.CreateMissingAsync(book_info.GenreNames);
             await _bookCopyRepository.UpdateAsync(book, book_info.AuthorNames, book_info.GenreNames, book_info.LibraryNames);
             var bookCopyDto = book.BookCopyToGetDto();
             return bookCopyDto;

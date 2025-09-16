@@ -13,6 +13,7 @@ namespace DataAccessLayer.Repositories
     public class BookCopyRepository: BookRepository<BookCopy>, IBookCopyRepository
     {
         private readonly LibraryDbContext _libraryDbContext;
+       
         public BookCopyRepository(LibraryDbContext libraryDbContext) : base(libraryDbContext)
         {
             _libraryDbContext = libraryDbContext;
@@ -142,8 +143,15 @@ namespace DataAccessLayer.Repositories
                         BookCopyId = book.Id
                     });
                 }
-
+                var id = book.Id;
                 await libraryDbContext.SaveChangesAsync();
+                book = await libraryDbContext.BookCopies.Where(b => b.Id == id)
+               .Include(b => b.BookAuthors)
+               .ThenInclude(ba => ba.Author)
+               .Include(b => b.BookGenres)
+               .ThenInclude(ba => ba.Genre)
+               .Include(b => b.LibraryBooks)
+               .ThenInclude(lb => lb.Library).FirstAsync();
                 await transaction.CommitAsync();
             }
             catch

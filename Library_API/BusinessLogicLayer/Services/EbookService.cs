@@ -35,6 +35,8 @@ namespace BusinessLogicLayer.Services
             }
 
             book_info.UpdateDtoToEBook(book);
+            await _authorRepository.CreateMissingAsync(book_info.AuthorNames);
+            await _genreRepository.CreateMissingAsync(book_info.GenreNames);
             await _eBookRepository.UpdateAsync(book, book_info.AuthorNames, book_info.GenreNames);
             var ebookDto = book.EbookToGetResponce();
             return ebookDto;
