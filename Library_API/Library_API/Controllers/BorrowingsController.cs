@@ -9,6 +9,7 @@ namespace Library_API.Controllers
 {
     [Controller]
     [Route("api/[controller]")]
+    //[Authorize]
     public class BorrowingsController : Controller
     {
         private readonly IBorrowingService _borrowingService;

@@ -11,11 +11,11 @@ namespace BusinessLogicLayer.Interfaces
     public interface IBookService<TBook> where TBook : Book
     {
         Task<IEnumerable<TBook>> GetAllBooksAsync();
-        Task<TBook> GetBookAsync(Guid id);
-        Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genre);
+        Task<TBook?> GetBookAsync(Guid id);
+        Task<IEnumerable<TBook>> GetBooksByGenreAsync(string genre);
 
         Task CreateBookAsync(TBook book);
-        Task<TBook> DeleteBookAsync(Guid id);
+        Task<TBook?> DeleteBookAsync(Guid id);
         Task<IEnumerable<TBook>> GetBooksAsync(string name);
     }
 }

@@ -57,15 +57,14 @@ namespace DataAccessLayer.Repositories
             return books;
         }
 
-        public new async Task<IEnumerable<Ebook>> GetBooksByGenreAsync(List<string> genres)
+        public new async Task<IEnumerable<Ebook>> GetBooksByGenreAsync(string genre)
         {
-            if (genres == null || !genres.Any()) return Enumerable.Empty<Ebook>();
-
+            if (genre == null) return Enumerable.Empty<Ebook>();
             IQueryable<Ebook> bookQuery = libraryDbContext.Set<Ebook>();
 
             return await bookQuery.Where(book =>
-                genres.All(g => book.BookGenres
-                .Any(bg => bg.Genre.Name == g)))
+                 book.BookGenres
+                .Any(bg => bg.Genre.Name == genre))
                 .Include(b => b.BookAuthors)
                 .ThenInclude(ba => ba.Author)
                 .Include(b => b.BookGenres)

@@ -8,7 +8,7 @@ namespace Library_API.Controllers
 {
     [Controller]
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ReviewsController : Controller
     {
         private readonly IReviewService _reviewService;

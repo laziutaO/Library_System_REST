@@ -69,9 +69,9 @@ namespace BusinessLogicLayer.Services
             return booksDto;
         }
 
-        public new async Task<IEnumerable<EBookGetResponce>> GetBooksByGenreAsync(List<string> genres)
+        public new async Task<IEnumerable<EBookGetResponce>> GetBooksByGenreAsync(string genre)
         {
-            var ebooks = await _eBookRepository.GetBooksByGenreAsync(genres);
+            var ebooks = await _eBookRepository.GetBooksByGenreAsync(genre);
             var booksDto = ebooks.Select(b => b.EbookToGetResponce());
             return booksDto;
         }

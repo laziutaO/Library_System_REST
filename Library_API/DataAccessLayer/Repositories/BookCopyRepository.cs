@@ -160,7 +160,7 @@ namespace DataAccessLayer.Repositories
                 throw;
             }
         }
-        public async new Task<IEnumerable<BookCopy>> GetAllAsync()
+        public async new Task<IEnumerable<BookCopy>?> GetAllAsync()
         {
             List<BookCopy> books = await libraryDbContext.BookCopies
                .Include(b => b.BookAuthors)
@@ -210,15 +210,14 @@ namespace DataAccessLayer.Repositories
             var books = await bookQuery.ToListAsync();
             return books;
         }
-        public async new Task<IEnumerable<BookCopy>> GetBooksByGenreAsync(List<string> genres)
+        public async new Task<IEnumerable<BookCopy>> GetBooksByGenreAsync(string genreName)
         {
-            if (genres == null || !genres.Any()) return Enumerable.Empty<BookCopy>();
+            if (genreName == null) return Enumerable.Empty<BookCopy>();
 
             IQueryable<BookCopy> bookQuery = libraryDbContext.Set<BookCopy>();
 
-            return await bookQuery.Where(book =>
-                genres.All(g => book.BookGenres
-                .Any(bg => bg.Genre.Name == g)))
+            return await bookQuery.Where(book =>book.BookGenres
+                .Any(bg => bg.Genre.Name == genreName))
                 .Include(b => b.BookAuthors)
                 .ThenInclude(ba => ba.Author)
                 .Include(b => b.BookGenres)

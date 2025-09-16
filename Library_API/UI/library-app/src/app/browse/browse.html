@@ -1,6 +1,13 @@
 <main>
     <h2>Categories</h2>
-    <section class="genres-section">
-        
+    <section class="genres-list">
+        @for(genre of genreList; track genre.id){
+            <button class="filterCategory" type="button" (click)="filterBooks(genre.name)">{{genre.name}}</button>
+        }
+    </section>
+    <h2>{{selectedGenre}}</h2>
+    <section class="bookLayout">
+            @for (book of booksList; track book.id){
+            <app-book-panel [bookPanel]="book"></app-book-panel>}
     </section>
 </main>

@@ -9,7 +9,7 @@ namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class AuthorsController: Controller
     {
         private readonly IAuthorService _authorService;

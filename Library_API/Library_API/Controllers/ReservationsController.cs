@@ -8,7 +8,7 @@ namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ReservationsController:Controller
     {
         private readonly IReservationService _reservationService;

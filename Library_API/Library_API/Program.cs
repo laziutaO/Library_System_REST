@@ -98,12 +98,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+
+app.UseRouting();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.UseRouting();
-
-app.UseHttpsRedirection();
 
 app.UseCors(policy => policy
 .AllowAnyHeader()

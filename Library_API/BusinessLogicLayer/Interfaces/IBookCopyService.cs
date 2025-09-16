@@ -14,6 +14,6 @@ namespace BusinessLogicLayer.Interfaces
         Task<BookCopyGetRequest> CreateBookAsync(BookCopyCreateRequest book);
         new Task<IEnumerable<BookCopyGetRequest>> GetAllBooksAsync();
         new Task<IEnumerable<BookCopyGetRequest>> GetBooksAsync(string keyword);
-        new Task<IEnumerable<BookCopyGetRequest>> GetBooksByGenreAsync(List<string> genres);
+        new Task<IEnumerable<BookCopyGetRequest>> GetBooksByGenreAsync(string genre);
     }
 }

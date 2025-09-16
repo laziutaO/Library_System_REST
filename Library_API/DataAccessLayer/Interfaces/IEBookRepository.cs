@@ -14,7 +14,7 @@ namespace DataAccessLayer.Interfaces
         Task CreateAsync(Ebook book, List<string> authorNames, List<string> genreNames);
         new Task<IEnumerable<Ebook>> GetAllAsync();
         new Task<IEnumerable<Ebook>> GetBooksAsync(string searchText);
-        new Task<IEnumerable<Ebook>> GetBooksByGenreAsync(List<string> genres);
+        new Task<IEnumerable<Ebook>> GetBooksByGenreAsync(string genre);
 
     }
 }

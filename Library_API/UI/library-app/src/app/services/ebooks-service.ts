@@ -11,6 +11,7 @@ import { BookData } from '../interfaces/book-data';
 })
 export class EbooksService {
   private apiUrl = "https://localhost:7103/api/EBooks";
+  private apiUrlGetByGenres = "https://localhost:7103/api/EBooks/genres/";
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +21,8 @@ export class EbooksService {
   }
   getEbookById(id: string): Observable<BookData> {
     return this.http.get<BookResponce>(`${this.apiUrl}/${id}`).pipe(map(res => res["book"]));
+  }
+    getBookByGenres(genre: string): Observable<BookData[]>{
+    return this.http.get<BooksResponce>(this.apiUrlGetByGenres + genre).pipe(map(book => book["books"]));
   }
 }

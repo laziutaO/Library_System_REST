@@ -26,7 +26,7 @@ namespace BusinessLogicLayer.Services
             await _repository.CreateAsync(book);
         }
 
-        public async Task<TBook> DeleteBookAsync(Guid id)
+        public async Task<TBook?> DeleteBookAsync(Guid id)
         {
             var book = await _repository.GetAsync(id);
 
@@ -45,7 +45,7 @@ namespace BusinessLogicLayer.Services
             return await _repository.GetAllAsync();
         }
 
-        public async Task<TBook> GetBookAsync(Guid id)
+        public async Task<TBook?> GetBookAsync(Guid id)
         {
             return await _repository.GetAsync(id);
         }
@@ -55,9 +55,9 @@ namespace BusinessLogicLayer.Services
             return await _repository.GetBooksAsync(keyword);
         }
 
-        public async Task<IEnumerable<TBook>> GetBooksByGenreAsync(List<string> genres)
+        public async Task<IEnumerable<TBook>> GetBooksByGenreAsync(string genre)
         {
-            return await _repository.GetBooksByGenreAsync(genres);
+            return await _repository.GetBooksByGenreAsync(genre);
         }
 
         

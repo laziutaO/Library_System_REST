@@ -65,10 +65,10 @@ namespace Library_API.Controllers
         }
 
         [HttpGet]
-        [Route("genres")]
-        public async Task<IActionResult> GetBookCopyByGenre([FromBody] List<string> genres)
+        [Route("genres/{genre}")]
+        public async Task<IActionResult> GetBookCopyByGenre([FromRoute] string genre)
         {
-            var books = await _bookCopyService.GetBooksByGenreAsync(genres);
+            var books = await _bookCopyService.GetBooksByGenreAsync(genre);
             if (books == null)
             {
                 return NotFound();

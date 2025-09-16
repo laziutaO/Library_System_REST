@@ -64,8 +64,8 @@ namespace Library_API.Controllers
 
 
         [HttpGet]
-        [Route("genres")]
-        public async Task<IActionResult> GetBooksByCategory([FromBody] List<string> genre)
+        [Route("genres/{genre}")]
+        public async Task<IActionResult> GetBooksByCategory([FromRoute] string genre)
         {
             var books = await _bookService.GetBooksByGenreAsync(genre);
             var output = new Dictionary<string, IEnumerable<EBookGetResponce>>()
