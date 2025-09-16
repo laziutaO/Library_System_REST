@@ -64,7 +64,7 @@ namespace Library_API.Controllers
 
         [HttpDelete]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> DeleteUser([FromRoute] Guid id)
+        public async Task<IActionResult> DeleteAuthor([FromRoute] Guid id)
         {
             var author = await _authorService.DeleteAuthorAsync(id);
 
