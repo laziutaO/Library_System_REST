@@ -1,3 +1,32 @@
 .genres-list{
     display: inline;
 }
+
+.book-layout{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.filter-category {
+  text-align: center;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+  background-color: #fff;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: background 0.2s ease;
+}
+
+.filter-category:hover {
+  background-color: hsl(0, 0%, 89%);
+}

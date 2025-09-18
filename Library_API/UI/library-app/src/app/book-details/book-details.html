@@ -12,17 +12,13 @@
         </section>
         <section class="description">
             <h2 class="book-title">{{bookData?.title}}</h2>
-            <h4>By author name</h4>
+            <h4>By {{bookData?.authorNames}}</h4>
             <ul>
                 <li>4/5 rating(0 reviews)</li>
                 <li>published in {{bookData?.year}}</li>
                 <li>{{bookData?.pagesCount}} pages</li>
             </ul>
-            <section>
-                @for(genre of bookData?.genreNames; track bookData?.id){
-                    <b>{{genre}} </b>
-            }
-            </section>
+                <b>{{bookData?.genreNames}}</b>
             <h2>About This Book</h2>
             <p class="book-description">{{bookData?.description}}</p>
             <h2>Book Details</h2>
@@ -48,11 +44,11 @@
                     </div>
                     <div>
                         <dt>Availability</dt>
-                        <dd>Available</dd>
+                        <dd>{{ type === 'ebook' ? bookData?.bookAccessType : 'Available'}}</dd>
                     </div>
                     <div>
                         <dt>Format</dt>
-                        <dd>Digital & Physical</dd>
+                        <dd>{{ type === 'ebook' ? 'Digital' : 'Physical'}}</dd>
                     </div>
                 </dl>
             </section>

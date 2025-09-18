@@ -18,4 +18,10 @@ export class BooksFacadeService {
       this.ebookService.getEbookById(id):
       this.bookCopiesSevice.getBookById(id); 
   }
+
+  getBookByGenre(genre: string, type: "ebook" | "copy"): Observable<BookData[]>{
+    return type === "ebook" ? 
+      this.ebookService.getBooksByGenre(genre):
+      this.bookCopiesSevice.getBooksByGenre(genre);
+  }
 }

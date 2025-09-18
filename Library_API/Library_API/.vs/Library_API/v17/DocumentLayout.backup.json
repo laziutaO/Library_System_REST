@@ -224,8 +224,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T12:00:53.5Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -238,8 +237,7 @@
               "ViewState": "AgIAACMAAAAAAAAAAAAwwA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T11:59:47.951Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -252,8 +250,7 @@
               "ViewState": "AgIAADgAAAAAAAAAAAAIwEkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-16T12:32:52.423Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -266,8 +263,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T16:33:03.882Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -279,8 +275,7 @@
               "RelativeToolTip": "Controllers\\ReviewsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T19:48:16.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T19:48:16.833Z"
             },
             {
               "$type": "Document",
@@ -292,8 +287,7 @@
               "RelativeToolTip": "Controllers\\UsersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T19:48:23.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T19:48:23.362Z"
             },
             {
               "$type": "Document",
@@ -305,8 +299,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T09:56:47.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T09:56:47.661Z"
             },
             {
               "$type": "Document",
@@ -318,8 +311,7 @@
               "RelativeToolTip": "Controllers\\BookCopiesController.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAIwEIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T19:31:01.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T19:31:01.255Z"
             },
             {
               "$type": "Document",
@@ -329,7 +321,7 @@
               "RelativeDocumentMoniker": "Controllers\\EBooksController.cs",
               "ToolTip": "C:\\Users\\WellDone\\Desktop\\kpi\\.Net_Library\\Library_API\\Library_API\\Controllers\\EBooksController.cs",
               "RelativeToolTip": "Controllers\\EBooksController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwEIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T20:02:30.313Z",
               "EditorCaption": ""
@@ -344,8 +336,7 @@
               "RelativeToolTip": "Controllers\\ReservationsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-25T19:48:06.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T19:48:06.731Z"
             },
             {
               "$type": "Document",
@@ -357,8 +348,7 @@
               "RelativeToolTip": "Controllers\\LibrariesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T20:09:00.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T20:09:00.242Z"
             },
             {
               "$type": "Document",
@@ -370,8 +360,7 @@
               "RelativeToolTip": "Controllers\\BorrowingsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T19:58:20.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T19:58:20.232Z"
             },
             {
               "$type": "Document",
@@ -383,8 +372,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\BookCopyService.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAnwD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T09:57:00.387Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T09:57:00.387Z"
             },
             {
               "$type": "Document",
@@ -396,8 +384,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBookCopyRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:28:50.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T17:28:50.389Z"
             },
             {
               "$type": "Document",
@@ -409,8 +396,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\BookService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T13:40:46.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T13:40:46.136Z"
             },
             {
               "$type": "Document",
@@ -422,8 +408,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BookRepository.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAnwEYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T16:30:55.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T16:30:55.334Z"
             },
             {
               "$type": "Document",
@@ -435,8 +420,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IBookService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:29:47.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T17:29:47.588Z"
             },
             {
               "$type": "Document",
@@ -448,8 +432,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BookCopyRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T16:30:41.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T16:30:41.199Z"
             },
             {
               "$type": "Document",
@@ -461,8 +444,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\EbookRepository.cs",
               "ViewState": "AgIAAKIAAAAAAAAAAAAmwA0AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T16:31:47.494Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T16:31:47.494Z"
             },
             {
               "$type": "Document",
@@ -474,8 +456,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IEBookRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:31:54.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T17:31:54.808Z"
             },
             {
               "$type": "Document",
@@ -487,8 +468,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\EbookService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T09:52:02.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T09:52:02.51Z"
             },
             {
               "$type": "Document",
@@ -500,8 +480,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IEbookService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:29:32.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T17:29:32.536Z"
             },
             {
               "$type": "Document",
@@ -513,8 +492,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Interfaces\\IBookRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:28:15.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T17:28:15.486Z"
             },
             {
               "$type": "Document",
@@ -526,8 +504,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IBookCopyService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T17:16:39.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T17:16:39.748Z"
             },
             {
               "$type": "Document",
@@ -539,8 +516,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IGenreService.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAQwAcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T12:01:32.964Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T12:01:32.964Z"
             },
             {
               "$type": "Document",
@@ -552,8 +528,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\AuthorService.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwDUAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T11:48:42.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T11:48:42.175Z"
             },
             {
               "$type": "Document",
@@ -565,8 +540,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\BaseRepository.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAgwCUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T13:37:07.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T13:37:07.266Z"
             },
             {
               "$type": "Document",
@@ -578,8 +552,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Services\\ReviewService.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAmwFwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T13:45:15.94Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T13:45:15.94Z"
             },
             {
               "$type": "Document",
@@ -591,8 +564,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\GenreGetResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T12:06:06.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T12:06:06.909Z"
             },
             {
               "$type": "Document",
@@ -604,8 +576,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\LibraryRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T16:32:24.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T16:32:24.274Z"
             },
             {
               "$type": "Document",
@@ -617,8 +588,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Repositories\\GenreRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T16:32:10.648Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-06T16:32:10.648Z"
             },
             {
               "$type": "Document",
@@ -630,8 +600,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Interfaces\\IAuthorService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T12:02:15.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T12:02:15.71Z"
             },
             {
               "$type": "Document",
@@ -643,8 +612,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\EBookGetResponce.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T14:24:42.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T14:24:42.369Z"
             },
             {
               "$type": "Document",
@@ -656,8 +624,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Genre.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:08:15.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:08:15.123Z"
             },
             {
               "$type": "Document",
@@ -669,8 +636,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Borrowing.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:07:23.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:07:23.503Z"
             },
             {
               "$type": "Document",
@@ -682,8 +648,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\ReviewGetRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-23T09:36:05.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-23T09:36:05.052Z"
             },
             {
               "$type": "Document",
@@ -695,8 +660,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookGenre.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:07:22.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:07:22.921Z"
             },
             {
               "$type": "Document",
@@ -708,8 +672,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\LibraryBook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:08:20.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:08:20.639Z"
             },
             {
               "$type": "Document",
@@ -721,8 +684,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookAuthor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:07:19.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:07:19.583Z"
             },
             {
               "$type": "Document",
@@ -734,8 +696,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Book.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:07:14.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:07:14.977Z"
             },
             {
               "$type": "Document",
@@ -747,8 +708,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Author.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:07:09.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:07:09.967Z"
             },
             {
               "$type": "Document",
@@ -760,8 +720,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\DtoToEBookMapper.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T14:33:51.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T14:33:51.876Z"
             },
             {
               "$type": "Document",
@@ -773,8 +732,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Reservation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:08:22.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:08:22.701Z"
             },
             {
               "$type": "Document",
@@ -786,8 +744,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Review.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:08:25.109Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:08:25.109Z"
             },
             {
               "$type": "Document",
@@ -799,8 +756,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-16T10:08:26.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-16T10:08:26.373Z"
             },
             {
               "$type": "Document",
@@ -812,8 +768,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\BookCopyMapper.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAwwBkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T19:30:38.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T19:30:38.895Z"
             },
             {
               "$type": "Document",
@@ -825,8 +780,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Library.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T18:54:40.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T18:54:40.624Z"
             },
             {
               "$type": "Document",
@@ -838,8 +792,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\Mapping\\EbookToDto.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T14:34:43.28Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T14:34:43.28Z"
             },
             {
               "$type": "Document",
@@ -851,8 +804,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\Ebook.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T20:38:43.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T20:38:43.862Z"
             },
             {
               "$type": "Document",
@@ -864,8 +816,7 @@
               "RelativeToolTip": "..\\BusinessLogicLayer\\DTOs\\BookCopyGetRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T19:23:31.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T19:23:31.449Z"
             },
             {
               "$type": "Document",
@@ -877,8 +828,7 @@
               "RelativeToolTip": "..\\DataAccessLayer\\Entities\\BookCopy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-14T19:19:15.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-14T19:19:15.266Z"
             },
             {
               "$type": "Document",

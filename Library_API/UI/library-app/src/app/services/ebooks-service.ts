@@ -16,13 +16,16 @@ export class EbooksService {
   constructor(private http: HttpClient) { }
 
   getAllEbooks(): Observable<BookData[]> {
-    return this.http.get<BooksResponce>(this.apiUrl).pipe(map(res => res["books"].map(b => ({ ...b, type: 'ebook' as const })))
-  );
+    return this.http.get<BooksResponce>(this.apiUrl)
+    .pipe(map(res => res["books"].map(b => ({ ...b, type: 'ebook' as const })))
+    );
   }
   getEbookById(id: string): Observable<BookData> {
-    return this.http.get<BookResponce>(`${this.apiUrl}/${id}`).pipe(map(res => res["book"]));
+    return this.http.get<BookResponce>(`${this.apiUrl}/${id}`)
+    .pipe(map(res => res["book"]));
   }
-    getBookByGenres(genre: string): Observable<BookData[]>{
-    return this.http.get<BooksResponce>(this.apiUrlGetByGenres + genre).pipe(map(book => book["books"]));
+  getBooksByGenre(genre: string): Observable<BookData[]> {
+    return this.http.get<BooksResponce>(this.apiUrlGetByGenres + genre)
+    .pipe(map(book => book["books"].map(b => ({ ...b, type: 'ebook' as const }))));
   }
 }

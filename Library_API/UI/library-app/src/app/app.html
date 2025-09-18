@@ -3,7 +3,7 @@
     <header>
       <img class="brand-logo" src="logo_smallx3.svg" alt="logo" aria-hidden="true">
       <form class="search-bar">
-        <input type="text" placeholder="Search books, authors...">
+        <input type="text" placeholder="Search books, authors..." [value]="filterText()" (input)="filterText.set($any($event.target.value))">
         <button class="primary" type="'button">Search</button>
       </form>
       <nav>

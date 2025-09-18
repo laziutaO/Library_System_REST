@@ -14,6 +14,7 @@ export class BookDetails implements OnInit{
   bookData: BookData | undefined;
   bookResponce: BookResponce = {};
   bookPanelId: string= "";
+  type: "ebook" | "copy" | '' = ''
 
   constructor(private route: ActivatedRoute, 
     private booksFacade: BooksFacadeService){
@@ -21,8 +22,8 @@ export class BookDetails implements OnInit{
   }
 
   ngOnInit(): void {
-    const type = this.route.snapshot.queryParamMap.get('type') as "ebook" | "copy";
-    this.booksFacade.getBookById(this.bookPanelId, type).subscribe(data => {
+    this.type = this.route.snapshot.queryParamMap.get('type') as "ebook" | "copy";
+    this.booksFacade.getBookById(this.bookPanelId, this.type).subscribe(data => {
       this.bookData = data;
     })
   }

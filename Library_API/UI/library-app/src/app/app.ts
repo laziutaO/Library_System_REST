@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Home } from "./home/home";
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 
 @Component({
@@ -12,4 +12,14 @@ import { RouterLink } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('library-app');
+  filterText= signal('');
+
+  constructor(private router: Router){
+    effect(()=> {
+      const searchText: string = this.filterText();
+      if(searchText.trim()){
+        router.navigate(['/browse'], {queryParams: {q :searchText}})
+      }
+    })
+  }
 }
