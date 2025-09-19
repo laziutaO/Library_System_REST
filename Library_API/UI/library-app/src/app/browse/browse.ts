@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, computed, effect } from '@angular/core';
 import { GenresService } from '../services/genres-service';
 import { GenreData } from '../interfaces/genre-data';
 import { BookData } from '../interfaces/book-data';
@@ -7,6 +7,7 @@ import { BookCopiesService } from '../services/book-copies-service';
 import { BookPanel } from '../book-panel/book-panel';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { BooksFacadeService } from '../services/books-facade-service';
+import { FilterService } from '../services/filter-service';
 
 @Component({
   selector: 'app-browse',
@@ -16,18 +17,19 @@ import { BooksFacadeService } from '../services/books-facade-service';
 })
 export class Browse implements OnInit {
   genreList: GenreData[] = [];
-  booksList: BookData[] = [];
+  booksList = signal<BookData[]>([]);
   selectedGenre: string = "All Books";
-  filterTextString: string | null;
-  filterText = signal('');
-
+  searchedBooks = computed(()=>this.booksList()
+  .filter(book => book.title.toLowerCase()
+  .includes(this.filterService.debouncedFilterText().toLowerCase())))
 
   constructor(private genresService: GenresService,
     private ebooksService: EbooksService,
     private bookcopiesService: BookCopiesService,
     private booksFacadeService: BooksFacadeService,
-    private route: ActivatedRoute) {
-    this.filterTextString = this.route.snapshot.paramMap?.get('q');
+    private route: ActivatedRoute,
+  private filterService: FilterService) {
+    
   }
 
   ngOnInit(): void {
@@ -41,26 +43,26 @@ export class Browse implements OnInit {
     console.log(text);
     if (!text) {
       this.selectedGenre = 'All Books';
-      this.booksList = [];
+      this.booksList.set([]);
       this.ebooksService.getAllEbooks().subscribe((data) => {
-        this.booksList.push(...data);
+        this.booksList.update(prevItem => [...prevItem, ...data]);
       }
       )
 
       this.bookcopiesService.getAllBooks().subscribe((data) => {
-        this.booksList.push(...data);
+        this.booksList.update(prevItem => [...prevItem, ...data]);
       }
       )
     }
     else {
       this.selectedGenre = text;
-      this.booksList = [];
+      this.booksList.set([]);
       this.ebooksService.getBooksByGenre(text).subscribe((data) => {
-        this.booksList.push(...data);
+        this.booksList.update(prevItem => [...prevItem, ...data]);
       })
 
       this.bookcopiesService.getBooksByGenre(text).subscribe((data) => {
-        this.booksList.push(...data);
+        this.booksList.update(prevItem => [...prevItem, ...data]);
       })
     }
 

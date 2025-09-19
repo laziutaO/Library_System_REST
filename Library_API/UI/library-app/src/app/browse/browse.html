@@ -8,7 +8,7 @@
     </section>
     <h2>{{selectedGenre}}</h2>
     <section class="book-layout">
-            @for (book of booksList; track book.id){
+            @for (book of searchedBooks(); track book.id){
             <app-book-panel [bookPanel]="book"></app-book-panel>}
     </section>
 </main>

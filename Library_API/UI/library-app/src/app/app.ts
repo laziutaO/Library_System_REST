@@ -2,7 +2,7 @@ import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Home } from "./home/home";
 import { RouterLink, Router } from '@angular/router';
-
+import { FilterService } from './services/filter-service';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +12,12 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('library-app');
-  filterText= signal('');
 
-  constructor(private router: Router){
-    effect(()=> {
-      const searchText: string = this.filterText();
-      if(searchText.trim()){
-        router.navigate(['/browse'], {queryParams: {q :searchText}})
+  constructor(private router: Router, public filterService: FilterService){
+    effect(()=>{
+      if(this.filterService.filterText()){
+        router.navigate(['/browse']);
       }
-    })
+});
   }
 }
