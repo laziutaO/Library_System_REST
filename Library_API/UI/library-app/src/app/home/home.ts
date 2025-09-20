@@ -4,7 +4,6 @@ import { BookData } from '../interfaces/book-data';
 import { EbooksService } from '../services/ebooks-service';
 import { BookCopiesService } from '../services/book-copies-service';
 import { RouterLink } from '@angular/router';
-import { BooksResponce } from '../interfaces/books-responce';
 
 
 @Component({
@@ -15,7 +14,6 @@ import { BooksResponce } from '../interfaces/books-responce';
 })
 export class Home implements OnInit{
   bookList: BookData[] = [];
-  booksResponce: BooksResponce = {};
 
   constructor(private ebooksService: EbooksService, 
     private booksCopyService: BookCopiesService){

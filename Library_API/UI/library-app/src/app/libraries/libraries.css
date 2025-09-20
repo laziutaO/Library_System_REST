@@ -1,0 +1,44 @@
+.head{
+   display: flex;
+   flex-direction: column;
+   justify-content: center; 
+   text-align: center;
+   align-items: center;
+}
+
+#stats{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.description{
+    max-width: 25rem;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  font-size: 1rem;
+  min-width: 25rem;
+}
+
+.libraries-listing{
+    display: flex;
+    flex-direction: row;
+}

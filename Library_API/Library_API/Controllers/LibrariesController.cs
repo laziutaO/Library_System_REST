@@ -17,6 +17,17 @@ namespace Library_API.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetAllLibraries()
+        {
+            var libraries = await _libraryService.GetLibrariesAsync();
+            var output = new Dictionary<string, IEnumerable<LibraryRequest>>()
+            {
+                ["libraries"] = libraries
+            };
+            return Ok(output);
+        }
+
+        [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetLibrary([FromRoute] Guid id)
         {

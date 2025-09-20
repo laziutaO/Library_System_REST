@@ -7,6 +7,7 @@ namespace BusinessLogicLayer.Interfaces
 {
     public interface ILibraryService
     {
+        Task<IEnumerable<LibraryRequest>> GetLibrariesAsync();
         Task<LibraryRequest?> GetLibraryAsync(Guid id);
 
         Task<LibraryRequest> CreateLibraryAsync(LibraryRequest author);

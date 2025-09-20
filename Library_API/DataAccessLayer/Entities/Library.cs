@@ -12,6 +12,8 @@ namespace DataAccessLayer.Entities
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; } = null!;
+        public string Description { get; set; } = null!;
+        public string CoverImageUrl { get; set; } = null!;
         public string Address { get; set; } = null!;
         public string Phone { get; set; } = null!;
         public ICollection<LibraryBook> LibraryBooks { get; set; } = new List<LibraryBook>();

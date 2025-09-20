@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record LibraryRequest(
-        string Name,
-        string Address,
-        string Phone,
-        List<string> Books);
+        string id,
+        string description,
+        string coverImageUrl,
+        string name,
+        string address,
+        string phone,
+        List<string> books);
 
 }

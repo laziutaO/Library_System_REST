@@ -13,6 +13,9 @@ namespace BusinessLogicLayer.Mapping
         public static LibraryRequest LibraryToGetDto(this Library library)
         {
             return new(
+                library.Id.ToString(),
+                library.Description,
+                library.CoverImageUrl,
                 library.Name,
                 library.Address,
                 library.Phone,
@@ -21,9 +24,11 @@ namespace BusinessLogicLayer.Mapping
 
         public static void DtoToLibrary(this LibraryRequest request, Library library)
         {
-            library.Name = request.Name;
-            library.Address = request.Address;
-            library.Phone = request.Phone;
+            library.Name = request.name;
+            library.Address = request.address;
+            library.Phone = request.phone;
+            library.Description = request.description;
+            library.CoverImageUrl = request.coverImageUrl;
         }
     }
 }

@@ -19,11 +19,12 @@ namespace BusinessLogicLayer.Services
         {
             _repository = repository;
         }
+
         public async Task<LibraryRequest> CreateLibraryAsync(LibraryRequest library)
         {
             Library new_library = new Library();
             library.DtoToLibrary(new_library);
-            await _repository.CreateAsync(new_library, library.Books);
+            await _repository.CreateAsync(new_library, library.books);
             return new_library.LibraryToGetDto();
         }
 
@@ -36,6 +37,13 @@ namespace BusinessLogicLayer.Services
             }
             await _repository.DeleteAsync(library);
             return library.LibraryToGetDto();
+        }
+
+        public async Task<IEnumerable<LibraryRequest>> GetLibrariesAsync()
+        {
+            var libraries = await _repository.GetAllAsync();
+            var libraryResponce = libraries.Select(l => l.LibraryToGetDto()).ToList();
+            return libraryResponce;
         }
 
         public async Task<LibraryRequest?> GetLibraryAsync(Guid id)
@@ -55,7 +63,7 @@ namespace BusinessLogicLayer.Services
 
             library_info.DtoToLibrary(library);
 
-            await _repository.UpdateAsync(library, library_info.Books);
+            await _repository.UpdateAsync(library, library_info.books);
 
             return library.LibraryToGetDto();
         }

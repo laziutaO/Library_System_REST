@@ -1,0 +1,72 @@
+.listing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 260px;              
+  min-height: 420px;         
+  margin: 1rem;
+  padding: 1rem;
+
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listing:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.listing-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.listing-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #222;
+  flex-grow: 0;
+}
+
+.listing-discription {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;    
+  line-clamp: 3;             
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listing a {
+  display: block;
+  text-align: center;
+  padding: 0.6rem 1rem;
+
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.listing a:hover {
+  background-color: #333;
+}

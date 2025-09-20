@@ -21,7 +21,7 @@ export class Browse implements OnInit {
   selectedGenre: string = "All Books";
   searchedBooks = computed(()=>this.booksList()
   .filter(book => book.title.toLowerCase()
-  .includes(this.filterService.debouncedFilterText().toLowerCase())))
+  .includes(this.filterService.debouncedFilterText().toLowerCase())));
 
   constructor(private genresService: GenresService,
     private ebooksService: EbooksService,
