@@ -7,9 +7,19 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 })
 export class FilterService {
   public filterText = signal('');
+  public filterLibrary = signal('');
 
    debouncedFilterText = toSignal(
     toObservable(this.filterText).pipe(
+      debounceTime(200),        
+      distinctUntilChanged(),     
+      map(value => value.trim())  
+    ),
+    { initialValue: '' }
+  );
+
+  debouncedFilterLibrary = toSignal(
+    toObservable(this.filterLibrary).pipe(
       debounceTime(200),        
       distinctUntilChanged(),     
       map(value => value.trim())  

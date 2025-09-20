@@ -10,11 +10,13 @@
         <li>3 study rooms</li>
     </ul>
     <form class="search-bar">
-        <input type="text" placeholder="Search libraries...">
+        <input type="text" placeholder="Search libraries..."
+        [value]="filterService.filterLibrary()" 
+        (input)="filterService.filterLibrary.set($any($event.target).value)">
     </form>
 </section>
 <section class="libraries-listing">
-    @for(library of libraryList; track library.id ){
+    @for(library of searchedLibraries(); track library.id ){
         <app-library-panel [libraryPanel] = "library"></app-library-panel>
     }
 </section>
