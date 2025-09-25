@@ -13,6 +13,9 @@ namespace BusinessLogicLayer.DTOs
         string name,
         string address,
         string phone,
-        List<string> books);
+        string email,
+        int studyRooms,
+        int computers,
+        List<LibraryScheduleGetRequest> schedule);
 
 }

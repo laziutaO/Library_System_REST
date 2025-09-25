@@ -20,11 +20,10 @@ namespace BusinessLogicLayer.Services
             _repository = repository;
         }
 
-        public async Task<LibraryRequest> CreateLibraryAsync(LibraryRequest library)
+        public async Task<LibraryRequest> CreateLibraryAsync(LibraryCreateRequest library)
         {
-            Library new_library = new Library();
-            library.DtoToLibrary(new_library);
-            await _repository.CreateAsync(new_library, library.books);
+            Library new_library = library.CreateDtoToLibrary();
+            await _repository.CreateAsync(new_library);
             return new_library.LibraryToGetDto();
         }
 
@@ -52,7 +51,7 @@ namespace BusinessLogicLayer.Services
             return library == null ? null : library.LibraryToGetDto();
         }
 
-        public async Task<LibraryRequest?> UpdateLibraryAsync(Guid id, LibraryRequest library_info)
+        public async Task<LibraryRequest?> UpdateLibraryAsync(Guid id, LibraryUpdateRequest library_info)
         {
             var library = await _repository.GetAsync(id);
 
@@ -61,10 +60,8 @@ namespace BusinessLogicLayer.Services
                 return null;
             }
 
-            library_info.DtoToLibrary(library);
-
-            await _repository.UpdateAsync(library, library_info.books);
-
+            library_info.UpdateDtoToLibrary(library);
+            await _repository.UpdateAsync();
             return library.LibraryToGetDto();
         }
     }

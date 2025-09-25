@@ -10,8 +10,8 @@ namespace BusinessLogicLayer.Interfaces
         Task<IEnumerable<LibraryRequest>> GetLibrariesAsync();
         Task<LibraryRequest?> GetLibraryAsync(Guid id);
 
-        Task<LibraryRequest> CreateLibraryAsync(LibraryRequest author);
-        Task<LibraryRequest?> UpdateLibraryAsync(Guid id, LibraryRequest author);
+        Task<LibraryRequest> CreateLibraryAsync(LibraryCreateRequest libraryRequest);
+        Task<LibraryRequest?> UpdateLibraryAsync(Guid id, LibraryUpdateRequest libraryRequest);
         Task<LibraryRequest?> DeleteLibraryAsync(Guid id);
     }
 }

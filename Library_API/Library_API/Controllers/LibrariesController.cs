@@ -44,19 +44,19 @@ namespace Library_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddLibrary([FromBody] LibraryRequest request)
+        public async Task<IActionResult> AddLibrary([FromBody] LibraryCreateRequest request)
         {
             var libraryDto = await _libraryService.CreateLibraryAsync(request);
             var output = new Dictionary<string, LibraryRequest>()
             {
                 ["library"] = libraryDto
             };
-            return CreatedAtAction(nameof(output), output);
+            return CreatedAtAction(nameof(AddLibrary), output);
         }
 
         [HttpPut]
         [Route("{id:Guid}")]
-        public async Task<IActionResult> UpdateLibrary([FromRoute] Guid id, [FromBody] LibraryRequest request)
+        public async Task<IActionResult> UpdateLibrary([FromRoute] Guid id, [FromBody] LibraryUpdateRequest request)
         {
             var library = await _libraryService.GetLibraryAsync(id);
             if (library == null)

@@ -15,7 +15,14 @@ namespace DataAccessLayer.Entities
         public string Description { get; set; } = null!;
         public string CoverImageUrl { get; set; } = null!;
         public string Address { get; set; } = null!;
+        [EmailAddress(ErrorMessage = "Invalid email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; } = null!;
         public string Phone { get; set; } = null!;
+        public int StudyRooms { get; set; }
+        public int Computers { get; set; }
+
+        public ICollection<LibrarySchedule> Schedules { get; set; } = new List<LibrarySchedule>();
         public ICollection<LibraryBook> LibraryBooks { get; set; } = new List<LibraryBook>();
     }
 }

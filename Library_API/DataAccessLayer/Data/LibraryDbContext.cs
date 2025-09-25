@@ -24,8 +24,16 @@ namespace DataAccessLayer.Data
         public DbSet<LibraryBook> LibraryBooks { get; set; }
         public DbSet<Review> Reviews { get; set; }
 
+        public DbSet<LibrarySchedule> LibrarySchedules { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Library>()
+                .HasMany(ls => ls.Schedules)
+                .WithOne(l => l.Library)
+                .HasForeignKey(l => l.LibraryId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<BookAuthor>()
                 .HasOne(ba => ba.Book)
                 .WithMany(b => b.BookAuthors)
@@ -46,9 +54,15 @@ namespace DataAccessLayer.Data
                 .Property(b => b.BookAccessType)
                 .HasConversion<string>();
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<LibrarySchedule>()
+                .Property(s => s.DayOfWeek)
+                .HasConversion<string>();
 
-            
+            modelBuilder.Entity<LibrarySchedule>()
+            .HasIndex(s => new { s.LibraryId, s.DayOfWeek })
+            .IsUnique();
+
+            base.OnModelCreating(modelBuilder);
         }
 
     }
