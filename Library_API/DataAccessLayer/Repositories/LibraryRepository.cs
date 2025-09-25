@@ -38,18 +38,6 @@ namespace DataAccessLayer.Repositories
 
         public new async Task CreateAsync(Library library)
         {
-            //var bookIds = await libraryDbContext.Books.Where(b => books
-            //    .Contains(b.Title))
-            //    .Select(b => b.Id)
-            //    .ToListAsync();
-            //foreach (var bookId in bookIds)
-            //{
-            //    library.LibraryBooks.Add(new LibraryBook
-            //    {
-            //        LibraryId = library.Id,
-            //        BookCopyId = bookId
-            //    });
-            //}
             await libraryDbContext.Libraries.AddAsync(library);
             await libraryDbContext.SaveChangesAsync();
 
@@ -58,6 +46,47 @@ namespace DataAccessLayer.Repositories
                 .ThenInclude(ba => ba.BookCopy)
                 .Include(ba => ba.Schedules)
                 .FirstAsync(a => a.Id == library.Id);
+        }
+
+        public async Task<BookCopy?> AddBookToLibraryAsync(Library library, Guid bookId)
+        {
+            var book = await libraryDbContext.BookCopies.FindAsync(bookId);
+            if (book == null)
+                return null;
+            library.LibraryBooks.Add(new LibraryBook
+            {
+                LibraryId = library.Id,
+                BookCopyId = bookId
+            });
+            await libraryDbContext.SaveChangesAsync();
+            book = await libraryDbContext.BookCopies
+               .Include(b => b.BookAuthors)
+               .ThenInclude(ba => ba.Author)
+               .Include(b => b.BookGenres)
+               .ThenInclude(bg => bg.Genre)
+               .Include(b => b.LibraryBooks)
+               .ThenInclude(lb => lb.Library)
+               .FirstAsync(b => b.Id == book.Id);
+            return book;
+
+        }
+        public async Task<Library?> GetByIdAsync(Guid id)
+        {
+            var library = await libraryDbContext.Libraries
+                .Include(l => l.LibraryBooks)
+                .FirstOrDefaultAsync(l => l.Id == id);
+            return library;
+        }
+        public async Task<LibraryBook?> RemoveBookFromLibraryAsync(Library library, Guid bookId)
+        {
+
+            var libraryBook = await libraryDbContext.LibraryBooks.Where(lb => lb.BookCopyId == bookId).FirstOrDefaultAsync();
+            if(libraryBook == null) 
+                return null;
+            libraryDbContext.LibraryBooks.Remove(libraryBook);
+            await libraryDbContext.SaveChangesAsync();
+            return libraryBook;
+
         }
 
         //public async Task UpdateAsync(Library library, List<string> books)

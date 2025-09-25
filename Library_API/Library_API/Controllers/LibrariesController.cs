@@ -54,6 +54,34 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddLibrary), output);
         }
 
+        [HttpPost]
+        [Route("{libraryId:Guid}/books")]
+        public async Task<IActionResult> AddBookToLibrary([FromRoute] Guid libraryId, [FromBody] string bookId)
+        {
+            var bookDto = await _libraryService.AddBookToLibrary(libraryId, bookId);
+            if(bookDto == null)
+            {
+                return NotFound(bookId);
+            }
+            var output = new Dictionary<string, BookCopyGetRequest>()
+            {
+                ["book"] = bookDto
+            };
+            return CreatedAtAction(nameof(AddBookToLibrary), output);
+        }
+
+        [HttpDelete]
+        [Route("{libraryId:Guid}/books")]
+        public async Task<IActionResult> RemoveBook([FromRoute] Guid libraryId, [FromBody] string bookId)
+        {
+            var libraryBook = await _libraryService.RemoveBookToLibrary(libraryId, bookId);
+            if (libraryBook == null)
+            {
+                return NotFound(bookId);
+            }
+            return NoContent();
+        }
+
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateLibrary([FromRoute] Guid id, [FromBody] LibraryUpdateRequest request)

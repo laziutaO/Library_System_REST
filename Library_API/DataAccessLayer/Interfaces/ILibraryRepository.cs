@@ -10,6 +10,9 @@ namespace DataAccessLayer.Interfaces
     public interface ILibraryRepository: IBaseRepository<Library>
     {
         public new Task CreateAsync(Library library);
+        public Task<Library?> GetByIdAsync(Guid id);
 
+        public Task<BookCopy?> AddBookToLibraryAsync(Library library, Guid bookId);
+        public Task<LibraryBook?> RemoveBookFromLibraryAsync(Library library, Guid bookId);
     }
 }

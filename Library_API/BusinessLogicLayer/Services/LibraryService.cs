@@ -20,6 +20,29 @@ namespace BusinessLogicLayer.Services
             _repository = repository;
         }
 
+        public async Task<BookCopyGetRequest?> AddBookToLibrary(Guid libraryId, string bookId)
+        {
+            var library = await _repository.GetByIdAsync(libraryId);
+            if (library == null)
+            {
+                return null;
+            }
+
+            BookCopy? book;
+            if (Guid.TryParse(bookId, out Guid bookIdParse))
+            {
+                Console.WriteLine(bookIdParse);
+                
+            }
+           
+            book = await _repository.AddBookToLibraryAsync(library, bookIdParse);
+            if (book == null)
+            {
+                return null;
+            }
+            return book.BookCopyToGetDto();
+        }
+
         public async Task<LibraryRequest> CreateLibraryAsync(LibraryCreateRequest library)
         {
             Library new_library = library.CreateDtoToLibrary();
@@ -47,8 +70,32 @@ namespace BusinessLogicLayer.Services
 
         public async Task<LibraryRequest?> GetLibraryAsync(Guid id)
         {
-            var library = await _repository.GetAsync(id);
+            var library = await _repository.GetByIdAsync(id);
             return library == null ? null : library.LibraryToGetDto();
+        }
+
+        public async Task<LibraryBook?> RemoveBookToLibrary(Guid libraryId, string bookId)
+        {
+            var library = await _repository.GetByIdAsync(libraryId);
+
+            if (library == null)
+            {
+                return null;
+            }
+            LibraryBook? librarybook;
+            if (Guid.TryParse(bookId, out Guid bookIdParse))
+            {
+                librarybook = await _repository.RemoveBookFromLibraryAsync(library, bookIdParse);
+            }
+            else
+            {
+                return null;
+            }
+            if (librarybook == null)
+            {
+                return null;
+            }
+            return librarybook;
         }
 
         public async Task<LibraryRequest?> UpdateLibraryAsync(Guid id, LibraryUpdateRequest library_info)
