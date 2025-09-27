@@ -17,7 +17,7 @@ export class LibrariesService {
     return this.http.get<LibrariesResponce>(this.apiUrl).pipe(map(libraries => libraries['libraries']));
   }
 
-  getLibraryById(): Observable<LibraryData>{
-    return this.http.get<LibraryResponce>(this.apiUrl).pipe(map(library=> library['library']));
+  getLibraryById(id: string): Observable<LibraryData>{
+    return this.http.get<LibraryResponce>(`${this.apiUrl}/${id}`).pipe(map(library=> library['library']));
   }
 }

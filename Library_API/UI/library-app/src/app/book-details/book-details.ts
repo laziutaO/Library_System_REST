@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookData } from '../interfaces/book-data';
-import { BookResponce } from '../interfaces/book-responce';
 import { BooksFacadeService } from '../services/books-facade-service';
 
 @Component({
@@ -12,7 +11,6 @@ import { BooksFacadeService } from '../services/books-facade-service';
 })
 export class BookDetails implements OnInit{
   bookData: BookData | undefined;
-  bookResponce: BookResponce = {};
   bookPanelId: string= "";
   type: "ebook" | "copy" | '' = ''
 

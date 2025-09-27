@@ -2,5 +2,9 @@
     <img class="listing-img" [src]="libraryPanel.coverImageUrl">
     <h2 class="listing-heading">{{libraryPanel.name}}</h2>
     <p class="listing-discription">{{libraryPanel.description}}</p>
+    <p class="listing-address">{{libraryPanel.address}}</p>
+    <p class="listing-phone">{{libraryPanel.phone}}</p>
+    <p class="text">Today's working hours:</p>
+    <p class="today-schedule">{{ todaySchedule ? (todaySchedule.isClosed ? 'Closed' : todaySchedule.openTime + ' - ' + todaySchedule.closeTime) : 'No schedule' }}</p>
     <a [routerLink]="['/libraries/details', libraryPanel.id]">View details</a>
 </section>

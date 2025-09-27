@@ -1,1 +1,36 @@
-<p>library-details works!</p>
+<main>
+    <section class="upper-section">
+        <section class="info-section">
+            <h2>{{libraryData.name}}</h2>
+            <p class="description">{{libraryData.description}}</p>
+            <div class="info-div">
+                <h3>Contact & Locaiton</h3>
+                <p>{{libraryData.address}}</p>
+                <p>{{libraryData.phone}}</p>
+                <p>{{libraryData.email}}</p>
+            </div>
+            <div class="info-div">
+                <h3>Library Statistics</h3>
+                <p>total books</p>
+                <p>{{libraryData.computers}} computers</p>
+                <p>{{libraryData.studyRooms}} study rooms</p>
+            </div>
+        </section>
+        <section class="image-section">
+            <img class ="library-image" [src]="libraryData.coverImageUrl">
+        </section>
+    </section>
+    <section class="schedule-section">
+        <h3>Hours of Operation</h3>
+        <div class="schedule-layout">
+        @for(day of libraryData.schedule; track day.id){
+
+            <div class="schedule-div">
+                <dt>{{day.dayOfWeek}}</dt>
+                <dd>{{day.openTime}} - {{day.closeTime}}</dd>
+            </div>
+
+        }
+      </div>
+    </section>
+</main>

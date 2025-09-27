@@ -1,0 +1,86 @@
+main {
+    font-size: large;
+    padding-left: 7rem;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-div {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 700px;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+.library-image {
+    width: 800px;
+    height: 500px;
+    object-fit: fill;
+    border-radius: 8px;
+    padding-top: 3rem;
+}
+
+.info-seciton {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-section {
+    padding-left: 5rem;
+}
+
+.schedule-section{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 80%;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding-bottom: 2rem;
+}
+
+.schedule-section h3{
+    padding-left: 2rem;
+}
+
+.schedule-layout {
+    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+
+.schedule-section dt {
+    font-weight: normal;
+    color: #555;
+}
+
+.schedule-section dd {
+    font-weight: bold;
+    text-align: right;
+}
+
+.schedule-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 22rem;
+}

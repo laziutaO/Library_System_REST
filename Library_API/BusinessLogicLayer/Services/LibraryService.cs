@@ -70,7 +70,7 @@ namespace BusinessLogicLayer.Services
 
         public async Task<LibraryRequest?> GetLibraryAsync(Guid id)
         {
-            var library = await _repository.GetByIdAsync(id);
+            var library = await _repository.GetAsync(id);
             return library == null ? null : library.LibraryToGetDto();
         }
 
