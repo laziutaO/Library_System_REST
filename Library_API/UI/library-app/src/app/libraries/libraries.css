@@ -10,10 +10,16 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
+    font-size: 1rem;
+  line-height: 1;
+  color: #555;
 }
 
 .description{
-    max-width: 25rem;
+  max-width: 25rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
 }
 
 .search-bar {

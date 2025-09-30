@@ -71,5 +71,20 @@ body {
   gap: 2rem;
 }
 
+p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+li{
+font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+h2{
+  padding-left: 5rem;
+}
 
 

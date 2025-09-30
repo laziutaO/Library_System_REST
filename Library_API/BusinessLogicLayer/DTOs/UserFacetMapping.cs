@@ -11,7 +11,7 @@ namespace BusinessLogicLayer.DTOs
 {
     public class UserFacetMapping{
 
-        [Facet(typeof(User), exclude: new[] { nameof(User.HashedPassword), nameof(User.Id) })]
+        [Facet(typeof(User), exclude: new[] { nameof(User.HashedPassword)})]
         public partial record UserGetRequest { }
 
     }
