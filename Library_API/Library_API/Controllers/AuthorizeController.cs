@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Entities;
+using BusinessLogicLayer.DTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -25,67 +26,68 @@ namespace Library_API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register(AdminUser adminUser)
+        public async Task<IActionResult> Register(RegisterDto registerRequest)
         {
-            var user = new IdentityUser { UserName = adminUser.UserName, Email = adminUser.Email };
+            var user = new IdentityUser 
+            { 
+                UserName = registerRequest.UserName, 
+                Email = registerRequest.Email 
+            };
 
-            var result = await _userManager.CreateAsync(user, adminUser.Password);
+            var result = await _userManager.CreateAsync(user, registerRequest.Password);
 
-            if (result.Succeeded)
-            {
-                await _signInManager.SignInAsync(user, isPersistent: false);
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
 
-                List<Claim> claims = new List<Claim>();
-                claims.Add(new Claim("Profession", "LibraryAdministrator"));
-                claims.Add(new Claim("SeniorManager", "true"));
-                claims.Add(new Claim(ClaimTypes.Email, adminUser.Email));
+            await _userManager.AddToRoleAsync(user, "User");
 
-                await _userManager.AddClaimsAsync(user, claims);
-            }
-
-            else
-            {
-                return BadRequest();
-            }
-
-            return Ok();
+            return Ok(new { message = "User registered successfully" });
         }
 
-        private string GetToken(IdentityUser user, IEnumerable<Claim> prinicpal)
+        private async Task<string> GetToken(IdentityUser user)
         {
-            var claims = prinicpal.ToList();
-            claims.Add(new Claim(ClaimTypes.Name, user.UserName));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey));
+            var roles = await _userManager.GetRolesAsync(user);
+            var roleClaims = roles.Select(r => new Claim(ClaimTypes.Role, r));
 
-            var jwt = new JwtSecurityToken(
+            var claims = new List<Claim>
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Email!),
+                new Claim("userid", user.Id)
+            }
+            .Union(roleClaims);
+
+            var token = new JwtSecurityToken(
                 issuer: _options.Issuer,
                 audience: _options.Audience,
                 claims: claims,
-                expires: DateTime.UtcNow.Add(TimeSpan.FromDays(1)),
-                notBefore: DateTime.UtcNow,
-                signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256));
+                expires: DateTime.Now.AddMinutes(30),
+                signingCredentials: credentials
+            );
 
-            return new JwtSecurityTokenHandler().WriteToken(jwt);
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
 
         [HttpPost("SignIn")]
-        public async Task<IActionResult> SignIn(AdminUser adminUser)
+        public async Task<IResult> LogIn([FromBody] LoginDto request)
         {
-            var user = await _userManager.FindByEmailAsync(adminUser.Email);
-
-            var result = await _signInManager.PasswordSignInAsync(user, adminUser.Password, false, false);
-
-            if (result.Succeeded) 
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if (user is null)
             {
-                IEnumerable<Claim> claims = await _userManager.GetClaimsAsync(user);
-                var token = GetToken(user, claims);
-
-                return Ok(token);
+                return Results.NotFound("User not found");
             }
 
-            return BadRequest();
+            var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
+            if (!result.Succeeded)
+            {
+                return Results.Unauthorized();
+            }
+
+            var token = GetToken(user);
+            return Results.Ok(new { Token = token });
         }
     }
 }
