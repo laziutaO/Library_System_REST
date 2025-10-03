@@ -26,7 +26,7 @@ namespace Library_API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register(RegisterDto registerRequest)
+        public async Task<IResult> Register(RegisterDto registerRequest)
         {
             var user = new IdentityUser 
             { 
@@ -37,11 +37,15 @@ namespace Library_API.Controllers
             var result = await _userManager.CreateAsync(user, registerRequest.Password);
 
             if (!result.Succeeded)
-                return BadRequest(result.Errors);
+                return Results.BadRequest(result.Errors);
 
             await _userManager.AddToRoleAsync(user, "User");
-
-            return Ok(new { message = "User registered successfully" });
+             var token = GetToken(user);
+            return Results.Ok(new
+            {
+                userName = user.UserName,
+                email = user.Email,
+                token = token.Result });
         }
 
         private async Task<string> GetToken(IdentityUser user)
@@ -50,20 +54,19 @@ namespace Library_API.Controllers
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var roles = await _userManager.GetRolesAsync(user);
-            var roleClaims = roles.Select(r => new Claim(ClaimTypes.Role, r));
 
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email!),
-                new Claim("userid", user.Id)
-            }
-            .Union(roleClaims);
+                new Claim("userid", user.Id),
+            };
 
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
             var token = new JwtSecurityToken(
                 issuer: _options.Issuer,
                 audience: _options.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: DateTime.Now.AddMinutes(1),
                 signingCredentials: credentials
             );
 
@@ -72,7 +75,7 @@ namespace Library_API.Controllers
 
 
         [HttpPost("SignIn")]
-        public async Task<IResult> LogIn([FromBody] LoginDto request)
+        public async Task<IResult> LogIn(LoginDto request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user is null)
@@ -87,7 +90,13 @@ namespace Library_API.Controllers
             }
 
             var token = GetToken(user);
-            return Results.Ok(new { Token = token });
-        }
+            return Results.Ok(new
+            {
+                userName = user.UserName,
+                email = user.Email,
+                token = token.Result
+            });
+        
+    }
     }
 }

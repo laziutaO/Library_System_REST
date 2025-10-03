@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { UserData } from '../interfaces/user-data';
 import { UserService } from '../services/user-service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../services/auth-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,16 +13,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './user-profile.css'
 })
 export class UserProfile implements OnInit{
-  userData!: UserData;
+  userData: UserData = {
+    userName: '',
+    email: '',
+    phone: undefined
+  };
   userService = inject(UserService);
+  authService = inject(AuthService);
   route = inject(ActivatedRoute)
-  userId: string="";
+  router = inject(Router)
   constructor(){
-    this.userId = this.route.snapshot.paramMap.get('id')!;
+
   }
 ngOnInit(): void {
-    this.userService.getUserById(this.userId).subscribe(data=>{
-      this.userData = data;
-    })
+    this.userData.userName = this.authService.currentUser()?.userName; 
+    this.userData.email = this.authService.currentUser()?.email;
+}
+
+logout():void {
+  this.authService.currentUser.set(null);
+  localStorage.setItem('token', '');
+  this.router.navigate(['/login']);
 }
 }

@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [BookPanel, RouterLink],
+  imports: [BookPanel],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
