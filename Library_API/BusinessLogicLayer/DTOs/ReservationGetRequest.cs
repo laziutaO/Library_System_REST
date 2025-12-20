@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record ReservationGetRequest(
-        string UserName, 
         string BookTitle, 
         DateOnly ReserveDate, 
         DateOnly ExpiresAt, 

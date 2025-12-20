@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record BorrowingGetRequest(
-        string UserName,
         string BookTitle,
         DateOnly BorrowedDate,
         DateOnly DueDate,

@@ -11,7 +11,7 @@ namespace DataAccessLayer.Entities
     {
         [Key]
         public Guid Id { get; set; }
-        public Guid UserId { get; set; }
+        //public Guid UserId { get; set; }
         public Guid BookCopyId { get; set; }
         public DateOnly BorrowedDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
         public DateOnly DueDate { get; set; }
@@ -21,7 +21,7 @@ namespace DataAccessLayer.Entities
             get => !ReturnedAt.HasValue && DueDate < DateOnly.FromDateTime(DateTime.UtcNow); 
         }
 
-        public User User { get; set; } = null!;
+     
         public BookCopy BookCopy { get; set; } = null!;
 
     }

@@ -16,16 +16,12 @@ namespace BusinessLogicLayer.Services
     {
         private readonly IReserveRepository _repository;
         public ReservationService(IReserveRepository repository, 
-            IUserRepository userRepository, 
             IBookRepository<BookCopy> bookRepository)
         {
             _repository = repository;
         }
 
-        public async Task<bool> CheckIfCanReserve(Guid userId, Guid bookId)
-        {
-            return await _repository.CheckIfCanReserveAsync(userId, bookId);
-        }
+
         public async Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reservationInfo)
         {
             Reservation reservation = new Reservation();

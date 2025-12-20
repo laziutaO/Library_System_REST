@@ -13,7 +13,6 @@ namespace BusinessLogicLayer.Mapping
         public static ReservationGetRequest ReservationToGetDto(this Reservation reservation)
         {
             return new(
-                reservation.User.LastName,
                 reservation.BookCopy.Title,
                 reservation.ReserveDate,
                 reservation.ExpiresAt,
@@ -23,7 +22,6 @@ namespace BusinessLogicLayer.Mapping
 
         public static void CreateDtoToReservation(this ReservationCreateRequest request, Reservation reservation)
         {
-            reservation.UserId = request.UserId;
             reservation.BookCopyId = request.BookCopyId;
         }
 

@@ -7,6 +7,5 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record ReservationCreateRequest(
-        Guid UserId, 
         Guid BookCopyId); 
 }

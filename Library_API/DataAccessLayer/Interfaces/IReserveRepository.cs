@@ -9,11 +9,11 @@ namespace DataAccessLayer.Interfaces
 {
     public interface IReserveRepository: IBaseRepository<Reservation>
     {
-        int CheckReservationsCount(Guid userId);
+        
         new Task<IEnumerable<Reservation>> GetAllAsync();
         new Task<Reservation?> GetAsync(Guid id);
 
-        Task<bool> CheckIfCanReserveAsync(Guid userId, Guid bookId);
+        //Task<bool> CheckIfCanReserveAsync(Guid userId, Guid bookId);
 
         Task<List<Reservation>> GetByUserAsync(Guid userId);
         Task<List<Reservation>> GetByBookAsync(Guid userId);

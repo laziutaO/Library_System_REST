@@ -18,16 +18,11 @@ namespace DataAccessLayer.Repositories
             _libraryDbContext = libraryDbContext;
         }
 
-        public int CheckReservationsCount(Guid userId)
-        {
-            var count = libraryDbContext.Reservations.Where(u => u.UserId == userId && u.IsClosed == false).Count();
-            return count;
-        }
+  
 
         public new async Task<IEnumerable<Reservation>> GetAllAsync()
         {
             List<Reservation> reservations = await _libraryDbContext.Reservations
-                .Include(r => r.User)
                 .Include(r => r.BookCopy)
                 .ToListAsync();
             return reservations;
@@ -37,7 +32,6 @@ namespace DataAccessLayer.Repositories
         {
             var reservation = await _libraryDbContext.Reservations
                 .Where(r => r.Id == id)
-                .Include(r => r.User)
                 .Include(r => r.BookCopy)
                 .FirstOrDefaultAsync();
             return reservation;
@@ -45,8 +39,7 @@ namespace DataAccessLayer.Repositories
         public async Task<List<Reservation>> GetByUserAsync(Guid userId)
         {
             List<Reservation> reservationList = await _libraryDbContext.Reservations
-                .Where(r => r.UserId == userId)
-                .Include(r=> r.User)
+                //.Where(r => r.UserId == userId)
                 .Include(r => r.BookCopy).ToListAsync();
             return reservationList;
         }
@@ -55,22 +48,21 @@ namespace DataAccessLayer.Repositories
         {
             List<Reservation> reservationList = await _libraryDbContext.Reservations
                 .Where(r => r.BookCopyId == bookId)
-                .Include(r => r.User)
                 .Include(r => r.BookCopy).ToListAsync();
             return reservationList;
         }
 
         //to finish
-        public async Task<bool> CheckIfCanReserveAsync(Guid userId, Guid bookId)
-        {
-            bool userIsBlocked = await _libraryDbContext.Users
-                .Where(u => u.Id == userId)
-                .Select(u => u.IsBlocked)
-                .FirstOrDefaultAsync();
+        //public async Task<bool> CheckIfCanReserveAsync(Guid userId, Guid bookId)
+        //{
+        //    bool userIsBlocked = await _libraryDbContext.Users
+        //        .Where(u => u.Id == userId)
+        //        .Select(u => u.IsBlocked)
+        //        .FirstOrDefaultAsync();
 
-            int availableSamples = 1;
+        //    int availableSamples = 1;
 
-            return !userIsBlocked && availableSamples > 0;
-        }
+        //    return !userIsBlocked && availableSamples > 0;
+        //}
     }
 }

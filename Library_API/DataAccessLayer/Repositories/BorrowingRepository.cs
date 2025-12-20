@@ -22,7 +22,6 @@ namespace DataAccessLayer.Repositories
         {
             var reservation = await _libraryDbContext.Borrowings
                 .Where(r => r.Id == id)
-                .Include(r => r.User)
                 .Include(r => r.BookCopy)
                 .FirstOrDefaultAsync();
             return reservation;
@@ -30,8 +29,7 @@ namespace DataAccessLayer.Repositories
         public async Task<List<Borrowing>> GetByUserAsync(Guid userId)
         {
             List<Borrowing> reservationList = await _libraryDbContext.Borrowings
-                .Where(r => r.UserId == userId)
-                .Include(r => r.User)
+                //.Where(r => r.UserId == userId)
                 .Include(r => r.BookCopy).ToListAsync();
             return reservationList;
         }
@@ -40,22 +38,21 @@ namespace DataAccessLayer.Repositories
         {
             List<Borrowing> reservationList = await _libraryDbContext.Borrowings
                 .Where(r => r.BookCopyId == bookId)
-                .Include(r => r.User)
                 .Include(r => r.BookCopy).ToListAsync();
             return reservationList;
         }
 
         //to finish
-        public async Task<bool> CheckIfCanBorrowAsync(Guid userId, Guid bookId)
-        {
-            bool userIsBlocked = await _libraryDbContext.Users
-                .Where(u => u.Id == userId)
-                .Select(u => u.IsBlocked)
-                .FirstOrDefaultAsync();
+        //public async Task<bool> CheckIfCanBorrowAsync(Guid userId, Guid bookId)
+        //{
+        //    bool userIsBlocked = await _libraryDbContext.Users
+        //        .Where(u => u.Id == userId)
+        //        .Select(u => u.IsBlocked)
+        //        .FirstOrDefaultAsync();
 
-            int availableSamples = 1;
+        //    int availableSamples = 1;
 
-            return !userIsBlocked && availableSamples > 0;
-        }
+        //    return !userIsBlocked && availableSamples > 0;
+        //}
     }
 }

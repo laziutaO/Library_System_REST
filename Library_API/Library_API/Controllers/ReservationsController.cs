@@ -85,7 +85,7 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddReservation([FromBody]ReservationCreateRequest reservRequest)
         {
-            bool ableToReserve = await _reservationService.CheckIfCanReserve(reservRequest.UserId, reservRequest.BookCopyId);
+            bool ableToReserve = true;
             if (!ableToReserve)
                 return Ok("Cannot make reservation because either user is blocked or there are no available books");
             var reservation =  await _reservationService.CreateReservationAsync(reservRequest);

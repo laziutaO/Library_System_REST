@@ -20,10 +20,6 @@ namespace BusinessLogicLayer.Services
             _repository = repository;
         }
 
-        public async Task<bool> CheckIfCanBorrow(Guid userId, Guid bookId)
-        {
-            return await _repository.CheckIfCanBorrowAsync(userId, bookId);
-        }
 
         public async Task<BorrowingGetRequest> CreateBorrowingAsync(BorrowingCreateRequest request)
         {

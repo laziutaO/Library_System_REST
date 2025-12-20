@@ -20,7 +20,6 @@ namespace DataAccessLayer.Repositories
         public async new Task<IEnumerable<Review>> GetAllAsync()
         {
             var reviews = await _libraryDbContext.Reviews
-                .Include(r => r.User)
                 .Include(r => r.Book)
                 .ToListAsync();
             return reviews;
@@ -28,7 +27,6 @@ namespace DataAccessLayer.Repositories
         public async new Task<Review?> GetAsync(Guid id)
         {
             var review = await _libraryDbContext.Reviews
-                .Include(r => r.User)
                 .Include(r => r.Book)
                 .FirstOrDefaultAsync();
             return review;
@@ -36,8 +34,7 @@ namespace DataAccessLayer.Repositories
         public async Task<List<Review>> GetByUserAsync(Guid userId)
         {
             var reviews = await _libraryDbContext.Reviews
-                .Where(r => r.UserId == userId)
-                .Include(r => r.User)
+                //.Where(r => r.UserId == userId)
                 .Include(r => r.Book)
                 .ToListAsync();
             return reviews;
@@ -47,7 +44,6 @@ namespace DataAccessLayer.Repositories
         {
             var reviews = await _libraryDbContext.Reviews
                 .Where(r => r.BookId == bookId)
-                .Include(r => r.User)
                 .Include(r => r.Book)
                 .ToListAsync();
             return reviews;

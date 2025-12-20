@@ -11,7 +11,7 @@ namespace DataAccessLayer.Entities
     {
         [Key]
         public Guid Id { get; set; }
-        public Guid UserId { get; set; }
+        //public Guid UserId { get; set; }
         public Guid BookId { get; set; }
 
         [Range(0, 10, ErrorMessage = "Rating must be between 0 and 10.")]
@@ -19,7 +19,6 @@ namespace DataAccessLayer.Entities
         public string Comment { get; set; } = string.Empty;
         public DateOnly PostedDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
 
-        public User User { get; set; }
         public Book Book { get; set; }
     }
 }

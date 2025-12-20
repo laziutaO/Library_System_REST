@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record ReviewCreateRequest(
-        Guid UserId,
         Guid BookId,
         int Rating,
         string Comment);

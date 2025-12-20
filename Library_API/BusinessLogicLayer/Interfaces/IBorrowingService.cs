@@ -15,6 +15,5 @@ namespace BusinessLogicLayer.Interfaces
         Task<BorrowingGetRequest> DeleteBorrowingAsync(Guid id);
         Task<List<BorrowingGetRequest>?> GetBorrowingsByUserAsync(Guid userId);
         Task<List<BorrowingGetRequest>?> GetBorrowingsByBookAsync(Guid bookId);
-        Task<bool> CheckIfCanBorrow(Guid userId, Guid bookId);
     }
 }

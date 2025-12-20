@@ -17,9 +17,6 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<UserDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnStr")));
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>().AddDefaultTokenProviders();
-
 // Add services to the container.
 builder.Services.Configure<JWTSettings>(builder.Configuration.GetSection("JWTSettings"));
 
@@ -58,7 +55,13 @@ builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnStr")));
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddDbContext<AuthDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AuthConnection")));
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
+    .AddEntityFrameworkStores<AuthDbContext>()
+    .AddDefaultTokenProviders();
+
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
 builder.Services.AddScoped<IReservationService, ReservationService>();
@@ -66,12 +69,9 @@ builder.Services.AddScoped<IEbookService, EbookService>();
 builder.Services.AddScoped<IBookCopyService, BookCopyService>();
 builder.Services.AddScoped<ILibraryService, LibraryService>();
 builder.Services.AddScoped<IBorrowingService, BorrowingService>();
-builder.Services.AddScoped<IPasswordHelper, PasswordHelper>();
-builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<IGenreService, GenreService>();
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<IBookCopyRepository, BookCopyRepository>();
@@ -89,10 +89,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
-    var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHelper>();
     await DatabaseSeeder.SeedEbooksAsync(db);
     await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
-    DatabaseSeeder.SeedUsers(db, hasher);
 }
 
 // Configure the HTTP request pipeline.

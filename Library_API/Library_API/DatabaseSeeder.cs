@@ -78,18 +78,6 @@ namespace DataAccessLayer
             await context.SaveChangesAsync();
         }
 
-        public static void SeedUsers(LibraryDbContext context, IPasswordHelper passwordHasher)
-        {
-            if (!context.Users.Any())
-            {
-                var users = DataGenerator.GetBogusUserData()
-                    .Select(u => {
-                        u.HashedPassword = passwordHasher.GeneratePassword(u, u.HashedPassword);
-                        return u; 
-                    }).ToList();
-                context.Users.AddRange(users);
-                context.SaveChanges();
-            }
-        }
+        
     }
 }

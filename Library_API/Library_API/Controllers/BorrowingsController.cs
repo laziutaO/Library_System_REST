@@ -69,7 +69,7 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddBorrowing([FromBody] BorrowingCreateRequest request)
         {
-            bool ableToReserve = await _borrowingService.CheckIfCanBorrow(request.UserId, request.BookCopyId);
+            bool ableToReserve = true;
             if (!ableToReserve)
                 return Ok("Cannot make borrowing because either user is blocked or there are no available books");
             var borrowing = await _borrowingService.CreateBorrowingAsync(request);
