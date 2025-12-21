@@ -14,11 +14,11 @@ namespace Library_API.Controllers
     [Route("api/[controller]")]
     public class AuthorizeController : Controller
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly JWTSettings _options;
 
-        public AuthorizeController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IOptions<JWTSettings> options)
+        public AuthorizeController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IOptions<JWTSettings> options)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -28,10 +28,13 @@ namespace Library_API.Controllers
         [HttpPost("Register")]
         public async Task<IResult> Register(RegisterDto registerRequest)
         {
-            var user = new IdentityUser 
-            { 
-                UserName = registerRequest.UserName, 
-                Email = registerRequest.Email 
+            var user = new ApplicationUser
+            {
+                UserName = registerRequest.UserName,
+                Email = registerRequest.Email,
+                FirstName = registerRequest.FirstName,
+                LastName = registerRequest.LastName,
+                IsBlocked = false
             };
 
             var result = await _userManager.CreateAsync(user, registerRequest.Password);
@@ -48,7 +51,7 @@ namespace Library_API.Controllers
                 token = token.Result });
         }
 
-        private async Task<string> GetToken(IdentityUser user)
+        private async Task<string> GetToken(ApplicationUser user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -57,8 +60,9 @@ namespace Library_API.Controllers
 
             var claims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Email!),
-                new Claim("userid", user.Id),
+                new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new(JwtRegisteredClaimNames.Email, user.Email!)
             };
 
             claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
@@ -66,7 +70,7 @@ namespace Library_API.Controllers
                 issuer: _options.Issuer,
                 audience: _options.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(1),
+                expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: credentials
             );
 
@@ -83,12 +87,15 @@ namespace Library_API.Controllers
                 return Results.NotFound("User not found");
             }
 
+            if (user.IsBlocked)
+                return Results.Forbid();
+
             var result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
             if (!result.Succeeded)
             {
                 return Results.Unauthorized();
             }
-
+            
             var token = GetToken(user);
             return Results.Ok(new
             {
