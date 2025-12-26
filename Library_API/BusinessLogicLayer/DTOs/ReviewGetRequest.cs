@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record ReviewGetRequest(
+        string UserName,
         string BookTitle,
         int Rating,
         string Comment,

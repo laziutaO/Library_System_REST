@@ -10,10 +10,10 @@ namespace BusinessLogicLayer.Mapping
 {
     public static class ReviewMapping
     {
-        public static ReviewGetRequest ReviewToGetRequest(this Review review)
+        public static ReviewGetRequest ReviewToGetRequest(this Review review, string username)
         {
             return new(
-                //new string($"{review.User.FirstName} {review.User.LastName}"),
+                username,
                 review.Book.Title,
                 review.Rating,
                 review.Comment,

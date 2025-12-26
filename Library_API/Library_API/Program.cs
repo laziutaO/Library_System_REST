@@ -39,6 +39,7 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidAudience = audience,
         ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
         IssuerSigningKey = signingKey,
         ValidateIssuerSigningKey = true,
     };
@@ -52,7 +53,7 @@ builder.Services.AddControllers()
     });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibraryConnStr")));
 builder.Services.AddDbContext<AuthDbContext>(options =>
@@ -82,29 +83,29 @@ builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
 builder.Services.AddScoped<ILibraryRepository, LibraryRepository>();
 builder.Services.AddScoped<IBorrowingRepository, BorrowingRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
-builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+
 
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
-    await DatabaseSeeder.SeedEbooksAsync(db);
-    await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
+    //await DatabaseSeeder.SeedEbooksAsync(db);
+    //await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
+    await AdminUserSeeder.SeedAdminAsync(scope.ServiceProvider);
 }
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
-app.UseRouting();
-app.UseDefaultFiles();
-app.UseStaticFiles();
+//app.UseDefaultFiles();
+//app.UseStaticFiles();
 
 
 app.UseCors(policy => policy
@@ -116,6 +117,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapFallbackToFile("index.html");
+//app.MapFallbackToFile("index.html");
 
 app.Run();

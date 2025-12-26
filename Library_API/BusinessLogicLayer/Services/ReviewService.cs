@@ -3,6 +3,8 @@ using BusinessLogicLayer.Interfaces;
 using BusinessLogicLayer.Mapping;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +17,12 @@ namespace BusinessLogicLayer.Services
     public class ReviewService : IReviewService
     {
         private readonly IReviewRepository _reviewRepository;
-        public ReviewService(IReviewRepository reviewRepository)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public ReviewService(IReviewRepository reviewRepository,
+                            UserManager<ApplicationUser> userManager)
         {
             _reviewRepository = reviewRepository;
+            _userManager = userManager;
         }
         public async Task<ReviewGetRequest> CreateReviewAsync(ReviewCreateRequest request)
         {
@@ -57,7 +62,13 @@ namespace BusinessLogicLayer.Services
             {
                 return null;
             }
-            return fetchedReview?.ReviewToGetRequest();
+            var userId = fetchedReview.UserId;
+            var userName = _userManager.Users
+                .Where(u => u.Id == userId)
+                .Select(u => u.UserName)
+                .FirstOrDefault();
+
+            return fetchedReview?.ReviewToGetRequest(userName);
         }
 
         public async Task<List<ReviewGetRequest>?> GetReviewsByBookAsync(Guid bookId)
@@ -67,6 +78,7 @@ namespace BusinessLogicLayer.Services
             {
                 return null;
             }
+
             List<ReviewGetRequest> reviewsList = fetchedReviews.Select(r => r.ReviewToGetRequest()).ToList();
             return reviewsList;
         }

@@ -34,7 +34,7 @@ namespace DataAccessLayer.Repositories
         public async Task<List<Review>> GetByUserAsync(Guid userId)
         {
             var reviews = await _libraryDbContext.Reviews
-                //.Where(r => r.UserId == userId)
+                .Where(r => r.UserId == userId)
                 .Include(r => r.Book)
                 .ToListAsync();
             return reviews;
