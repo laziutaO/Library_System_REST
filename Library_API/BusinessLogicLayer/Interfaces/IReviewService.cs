@@ -12,7 +12,7 @@ namespace BusinessLogicLayer.Interfaces
         Task<IEnumerable<ReviewGetRequest>> GetAllReviewsAsync();
         Task<ReviewGetRequest?> GetReviewAsync(Guid id);
 
-        Task<ReviewGetRequest> CreateReviewAsync(ReviewCreateRequest request);
+        Task<ReviewGetRequest> CreateReviewAsync(ReviewCreateRequest request, Guid userId);
         Task<ReviewGetRequest?> UpdateReviewAsync(Guid id, ReviewUpdateRequest request);
         Task<ReviewGetRequest?> DeleteReviewAsync(Guid id);
 

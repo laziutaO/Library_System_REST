@@ -26,8 +26,9 @@ namespace BusinessLogicLayer.Mapping
             review.Comment = request.Comment;
         }
 
-        public static void CreateRequestToReview(this ReviewCreateRequest request, Review review)
+        public static void CreateRequestToReview(this ReviewCreateRequest request, Review review, Guid userId)
         {
+            review.UserId = userId;
             review.BookId = request.BookId;
             review.Rating = request.Rating;
             review.Comment = request.Comment;

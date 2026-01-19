@@ -14,7 +14,7 @@ namespace BusinessLogicLayer.Interfaces
         Task<LibraryRequest?> UpdateLibraryAsync(Guid id, LibraryUpdateRequest libraryRequest);
         Task<LibraryRequest?> DeleteLibraryAsync(Guid id);
 
-        Task<BookCopyGetRequest?> AddBookToLibrary(Guid libraryId, string bookId);
+        Task<BookCopyGetRequest?> AddBookToLibrary(Guid libraryId, BookIdDto bookRequest);
 
         Task<LibraryBook?> RemoveBookToLibrary(Guid libraryId, string bookId);
     }

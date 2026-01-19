@@ -3,12 +3,12 @@ using BusinessLogicLayer.Interfaces;
 using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Library_API.Controllers
 {
     [Controller]
     [Route("api/[controller]")]
-    //[Authorize]
     public class ReviewsController : Controller
     {
         private readonly IReviewService _reviewService;
@@ -17,7 +17,7 @@ namespace Library_API.Controllers
         {
             _reviewService = reviewService;
         }
-
+        //[Authorize(Roles = "User")]
         [HttpGet]
         public async Task<IActionResult> GetAllReviews()
         {
@@ -32,7 +32,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-
+        //[Authorize(Roles = "User")]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetReview([FromRoute] Guid id)
@@ -48,7 +48,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("user")]
         public async Task<IActionResult> GetReviewsByUser([FromQuery] Guid userId)
@@ -64,7 +64,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-
+        //[Authorize(Roles = "User")]
         [HttpGet]
         [Route("book")]
         public async Task<IActionResult> GetReviewsByBook([FromQuery] Guid bookId)
@@ -84,14 +84,21 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddReview([FromBody] ReviewCreateRequest reservRequest)
         {
-            var review = await _reviewService.CreateReviewAsync(reservRequest);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId is null)
+                return Unauthorized();
+
+            var userGuid = Guid.Parse(userId);
+
+            var review = await _reviewService.CreateReviewAsync(reservRequest, userGuid);
             var output = new Dictionary<string, ReviewGetRequest>()
             {
                 ["reviews"] = review
             };
             return CreatedAtAction(nameof(AddReview), output);  
         }
-
+        //[Authorize(Roles = "User")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateReview([FromRoute] Guid id, [FromBody] ReviewUpdateRequest updateRequest)
@@ -105,7 +112,7 @@ namespace Library_API.Controllers
 
             return NoContent();
         }
-
+        //[Authorize(Roles = "User")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteReview([FromRoute] Guid id)

@@ -25,17 +25,16 @@ namespace BusinessLogicLayer.Services
             _reviewRepository = reviewRepository;
             _userManager = userManager;
         }
-        public async Task<ReviewGetRequest> CreateReviewAsync(ReviewCreateRequest request)
+        public async Task<ReviewGetRequest> CreateReviewAsync(ReviewCreateRequest request, Guid userId)
         {
             Review review = new Review();
-            request.CreateRequestToReview(review);
+            request.CreateRequestToReview(review, userId);
             await _reviewRepository.CreateAsync(review);
             var fetchedReview = await _reviewRepository.GetAsync(review.Id);
             if (fetchedReview == null)
             {
                 throw new InvalidOperationException("Reservation could not be retrieved after creation.");
             }
-            var userId = fetchedReview.UserId;
             var userName = _userManager.Users
                 .Where(u => u.Id == userId)
                 .Select(u => u.UserName)

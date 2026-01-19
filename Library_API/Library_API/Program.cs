@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -25,25 +26,53 @@ var issuer = builder.Configuration.GetSection("JWTSettings:Issuer").Value;
 var audience = builder.Configuration.GetSection("JWTSettings:Audience").Value;
 var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
 
+builder.Services
+    .AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+    })
+    .AddEntityFrameworkStores<AuthDbContext>()
+    .AddDefaultTokenProviders();
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
+})
+.AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
         ValidIssuer = issuer,
+
         ValidateAudience = true,
         ValidAudience = audience,
+
         ValidateLifetime = true,
         ClockSkew = TimeSpan.Zero,
-        IssuerSigningKey = signingKey,
+
         ValidateIssuerSigningKey = true,
+        IssuerSigningKey = signingKey,
+
+        RoleClaimType = ClaimTypes.Role,
+        NameClaimType = ClaimTypes.NameIdentifier
     };
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        return Task.CompletedTask;
+    };
+    options.Events.OnRedirectToAccessDenied = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status403Forbidden;
+        return Task.CompletedTask;
+    };
+});
+
 builder.Services.AddAuthorization();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -59,9 +88,7 @@ builder.Services.AddDbContext<LibraryDbContext>(options => options.UseSqlServer(
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AuthConnection")));
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
-    .AddEntityFrameworkStores<AuthDbContext>()
-    .AddDefaultTokenProviders();
+
 
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped(typeof(IBookService<>), typeof(BookService<>));
@@ -87,26 +114,26 @@ builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
-    //await DatabaseSeeder.SeedEbooksAsync(db);
-    //await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
-    await AdminUserSeeder.SeedAdminAsync(scope.ServiceProvider);
-}
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    //app.UseSwagger();
+    //app.UseSwaggerUI();
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
+        var authdb = scope.ServiceProvider.GetRequiredService<AuthDbContext>();
+        db.Database.EnsureCreated();
+        //await DatabaseSeeder.SeedEbooksAsync(db);
+        //await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
+        await AdminUserSeeder.SeedAdminAsync(scope.ServiceProvider);
+    }
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-//app.UseDefaultFiles();
-//app.UseStaticFiles();
-
+app.UseDefaultFiles();
+app.UseStaticFiles();
+app.UseRouting();
 
 app.UseCors(policy => policy
 .AllowAnyHeader()
@@ -117,6 +144,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-//app.MapFallbackToFile("index.html");
+app.MapFallbackToFile("index.html");
 
 app.Run();

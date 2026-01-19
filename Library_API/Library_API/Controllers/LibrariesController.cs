@@ -56,12 +56,12 @@ namespace Library_API.Controllers
 
         [HttpPost]
         [Route("{libraryId:Guid}/books")]
-        public async Task<IActionResult> AddBookToLibrary([FromRoute] Guid libraryId, [FromBody] string bookId)
+        public async Task<IActionResult> AddBookToLibrary([FromRoute] Guid libraryId, [FromBody] BookIdDto bookRequest)
         {
-            var bookDto = await _libraryService.AddBookToLibrary(libraryId, bookId);
+            var bookDto = await _libraryService.AddBookToLibrary(libraryId, bookRequest);
             if(bookDto == null)
             {
-                return NotFound(bookId);
+                return NotFound(bookRequest.bookId);
             }
             var output = new Dictionary<string, BookCopyGetRequest>()
             {

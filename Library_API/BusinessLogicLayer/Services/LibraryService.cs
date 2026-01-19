@@ -20,7 +20,7 @@ namespace BusinessLogicLayer.Services
             _repository = repository;
         }
 
-        public async Task<BookCopyGetRequest?> AddBookToLibrary(Guid libraryId, string bookId)
+        public async Task<BookCopyGetRequest?> AddBookToLibrary(Guid libraryId, BookIdDto bookRequest)
         {
             var library = await _repository.GetByIdAsync(libraryId);
             if (library == null)
@@ -29,13 +29,8 @@ namespace BusinessLogicLayer.Services
             }
 
             BookCopy? book;
-            if (Guid.TryParse(bookId, out Guid bookIdParse))
-            {
-                Console.WriteLine(bookIdParse);
-                
-            }
            
-            book = await _repository.AddBookToLibraryAsync(library, bookIdParse);
+            book = await _repository.AddBookToLibraryAsync(library, bookRequest.bookId);
             if (book == null)
             {
                 return null;

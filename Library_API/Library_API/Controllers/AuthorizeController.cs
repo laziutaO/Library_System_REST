@@ -1,5 +1,6 @@
-﻿using DataAccessLayer.Entities;
-using BusinessLogicLayer.DTOs;
+﻿using BusinessLogicLayer.DTOs;
+using DataAccessLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,7 +13,7 @@ namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthorizeController : Controller
+    public class AuthorizeController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -24,7 +25,7 @@ namespace Library_API.Controllers
             _signInManager = signInManager;
             _options = options.Value;
         }
-
+        [AllowAnonymous]
         [HttpPost("Register")]
         public async Task<IResult> Register(RegisterDto registerRequest)
         {
@@ -43,12 +44,12 @@ namespace Library_API.Controllers
                 return Results.BadRequest(result.Errors);
 
             await _userManager.AddToRoleAsync(user, "User");
-             var token = GetToken(user);
+             var token = await GetToken(user);
             return Results.Ok(new
             {
                 userName = user.UserName,
                 email = user.Email,
-                token = token.Result });
+                tokenValue = token });
         }
 
         private async Task<string> GetToken(ApplicationUser user)
@@ -70,21 +71,22 @@ namespace Library_API.Controllers
                 issuer: _options.Issuer,
                 audience: _options.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: DateTime.UtcNow.AddMinutes(30),
                 signingCredentials: credentials
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-
+        [AllowAnonymous]
         [HttpPost("SignIn")]
         public async Task<IResult> LogIn(LoginDto request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
-            if (user is null)
+            if (user is null ||
+                !await _userManager.CheckPasswordAsync(user, request.Password))
             {
-                return Results.NotFound("User not found");
+                return Results.Unauthorized();
             }
 
             if (user.IsBlocked)
