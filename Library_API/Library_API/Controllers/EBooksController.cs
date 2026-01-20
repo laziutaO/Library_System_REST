@@ -31,7 +31,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetBook([FromRoute] Guid id)

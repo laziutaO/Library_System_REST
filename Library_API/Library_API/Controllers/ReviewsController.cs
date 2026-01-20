@@ -17,7 +17,8 @@ namespace Library_API.Controllers
         {
             _reviewService = reviewService;
         }
-        //[Authorize(Roles = "User")]
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAllReviews()
         {
@@ -32,7 +33,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-        //[Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetReview([FromRoute] Guid id)
@@ -48,7 +49,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("user")]
         public async Task<IActionResult> GetReviewsByUser([FromQuery] Guid userId)
@@ -64,7 +65,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-        //[Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("book")]
         public async Task<IActionResult> GetReviewsByBook([FromQuery] Guid bookId)
@@ -80,7 +81,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddReview([FromBody] ReviewCreateRequest reservRequest)
         {
@@ -98,7 +99,7 @@ namespace Library_API.Controllers
             };
             return CreatedAtAction(nameof(AddReview), output);  
         }
-        //[Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateReview([FromRoute] Guid id, [FromBody] ReviewUpdateRequest updateRequest)
@@ -112,7 +113,7 @@ namespace Library_API.Controllers
 
             return NoContent();
         }
-        //[Authorize(Roles = "User")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteReview([FromRoute] Guid id)

@@ -1,14 +1,15 @@
-﻿using BusinessLogicLayer.Interfaces;
+﻿using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Interfaces;
+using BusinessLogicLayer.Mapping;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
-using BusinessLogicLayer.DTOs;
-using BusinessLogicLayer.Mapping;
 
 namespace Library_API.Controllers
 {
+    //[Authorize]
     [Controller]
     [Route("api/[controller]")]
-    //[Authorize]
     public class BookCopiesController : Controller
     {
         IBookCopyService _bookCopyService;
