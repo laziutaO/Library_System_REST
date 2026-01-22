@@ -1,1 +1,10 @@
-<p>comment-panel works!</p>
+<section class="comment">
+    <dl class="details">
+        <div>
+            <dt>{{ commentPanel.userName }}</dt>
+            <dd>{{ commentPanel.postedDate }}</dd>
+        </div>
+    </dl>
+    <p class="rating">Rating: {{ commentPanel.rating }} / 10</p>
+    <p class="comment-text">{{ commentPanel.comment }}</p>
+</section>

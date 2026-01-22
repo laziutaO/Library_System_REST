@@ -1,8 +1,14 @@
 #book-section {
-    font-size: large;
-    padding-left: 20rem;
-    padding-top: 5rem;
-    display: flex;
+  font-size: large;
+  padding-left: 20rem;
+  padding-top: 5rem;
+  display: flex;
+}
+
+#comment-section{
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 .description {
@@ -10,15 +16,15 @@
 }
 
 ul {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
 .details{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
 .details dl {
@@ -44,16 +50,16 @@ ul {
 }
 
 .details div{
-    width: 18rem;
-    display: flex;
-    justify-content:space-between;
+  width: 18rem;
+  display: flex;
+  justify-content:space-between;
 }
 
 .get-book{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5rem;
-    max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  max-width: 25rem;
 }
 
 

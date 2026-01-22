@@ -6,7 +6,7 @@ import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-book-panel',
-  imports: [RouterLink, TitleCasePipe],
+  imports: [RouterLink],
   templateUrl: './book-panel.html',
   styleUrl: './book-panel.css'
 })

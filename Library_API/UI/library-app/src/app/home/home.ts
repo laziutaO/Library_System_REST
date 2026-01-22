@@ -17,7 +17,6 @@ export class Home implements OnInit{
 
   constructor(private ebooksService: EbooksService, 
     private booksCopyService: BookCopiesService){
-
   }
 
   ngOnInit(): void {

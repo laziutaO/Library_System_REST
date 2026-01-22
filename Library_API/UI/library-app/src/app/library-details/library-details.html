@@ -24,12 +24,10 @@
         <h3>Hours of Operation</h3>
         <div class="schedule-layout">
         @for(day of libraryData.schedule; track day.id){
-
             <div class="schedule-div">
                 <dt>{{day.dayOfWeek}}</dt>
                 <dd>{{day.openTime}} - {{day.closeTime}}</dd>
             </div>
-
         }
       </div>
     </section>

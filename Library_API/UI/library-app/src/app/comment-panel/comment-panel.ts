@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { ReviewData } from '../interfaces/review-data';
 
 @Component({
   selector: 'app-comment-panel',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './comment-panel.css',
 })
 export class CommentPanel {
-
+  @Input() commentPanel!: ReviewData;
 }

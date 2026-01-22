@@ -1,0 +1,51 @@
+.comment {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5rem;
+  padding: 0.5rem;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  min-width:20rem;
+}
+
+.details {
+  display: flex;
+  flex-direction:row;
+}
+
+.details dl {
+  background: #585858;
+}
+
+.details dt {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.details dd {
+  font-weight: normal;
+  color: #555;
+}
+
+.details div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.rating {
+  font-size: 1rem;
+}
+
+.comment-text {
+  margin-top: 0.5rem;
+}

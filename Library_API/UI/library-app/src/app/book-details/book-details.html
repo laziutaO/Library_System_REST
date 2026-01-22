@@ -65,9 +65,7 @@
         </section>
     </section>
     <section id="comment-section">
-        @for(review of comments; track review?.id){
-            <h1>THIS IS COMMENT 1!!!!!!!!</h1>
-            <app-comment-panel [reviewPanel] = "review"></app-comment-panel>
-        }
+        @for(comment of comments; track comment?.id){
+            <app-comment-panel [commentPanel] = 'comment'></app-comment-panel>}
     </section>
 </main>
