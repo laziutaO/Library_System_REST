@@ -6,34 +6,44 @@ import { ReviewsService } from '../services/reviews-service';
 import { ReviewData } from '../interfaces/review-data';
 import { CommentPanel } from '../comment-panel/comment-panel';
 import { CommonModule } from '@angular/common'; 
+import { LibrariesService } from '../services/libraries-service';
+import { LibraryData } from '../interfaces/library-data';
+import { LibraryPanel } from '../library-panel/library-panel';
+import {combineLatest} from 'rxjs';
 
 @Component({
   selector: 'app-book-details',
-  imports: [CommentPanel, CommonModule],
+  imports: [CommentPanel, CommonModule, LibraryPanel],
   templateUrl: './book-details.html',
   styleUrl: './book-details.css'
 })
 export class BookDetails implements OnInit {
   bookData: BookData | undefined;
+  libraryList: LibraryData[] = [];
   comments: ReviewData[] = [];
   bookPanelId: string = "";
-  type: "ebook" | "copy" | '' = ''
+  type: "ebook" | "copy" | '' = '';
+  havebookLibraries: LibraryData[] = [];
 
   constructor(private route: ActivatedRoute,
     private booksFacade: BooksFacadeService,
-    private reviewsService: ReviewsService) {
+    private reviewsService: ReviewsService,
+  private librariesService: LibrariesService) {
     this.bookPanelId = this.route.snapshot.paramMap.get('id')!;
   }
 
   ngOnInit(): void {
     this.type = this.route.snapshot.queryParamMap.get('type') as "ebook" | "copy";
-
-    this.booksFacade.getBookById(this.bookPanelId, this.type).subscribe(data => {
-      this.bookData = data;
+    combineLatest([
+      this.booksFacade.getBookById(this.bookPanelId, this.type),
+      this.reviewsService.getAllReviews(),
+      this.librariesService.getAllLibraries()
+    ]).subscribe(([bookData, reviews, libraries]) => {
+      this.bookData = bookData;
+      this.comments = reviews;
+      this.libraryList = libraries;
+      this.havebookLibraries = this.libraryList.filter(lib => this.bookData?.libraryNames?.includes(lib.name));
     });
-
-    this.reviewsService.getAllReviews().subscribe(data => {
-      this.comments = data;
-    });
+    
   }
 }

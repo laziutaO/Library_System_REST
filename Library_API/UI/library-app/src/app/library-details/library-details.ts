@@ -12,7 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class LibraryDetails implements OnInit{
   libraryData!: LibraryData;
   libraryId: string = '';
-  constructor(private libraryService: LibrariesService, private route: ActivatedRoute) {
+  constructor(private libraryService: LibrariesService, 
+    private route: ActivatedRoute) {
     this.libraryId = this.route.snapshot.paramMap.get('id')!;
   }
 

@@ -5,10 +5,24 @@
   display: flex;
 }
 
-#comment-section{
+.comments{
   padding-top: 5rem;
   display: flex;
   justify-content: space-around;
+}
+.comment-section{
+  padding-left: 5rem;
+}
+
+.library-section{
+  padding-left:5rem;
+}
+
+.libraries{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .description {

@@ -7,7 +7,7 @@
             @if(bookData?.fileUrl !== undefined){
             <button class="get-book-button" type="button">Free Download</button>}
             @else if(bookData?.libraryNames === undefined && bookData?.fileUrl === undefined){
-                <p>This book is currently not available.</p>
+            <p>This book is currently not available.</p>
             }
         </section>
         <section class="description">
@@ -18,7 +18,7 @@
                 <li>published in {{bookData?.year}}</li>
                 <li>{{bookData?.pagesCount}} pages</li>
             </ul>
-                <b>{{bookData?.genreNames}}</b>
+            <b>{{bookData?.genreNames}}</b>
             <h2>About This Book</h2>
             <p class="book-description">{{bookData?.description}}</p>
             <h2>Book Details</h2>
@@ -52,20 +52,32 @@
                     </div>
                 </dl>
             </section>
-            @if(bookData?.libraryNames === undefined){
-            <h2>No Available Locaitons</h2>
-            }
-            @else {
-            <h2>Available Locaitons</h2>
-            <section class="libraries">
-                @for(library of bookData?.libraryNames; track bookData?.id){
-                <b>{{library}}</b>}
-            </section>
-            }
         </section>
     </section>
-    <section id="comment-section">
+
+    <section class="library-section">
+        @if(bookData?.libraryNames === undefined){
+    <h2>No Available Locaitons</h2>
+    }
+    @else {
+    <h2>Available Locaitons</h2>
+    <section class="libraries">
+        @for(library of havebookLibraries; track library?.id){
+        <app-library-panel [libraryPanel]="library"></app-library-panel>}
+    </section>
+    }
+    </section>
+    
+    <section class="comment-section">
+        @if(comments === []){
+    <h2>No Reviews Left Yet</h2>
+    }
+    @else {
+    <h2>Reviews</h2>
+    <section class="comments">
         @for(comment of comments; track comment?.id){
-            <app-comment-panel [commentPanel] = 'comment'></app-comment-panel>}
+        <app-comment-panel [commentPanel]='comment'></app-comment-panel>}
+        </section>
+    }
     </section>
 </main>
