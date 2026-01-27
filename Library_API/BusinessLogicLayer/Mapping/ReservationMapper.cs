@@ -10,18 +10,20 @@ namespace BusinessLogicLayer.Mapping
 {
     public static class ReservationMapper
     {
-        public static ReservationGetRequest ReservationToGetDto(this Reservation reservation)
+        public static ReservationGetRequest ReservationToGetDto(this Reservation reservation, Guid userId)
         {
             return new(
                 reservation.BookCopy.Title,
+                userId,
                 reservation.ReserveDate,
                 reservation.ExpiresAt,
                 reservation.IsClosed
                 );
         } 
 
-        public static void CreateDtoToReservation(this ReservationCreateRequest request, Reservation reservation)
+        public static void CreateDtoToReservation(this ReservationCreateRequest request, Reservation reservation, Guid userId)
         {
+            reservation.UserId = userId;
             reservation.BookCopyId = request.BookCopyId;
         }
 

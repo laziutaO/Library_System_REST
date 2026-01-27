@@ -36,14 +36,14 @@ export class BookDetails implements OnInit {
     this.type = this.route.snapshot.queryParamMap.get('type') as "ebook" | "copy";
     combineLatest([
       this.booksFacade.getBookById(this.bookPanelId, this.type),
-      this.reviewsService.getAllReviews(),
       this.librariesService.getAllLibraries()
-    ]).subscribe(([bookData, reviews, libraries]) => {
+    ]).subscribe(([bookData, libraries]) => {
       this.bookData = bookData;
-      this.comments = reviews;
       this.libraryList = libraries;
       this.havebookLibraries = this.libraryList.filter(lib => this.bookData?.libraryNames?.includes(lib.name));
     });
-    
+    this.reviewsService.getReviewsByBookId(this.bookPanelId).subscribe(reviews =>{
+      this.comments = reviews;
+    })
   }
 }

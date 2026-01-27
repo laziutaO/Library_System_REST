@@ -18,8 +18,6 @@ namespace DataAccessLayer.Repositories
             _libraryDbContext = libraryDbContext;
         }
 
-  
-
         public new async Task<IEnumerable<Reservation>> GetAllAsync()
         {
             List<Reservation> reservations = await _libraryDbContext.Reservations
@@ -39,7 +37,7 @@ namespace DataAccessLayer.Repositories
         public async Task<List<Reservation>> GetByUserAsync(Guid userId)
         {
             List<Reservation> reservationList = await _libraryDbContext.Reservations
-                //.Where(r => r.UserId == userId)
+                .Where(r => r.UserId == userId)
                 .Include(r => r.BookCopy).ToListAsync();
             return reservationList;
         }

@@ -3,12 +3,6 @@ using BusinessLogicLayer.DTOs;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using BusinessLogicLayer.Mapping;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Services
 {
@@ -22,17 +16,17 @@ namespace BusinessLogicLayer.Services
         }
 
 
-        public async Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reservationInfo)
+        public async Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reservationInfo, Guid userId)
         {
             Reservation reservation = new Reservation();
-            reservationInfo.CreateDtoToReservation(reservation);
+            reservationInfo.CreateDtoToReservation(reservation, userId);
             await _repository.CreateAsync(reservation);
             var fetchedReservation = await _repository.GetAsync(reservation.Id);
             if (fetchedReservation == null)
             {
                 throw new InvalidOperationException("Reservation could not be retrieved after creation.");
             }
-            return fetchedReservation.ReservationToGetDto();
+            return fetchedReservation.ReservationToGetDto(userId);
         }
 
         public async Task<ReservationGetRequest> DeleteReservationAsync(Guid id)
@@ -46,20 +40,20 @@ namespace BusinessLogicLayer.Services
 
             await _repository.DeleteAsync(reservation);
 
-            return reservation.ReservationToGetDto();
+            return reservation.ReservationToGetDto(reservation.UserId);
         }
 
         public async Task<IEnumerable<ReservationGetRequest>> GetAllReservationsAsync()
         {
             var reservations = await _repository.GetAllAsync();
-            var reservationsResponce = reservations.Select(r => r.ReservationToGetDto()).ToList();
+            var reservationsResponce = reservations.Select(r => r.ReservationToGetDto(r.UserId)).ToList();
             return reservationsResponce;
         }
 
         public async Task<ReservationGetRequest?> GetReservationAsync(Guid id)
         {
             var reservation = await _repository.GetAsync(id);
-            return reservation == null ? null : reservation.ReservationToGetDto();
+            return reservation == null ? null : reservation.ReservationToGetDto(reservation.UserId);
         }
 
         public async Task<ReservationGetRequest?> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv)
@@ -73,7 +67,7 @@ namespace BusinessLogicLayer.Services
             reserv.UpdateDtoToReservation(reservation);
             await _repository.UpdateAsync();
 
-            return reservation.ReservationToGetDto();
+            return reservation.ReservationToGetDto(reservation.UserId);
         }
 
         public async Task<List<ReservationGetRequest>?> GetReservationsByUserAsync(Guid userId)
@@ -83,7 +77,7 @@ namespace BusinessLogicLayer.Services
             {
                 return null;
             }
-            var reservationsList = reservations.Select(r=>r.ReservationToGetDto()).ToList();
+            var reservationsList = reservations.Select(r=>r.ReservationToGetDto(r.UserId)).ToList();
             return reservationsList;
         }
 
@@ -94,7 +88,7 @@ namespace BusinessLogicLayer.Services
             {
                 return null;
             }
-            var reservationsList = reservations.Select(r => r.ReservationToGetDto()).ToList();
+            var reservationsList = reservations.Select(r => r.ReservationToGetDto(r.UserId)).ToList();
             return reservationsList;
         }
     }

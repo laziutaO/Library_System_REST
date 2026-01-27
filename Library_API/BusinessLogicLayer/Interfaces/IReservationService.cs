@@ -1,11 +1,5 @@
 ﻿using BusinessLogicLayer.DTOs;
-using DataAccessLayer.Entities;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BusinessLogicLayer.Interfaces
 {
@@ -14,7 +8,7 @@ namespace BusinessLogicLayer.Interfaces
         Task<IEnumerable<ReservationGetRequest>> GetAllReservationsAsync();
         Task<ReservationGetRequest?> GetReservationAsync(Guid id);
 
-        Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reserv);
+        Task<ReservationGetRequest> CreateReservationAsync(ReservationCreateRequest reserv, Guid userId);
         Task<ReservationGetRequest?> UpdateReservationAsync(Guid id, ReservationUpdateRequest reserv);
         Task<ReservationGetRequest> DeleteReservationAsync(Guid id);
 

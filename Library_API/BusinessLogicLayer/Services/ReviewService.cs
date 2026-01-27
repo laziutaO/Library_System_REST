@@ -4,15 +4,7 @@ using BusinessLogicLayer.Mapping;
 using DataAccessLayer.Entities;
 using DataAccessLayer.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BusinessLogicLayer.Services
 {
     public class ReviewService : IReviewService
@@ -89,7 +81,7 @@ namespace BusinessLogicLayer.Services
         public async Task<List<ReviewGetRequest>?> GetReviewsByBookAsync(Guid bookId)
         {
             var fetchedReviews = await _reviewRepository.GetByBookAsync(bookId);
-            if (fetchedReviews.IsNullOrEmpty())
+            if (fetchedReviews == null || !fetchedReviews.Any())
             {
                 return null;
             }

@@ -57,27 +57,27 @@
 
     <section class="library-section">
         @if(bookData?.libraryNames === undefined){
-    <h2>No Available Locaitons</h2>
-    }
-    @else {
-    <h2>Available Locaitons</h2>
-    <section class="libraries">
-        @for(library of havebookLibraries; track library?.id){
-        <app-library-panel [libraryPanel]="library"></app-library-panel>}
-    </section>
-    }
-    </section>
-    
-    <section class="comment-section">
-        @if(comments === []){
-    <h2>No Reviews Left Yet</h2>
-    }
-    @else {
-    <h2>Reviews</h2>
-    <section class="comments">
-        @for(comment of comments; track comment?.id){
-        <app-comment-panel [commentPanel]='comment'></app-comment-panel>}
+        <h2>No Available Locaitons</h2>
+        }
+        @else {
+        <h2>Available Locaitons</h2>
+        <section class="libraries">
+            @for(library of havebookLibraries; track library?.id){
+            <app-library-panel [libraryPanel]="library"></app-library-panel>}
         </section>
-    }
+        }
+    </section>
+
+    <section class="comment-section">
+        @if(comments?.length === 0){
+        <h2>No Reviews Left Yet</h2>
+        }
+        @else {
+        <h2>Reviews</h2>
+        <section class="comments">
+            @for(comment of comments; track comment?.id){
+            <app-comment-panel [commentPanel]='comment'></app-comment-panel>}
+        </section>
+        }
     </section>
 </main>

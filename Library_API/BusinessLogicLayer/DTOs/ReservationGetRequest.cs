@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace BusinessLogicLayer.DTOs
 {
     public record ReservationGetRequest(
-        string BookTitle, 
+        string BookTitle,
+        Guid UserId,
         DateOnly ReserveDate, 
         DateOnly ExpiresAt, 
         bool IsClosed);

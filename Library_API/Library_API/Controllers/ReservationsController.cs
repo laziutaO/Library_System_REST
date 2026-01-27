@@ -1,14 +1,15 @@
-﻿using DataAccessLayer.Entities;
-using BusinessLogicLayer.DTOs;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
+﻿using BusinessLogicLayer.DTOs;
 using BusinessLogicLayer.Interfaces;
+using DataAccessLayer.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class ReservationsController:Controller
     {
         private readonly IReservationService _reservationService;
@@ -85,10 +86,16 @@ namespace Library_API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddReservation([FromBody]ReservationCreateRequest reservRequest)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId is null)
+                return Unauthorized();
+
+            var userGuid = Guid.Parse(userId);
             bool ableToReserve = true;
             if (!ableToReserve)
                 return Ok("Cannot make reservation because either user is blocked or there are no available books");
-            var reservation =  await _reservationService.CreateReservationAsync(reservRequest);
+            var reservation =  await _reservationService.CreateReservationAsync(reservRequest, userGuid);
             var output = new Dictionary<string, ReservationGetRequest>()
             {
                 ["reservations"] = reservation

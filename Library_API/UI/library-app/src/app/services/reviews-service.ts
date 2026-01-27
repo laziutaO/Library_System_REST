@@ -21,4 +21,8 @@ export class ReviewsService {
     getReviewById(id: string): Observable<ReviewData> {
       return this.http.get<ReviewResponce>(`${this.apiUrl}/${id}`).pipe(map(r => r["review"]));
     }
+
+    getReviewsByBookId(bookId: string): Observable<ReviewData[]> {
+      return this.http.get<ReviewsResponce>(`${this.apiUrl}/book`, { params: {bookId}}).pipe(map(r => r["reviews"]));
+    }
 }
