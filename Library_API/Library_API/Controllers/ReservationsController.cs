@@ -98,7 +98,7 @@ namespace Library_API.Controllers
             var reservation =  await _reservationService.CreateReservationAsync(reservRequest, userGuid);
             var output = new Dictionary<string, ReservationGetRequest>()
             {
-                ["reservations"] = reservation
+                ["reservation"] = reservation
             };
             return CreatedAtAction(nameof(AddReservation), output);
         }

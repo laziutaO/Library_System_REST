@@ -8,6 +8,7 @@ namespace BusinessLogicLayer.DTOs
 {
     public record BorrowingGetRequest(
         string BookTitle,
+        Guid LibraryId,
         DateOnly BorrowedDate,
         DateOnly DueDate,
         DateOnly? ReturnedAt,

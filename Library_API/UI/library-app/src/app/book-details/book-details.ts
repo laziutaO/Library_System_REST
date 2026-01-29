@@ -10,10 +10,14 @@ import { LibrariesService } from '../services/libraries-service';
 import { LibraryData } from '../interfaces/library-data';
 import { LibraryPanel } from '../library-panel/library-panel';
 import {combineLatest} from 'rxjs';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { signal } from '@angular/core';
+import { ReservationsService } from '../services/reservations-service';
+import { ReservationGetData } from '../interfaces/reservation-get-data';
 
 @Component({
   selector: 'app-book-details',
-  imports: [CommentPanel, CommonModule, LibraryPanel],
+  imports: [CommentPanel, CommonModule, LibraryPanel, ReactiveFormsModule],
   templateUrl: './book-details.html',
   styleUrl: './book-details.css'
 })
@@ -24,11 +28,16 @@ export class BookDetails implements OnInit {
   bookPanelId: string = "";
   type: "ebook" | "copy" | '' = '';
   havebookLibraries: LibraryData[] = [];
+  reservationForm = new FormControl('');
+  showReservationSuccessMessage = signal(false);
+  showReservationConfirmation = signal(false);
+  reservationData: ReservationGetData | null = null;
 
   constructor(private route: ActivatedRoute,
     private booksFacade: BooksFacadeService,
     private reviewsService: ReviewsService,
-  private librariesService: LibrariesService) {
+  private librariesService: LibrariesService,
+private reservationsService: ReservationsService) {
     this.bookPanelId = this.route.snapshot.paramMap.get('id')!;
   }
 
@@ -45,5 +54,15 @@ export class BookDetails implements OnInit {
     this.reviewsService.getReviewsByBookId(this.bookPanelId).subscribe(reviews =>{
       this.comments = reviews;
     })
+  }
+
+  reserveBook(): void{
+    if(this.reservationForm.value)
+      this.reservationsService.createReservation(this.reservationForm.value, this.bookPanelId)
+    .subscribe(resData =>{
+      this.reservationData = resData;
+      this.showReservationSuccessMessage.set(true);
+      this.showReservationConfirmation.set(false);
+    });
   }
 }

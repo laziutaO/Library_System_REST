@@ -14,9 +14,11 @@ namespace DataAccessLayer.Entities
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public Guid BookCopyId { get; set; }
+        public Guid LibraryId { get; set; }
         public DateOnly ReserveDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
         public DateOnly ExpiresAt { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(14);
         public bool IsClosed { get; set; } = false;
+
 
        
         public BookCopy BookCopy { get; set; } = null!;

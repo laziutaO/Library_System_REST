@@ -15,6 +15,7 @@ namespace BusinessLogicLayer.Mapping
         {
             return new(
                 borrowing.BookCopy.Title,
+                borrowing.LibraryId,
                 borrowing.BorrowedDate,
                 borrowing.DueDate,
                 borrowing.ReturnedAt,
@@ -24,6 +25,7 @@ namespace BusinessLogicLayer.Mapping
         public static void CreateDtoToBorrowing(this BorrowingCreateRequest request, Borrowing borrowing) 
         { 
             borrowing.BookCopyId = request.BookCopyId;
+            borrowing.LibraryId = request.LibraryId;
             borrowing.DueDate = request.DueDate;
         }
 

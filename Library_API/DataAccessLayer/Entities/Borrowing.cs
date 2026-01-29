@@ -11,8 +11,9 @@ namespace DataAccessLayer.Entities
     {
         [Key]
         public Guid Id { get; set; }
-        //public Guid UserId { get; set; }
+        public Guid UserId { get; set; }
         public Guid BookCopyId { get; set; }
+        public Guid LibraryId { get; set; }
         public DateOnly BorrowedDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
         public DateOnly DueDate { get; set; }
         public DateOnly? ReturnedAt { get; set; }

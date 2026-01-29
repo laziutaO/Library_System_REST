@@ -2,13 +2,28 @@
     <section id="book-section">
         <section class="get-book">
             <img class="book-img" [src]="bookData?.coverImageUrl">
-            @if(bookData?.libraryNames !== undefined){
-            <a class="get-book-button">Reserve Now</a>}
+            @if(bookData?.libraryNames !== undefined && !showReservationConfirmation()){
+            <button class="get-book-button" type="button" 
+            (click)="showReservationConfirmation.set(true)">Reserve Now</button>}
             @if(bookData?.fileUrl !== undefined){
             <button class="get-book-button" type="button">Free Download</button>}
             @else if(bookData?.libraryNames === undefined && bookData?.fileUrl === undefined){
             <p>This book is currently not available.</p>
             }
+            @if(showReservationConfirmation()){
+            <section class="reservation-confirmation">
+                <h3>Confirm Reservation</h3>
+                <p>Select a library to reserve this book:</p>
+                <select [formControl]="reservationForm">
+                    @for(library of havebookLibraries; track library?.id){
+                    <option [value]="library.id">{{library.name}}</option>}
+                </select>
+                <p>Are you sure you want to reserve this book?</p>
+                <button class="confirm-button" type="button" 
+                (click)="reserveBook()">Yes, Reserve</button>
+                <button class="cancel-button" type="button" 
+                (click)="showReservationConfirmation.set(false)">Cancel</button>
+        </section>}
         </section>
         <section class="description">
             <h2 class="book-title">{{bookData?.title}}</h2>

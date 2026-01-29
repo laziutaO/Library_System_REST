@@ -8,5 +8,6 @@ namespace BusinessLogicLayer.DTOs
 {
     public record BorrowingCreateRequest(
         Guid BookCopyId,
+        Guid LibraryId,
         DateOnly DueDate);
 }
