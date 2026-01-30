@@ -14,6 +14,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { signal } from '@angular/core';
 import { ReservationsService } from '../services/reservations-service';
 import { ReservationGetData } from '../interfaces/reservation-get-data';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-book-details',
@@ -37,7 +38,8 @@ export class BookDetails implements OnInit {
     private booksFacade: BooksFacadeService,
     private reviewsService: ReviewsService,
   private librariesService: LibrariesService,
-private reservationsService: ReservationsService) {
+private reservationsService: ReservationsService,
+private snackBar: MatSnackBar) {
     this.bookPanelId = this.route.snapshot.paramMap.get('id')!;
   }
 
@@ -63,6 +65,10 @@ private reservationsService: ReservationsService) {
       this.reservationData = resData;
       this.showReservationSuccessMessage.set(true);
       this.showReservationConfirmation.set(false);
+      this.snackBar.open('Reservation successful!', 'Close', 
+        { duration: 3000,
+          horizontalPosition: 'right'
+        });
     });
   }
 }
