@@ -1,14 +1,14 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form class="register-container" [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
-        <input type="text" placeholder="Username" formControlName="userName">
+        <input class="input-register" type="text" placeholder="Username" formControlName="userName">
     </div>
     <div>
-        <input type="text" placeholder="Email" formControlName="email">
+        <input class="input-register" type="text" placeholder="Email" formControlName="email">
     </div>
     <div>
-        <input type="password" placeholder="Password" formControlName="password">
+        <input class="input-register" type="password" placeholder="Password" formControlName="password">
     </div>
     <div>
-        <button type="submit">Sign Up</button>
+        <button class="submit" type="submit">Sign Up</button>
     </div>
 </form>

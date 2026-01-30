@@ -1,9 +1,15 @@
 #book-section {
   font-size: large;
-  padding-left: 20rem;
+  padding-left: 10%;
   padding-top: 5rem;
   display: flex;
 }
+
+.reserv-buttons-container{
+  display: flex;
+  gap: 10%;
+}
+
 
 .comments{
   padding-top: 5rem;
@@ -26,7 +32,7 @@
 }
 
 .description {
-    padding-left: 5rem;
+  padding-left: 5rem;
 }
 
 ul {
@@ -72,8 +78,40 @@ ul {
 .get-book{
   display: flex;
   flex-direction: column;
-  margin-bottom: 5rem;
-  max-width: 25rem;
+  margin-bottom: 3rem;
+  max-width: 20rem;
+}
+
+.reservation-confirmation{
+  margin-top: 1rem;
+  padding: 1rem;
+ border: 1px solid #000000;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.library-options{
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.reserv-button{
+  text-align: center;
+  padding: 0.8rem 1rem;
+  margin-top: 1rem;
+
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.reserv-button:hover {
+  background-color: #333;
 }
 
 
@@ -82,7 +120,6 @@ ul {
   text-align: center;
   padding: 0.6rem 1rem;
   margin-top: 1rem;
-
 
   background-color: #111;
   color: #fff;

@@ -14,15 +14,17 @@
             <section class="reservation-confirmation">
                 <h3>Confirm Reservation</h3>
                 <p>Select a library to reserve this book:</p>
-                <select [formControl]="reservationForm">
+                <select class="library-options" [formControl]="reservationForm">
                     @for(library of havebookLibraries; track library?.id){
                     <option [value]="library.id">{{library.name}}</option>}
                 </select>
                 <p>Are you sure you want to reserve this book?</p>
-                <button class="confirm-button" type="button" 
+                <div class ="reserv-buttons-container">
+                <button class="reserv-button" type="button" 
                 (click)="reserveBook()">Yes, Reserve</button>
-                <button class="cancel-button" type="button" 
+                <button class="reserv-button" type="button" 
                 (click)="showReservationConfirmation.set(false)">Cancel</button>
+                </div>
         </section>}
         </section>
         <section class="description">
