@@ -31,7 +31,8 @@
             <h2 class="book-title">{{bookData?.title}}</h2>
             <h4>By {{bookData?.authorNames}}</h4>
             <ul>
-                <li>4/5 rating(0 reviews)</li>
+                <li>{{meanReviewScore !== null ?
+                (meanReviewScore | number:'1.1-1') + '/10 rating' : ''}}({{reviewCount}} reviews)</li>
                 <li>published in {{bookData?.year}}</li>
                 <li>{{bookData?.pagesCount}} pages</li>
             </ul>
@@ -57,7 +58,8 @@
                 <dl>
                     <div>
                         <dt>Rating</dt>
-                        <dd>4/5</dd>
+                        <dd>{{meanReviewScore !== null ?
+                (meanReviewScore | number:'1.1-1') + '/10' : 'No reviews'}}</dd>
                     </div>
                     <div>
                         <dt>Availability</dt>

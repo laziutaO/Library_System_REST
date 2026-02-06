@@ -33,6 +33,8 @@ export class BookDetails implements OnInit {
   showReservationSuccessMessage = signal(false);
   showReservationConfirmation = signal(false);
   reservationData: ReservationGetData | null = null;
+  meanReviewScore: number | null = null;
+  reviewCount: number = 0;
 
   constructor(private route: ActivatedRoute,
     private booksFacade: BooksFacadeService,
@@ -55,6 +57,12 @@ private snackBar: MatSnackBar) {
     });
     this.reviewsService.getReviewsByBookId(this.bookPanelId).subscribe(reviews =>{
       this.comments = reviews;
+      let reviewSum = 0;
+      for(let rev of reviews){
+        reviewSum += rev.rating;
+      }
+      this.reviewCount = reviews.length;
+      this.meanReviewScore = reviews.length > 0 ? reviewSum / this.reviewCount : null;
     })
   }
 

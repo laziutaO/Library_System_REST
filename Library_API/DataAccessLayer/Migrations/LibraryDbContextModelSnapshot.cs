@@ -34,7 +34,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.Book", b =>
@@ -77,7 +77,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
 
                     b.HasDiscriminator().HasValue("Book");
 
@@ -102,7 +102,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("BookAuthors");
+                    b.ToTable("BookAuthors", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.BookGenre", b =>
@@ -123,7 +123,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("BookGenres");
+                    b.ToTable("BookGenres", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.Borrowing", b =>
@@ -154,7 +154,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("BookCopyId");
 
-                    b.ToTable("Borrowings");
+                    b.ToTable("Borrowings", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.Genre", b =>
@@ -170,7 +170,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.Library", b =>
@@ -211,7 +211,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Libraries");
+                    b.ToTable("Libraries", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.LibraryBook", b =>
@@ -232,7 +232,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("LibraryId");
 
-                    b.ToTable("LibraryBooks");
+                    b.ToTable("LibraryBooks", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.LibrarySchedule", b =>
@@ -262,7 +262,7 @@ namespace DataAccessLayer.Migrations
                     b.HasIndex("LibraryId", "DayOfWeek")
                         .IsUnique();
 
-                    b.ToTable("LibrarySchedules");
+                    b.ToTable("LibrarySchedules", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.Reservation", b =>
@@ -293,7 +293,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("BookCopyId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.Review", b =>
@@ -322,7 +322,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("DataAccessLayer.Entities.BookCopy", b =>
