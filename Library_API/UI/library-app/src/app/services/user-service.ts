@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserData } from '../interfaces/user-data';
 import { UserResponce } from '../interfaces/user-responce';
 import { UsersResponce } from '../interfaces/users-responce';
+import { UserUpdateRequest } from '../interfaces/user-update-request';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,16 @@ export class UserService {
 
   getUserById(id: string): Observable<UserData> {
     return this.http.get<UserResponce>(`${this.apiUrl}/${id}`).pipe(map(u => u["user"]));
+  }
+
+  getCurrentUser():Observable<UserData> {
+    return this.http.get<UserResponce>(`${this.apiUrl}/current`).pipe(map(u => u["user"]));
+  }
+  updateUser(id: string, userRequest: UserUpdateRequest): Observable<HttpResponse<void>>{
+    return this.http.patch<HttpResponse<void>>(`${this.apiUrl}/${id}`, userRequest);
+  }
+
+  deleteUser(id: string):Observable<HttpResponse<void>> {
+    return this.http.delete<HttpResponse<void>>(`${this.apiUrl}/${id}`);
   }
 }

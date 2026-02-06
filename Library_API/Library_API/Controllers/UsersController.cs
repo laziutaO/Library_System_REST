@@ -19,6 +19,7 @@ namespace Library_API.Controllers
             _userService = userService;
         }
         [HttpGet]
+        [Route("current")]
         public async Task<IActionResult> GetMe()
         {
             var user = await _userService.GetCurrentAsync(User);

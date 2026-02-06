@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.DTOs;
+using BusinessLogicLayer.Interfaces;
 using DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +8,7 @@ using System.Security.Claims;
 
 namespace BusinessLogicLayer.Services
 {
-    public class UserService
+    public class UserService: IUserService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         public UserService(UserManager<ApplicationUser> userManager) 
