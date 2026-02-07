@@ -21,6 +21,8 @@ export class Register {
   form = this.fb.nonNullable.group({
     userName: ['', Validators.required],
     email: ['', Validators.required],
+    firstName: ['', Validators.nullValidator],
+    lastName: ['', Validators.nullValidator],
     password: ['', Validators.required],
   });
   

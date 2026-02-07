@@ -44,12 +44,16 @@ namespace Library_API.Controllers
                 return Results.BadRequest(result.Errors);
 
             await _userManager.AddToRoleAsync(user, "User");
-             var token = await GetToken(user);
+
+            var userRoles = await _userManager.GetRolesAsync(user);
+            var token = GetToken(user);
             return Results.Ok(new
             {
                 userName = user.UserName,
                 email = user.Email,
-                tokenValue = token });
+                token = token.Result,
+                roles = userRoles
+            });
         }
 
         private async Task<string> GetToken(ApplicationUser user)
@@ -97,15 +101,15 @@ namespace Library_API.Controllers
             {
                 return Results.Unauthorized();
             }
-            
+            var userRoles = await _userManager.GetRolesAsync(user);
             var token = GetToken(user);
             return Results.Ok(new
             {
                 userName = user.UserName,
                 email = user.Email,
-                token = token.Result
+                token = token.Result,
+                roles = userRoles
             });
-        
     }
     }
 }

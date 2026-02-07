@@ -5,5 +5,6 @@ import { UserAuthData } from '../interfaces/user-auth-data';
   providedIn: 'root'
 })
 export class AuthService {
-  currentUser = signal<UserAuthData | undefined | null>(undefined)
+  currentUser = signal<UserAuthData | undefined | null>(undefined);
+  
 }
