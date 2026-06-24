@@ -43,6 +43,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddLibrary([FromBody] LibraryCreateRequest request)
         {
@@ -54,6 +55,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddLibrary), output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [Route("{libraryId:Guid}/books")]
         public async Task<IActionResult> AddBookToLibrary([FromRoute] Guid libraryId, [FromBody] BookIdDto bookRequest)
@@ -70,6 +72,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddBookToLibrary), output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{libraryId:Guid}/books")]
         public async Task<IActionResult> RemoveBook([FromRoute] Guid libraryId, [FromBody] string bookId)
@@ -82,6 +85,7 @@ namespace Library_API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateLibrary([FromRoute] Guid id, [FromBody] LibraryUpdateRequest request)
@@ -95,6 +99,7 @@ namespace Library_API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteLibrary([FromRoute] Guid id)

@@ -35,7 +35,8 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddAuthor(AuthorCreateRequest authorRequest)
         {
@@ -46,7 +47,8 @@ namespace Library_API.Controllers
             };
             return CreatedAtAction(nameof(AddAuthor), output);
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateAuthor([FromRoute] Guid id, AuthorUpdateRequest authorUpdateRequest)
@@ -61,7 +63,8 @@ namespace Library_API.Controllers
             return NoContent();
 
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteAuthor([FromRoute] Guid id)

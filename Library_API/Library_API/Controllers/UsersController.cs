@@ -28,7 +28,8 @@ namespace Library_API.Controllers
                 ["user"] = user
             });
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetUser([FromRoute] Guid id)
@@ -43,7 +44,8 @@ namespace Library_API.Controllers
                 ["user"] = user
             });
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -54,7 +56,8 @@ namespace Library_API.Controllers
             });
 
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpPatch]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateUser([FromRoute] Guid id, [FromBody] UserUpdateRequest request)
@@ -66,6 +69,7 @@ namespace Library_API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteUser([FromRoute] Guid id)

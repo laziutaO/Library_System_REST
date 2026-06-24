@@ -9,7 +9,7 @@ namespace Library_API.Controllers
 {
     [Controller]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class BorrowingsController : Controller
     {
         private readonly IBorrowingService _borrowingService;
@@ -18,6 +18,7 @@ namespace Library_API.Controllers
             _borrowingService = borrowingService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetBorrowingById([FromRoute]Guid id)
@@ -34,6 +35,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("user")]
         public async Task<IActionResult> GetBorrowingsByUser([FromQuery]Guid userId)
@@ -50,6 +52,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("book")]
         public async Task<IActionResult> GetBorrowingsByBook([FromQuery] Guid bookId)
@@ -66,6 +69,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> AddBorrowing([FromBody] BorrowingCreateRequest request)
         {
@@ -80,6 +84,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddBorrowing), output);
         }
 
+        [Authorize]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateBorrowing([FromRoute] Guid id, [FromBody]BorrowingUpdateRequest request)
@@ -91,7 +96,8 @@ namespace Library_API.Controllers
             }
             return NoContent();
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteBorrowing([FromRoute]Guid id)

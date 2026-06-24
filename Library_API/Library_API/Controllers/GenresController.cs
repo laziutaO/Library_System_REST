@@ -9,7 +9,7 @@ namespace Library_API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class GenresController : Controller
     {
         private readonly IGenreService _genreService;
@@ -46,6 +46,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPatch]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateGenre([FromRoute] Guid id, [FromBody] GenreUpdateRequest updateRequest)
@@ -58,6 +59,7 @@ namespace Library_API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddGenre(GenreCreateRequest createRequest)
         {
@@ -69,6 +71,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddGenre), output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteGenre([FromRoute] Guid id)

@@ -19,7 +19,7 @@ namespace Library_API.Controllers
             _bookService = bookService;
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAllBooks()
         {
@@ -31,7 +31,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetBook([FromRoute] Guid id)
@@ -77,7 +77,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddBook(EBookCreateRequest bookRequest)
         {
@@ -89,7 +89,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddBook), output);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateBook([FromRoute] Guid id, [FromBody] EBookUpdateRequest bookUpdateRequest)
@@ -104,7 +104,7 @@ namespace Library_API.Controllers
             return NoContent();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteBook([FromRoute] Guid id)

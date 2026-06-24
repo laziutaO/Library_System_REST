@@ -19,6 +19,7 @@ namespace Library_API.Controllers
             _reservationService = reservationService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAllReservations()
         {
@@ -34,6 +35,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetReservation([FromRoute] Guid id)
@@ -50,6 +52,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("user")]
         public async Task<IActionResult> GetReservationsByUser([FromQuery] Guid userId)
@@ -66,6 +69,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("book")]
         public async Task<IActionResult> GetReservationsByBook([FromQuery]Guid bookId)
@@ -83,6 +87,7 @@ namespace Library_API.Controllers
         }
 
         //to finish
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> AddReservation([FromBody]ReservationCreateRequest reservRequest)
         {
@@ -103,6 +108,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddReservation), output);
         }
 
+        [Authorize(Roles = "User")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateReservation([FromRoute] Guid id, [FromBody]ReservationUpdateRequest reservUpdateRequest)
@@ -116,7 +122,8 @@ namespace Library_API.Controllers
 
             return NoContent();
         }
-
+        
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteReservation([FromRoute] Guid id)

@@ -120,8 +120,8 @@ if (app.Environment.IsDevelopment())
         var db = scope.ServiceProvider.GetRequiredService<LibraryDbContext>();
         var authdb = scope.ServiceProvider.GetRequiredService<AuthDbContext>();
         db.Database.EnsureCreated();
-        //await DatabaseSeeder.SeedEbooksAsync(db);
-        //await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
+        await DatabaseSeeder.SeedEbooksAsync(db);
+        await RoleSeeder.SeedRolesAsync(scope.ServiceProvider);
         await AdminUserSeeder.SeedAdminAsync(scope.ServiceProvider);
     }
 }

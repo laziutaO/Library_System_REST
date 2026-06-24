@@ -17,7 +17,7 @@ namespace Library_API.Controllers
         {
             _reviewService = reviewService;
         }
-
+        
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<IActionResult> GetAllReviews()
@@ -33,6 +33,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
+        
         [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("{id:Guid}")]
@@ -49,7 +50,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet]
         [Route("user")]
         public async Task<IActionResult> GetReviewsByUser([FromQuery] Guid userId)
@@ -65,7 +66,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-        [Authorize(Roles = "Admin")]
+
         [HttpGet]
         [Route("book")]
         public async Task<IActionResult> GetReviewsByBook([FromQuery] Guid bookId)
@@ -81,7 +82,7 @@ namespace Library_API.Controllers
             };
             return Ok(output);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "User")]
         [HttpPost]
         public async Task<IActionResult> AddReview([FromBody] ReviewCreateRequest reservRequest)
         {
@@ -99,7 +100,7 @@ namespace Library_API.Controllers
             };
             return CreatedAtAction(nameof(AddReview), output);  
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "User")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateReview([FromRoute] Guid id, [FromBody] ReviewUpdateRequest updateRequest)
@@ -113,7 +114,7 @@ namespace Library_API.Controllers
 
             return NoContent();
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "User")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteReview([FromRoute] Guid id)

@@ -65,6 +65,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        
         [HttpGet]
         [Route("genres/{genre}")]
         public async Task<IActionResult> GetBookCopyByGenre([FromRoute] string genre)
@@ -81,6 +82,7 @@ namespace Library_API.Controllers
             return Ok(output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> AddBookCopy([FromBody] BookCopyCreateRequest request)
         {
@@ -92,6 +94,7 @@ namespace Library_API.Controllers
             return CreatedAtAction(nameof(AddBookCopy), output);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:Guid}")]
         public async Task<IActionResult> UpdateBookCopy([FromRoute] Guid id, [FromBody] BookCopyUpdateRequest request)
@@ -104,6 +107,7 @@ namespace Library_API.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:Guid}")]
         public async Task<IActionResult> DeleteBookCopy([FromRoute] Guid id)
