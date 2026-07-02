@@ -19,7 +19,7 @@ main {
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 700px;
+    width: 30rem;
 }
 
 p {
@@ -27,8 +27,8 @@ p {
 }
 
 .library-image {
-    width: 800px;
-    height: 500px;
+    width: 40rem;
+    height: 25rem;
     object-fit: fill;
     border-radius: 8px;
     padding-top: 3rem;

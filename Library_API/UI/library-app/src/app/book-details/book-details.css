@@ -136,6 +136,7 @@ ul {
 }
 
 .book-img{
-  width: 100%; 
+  width: 20rem; 
+  height: 30rem;
   display: block;
 }

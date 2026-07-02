@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net10.0": {
       "Azure.Core/1.38.0": {
@@ -3802,36 +3802,44 @@
     ]
   },
   "packageFolders": {
-    "/home/oleksii/.nuget/packages/": {}
+    "C:\\Users\\lazyu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/oleksii/projects/Libra/Library_System_REST/Library_API/Library_API/Library_API.csproj",
+      "projectUniqueName": "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\Library_API\\Library_API.csproj",
       "projectName": "Library_API",
-      "projectPath": "/home/oleksii/projects/Libra/Library_System_REST/Library_API/Library_API/Library_API.csproj",
-      "packagesPath": "/home/oleksii/.nuget/packages/",
-      "outputPath": "/home/oleksii/projects/Libra/Library_System_REST/Library_API/Library_API/obj/",
+      "projectPath": "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\Library_API\\Library_API.csproj",
+      "packagesPath": "C:\\Users\\lazyu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\Library_API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/oleksii/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\lazyu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "/usr/lib/dotnet/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/home/oleksii/projects/Libra/Library_System_REST/Library_API/BusinessLogicLayer/BusinessLogicLayer.csproj": {
-              "projectPath": "/home/oleksii/projects/Libra/Library_System_REST/Library_API/BusinessLogicLayer/BusinessLogicLayer.csproj"
+            "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+              "projectPath": "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
             },
-            "/home/oleksii/projects/Libra/Library_System_REST/Library_API/DataAccessLayer/DataAccessLayer.csproj": {
-              "projectPath": "/home/oleksii/projects/Libra/Library_System_REST/Library_API/DataAccessLayer/DataAccessLayer.csproj"
+            "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\lazyu\\projects\\Library_System_REST\\Library_API\\DataAccessLayer\\DataAccessLayer.csproj"
             }
           }
         }
@@ -3846,10 +3854,11 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net10.0": {
+        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Bogus": {
@@ -3922,7 +3931,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.107/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
