@@ -1,0 +1,54 @@
+h1 {
+  margin-left: 1rem;
+}
+
+#sidenav-images{
+  margin-right:1rem;
+}
+ul li {
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+ul li p {
+  white-space: nowrap;
+  display: none;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0.2rem 1rem;
+  min-width: 2rem;
+  margin-left:1rem;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  display: none;
+}
+
+nav {
+  background-color: white;
+  margin: 2rem 0 2rem 1rem;
+  border: 1px solid #ccc;
+  max-width: 7rem;
+  transition: max-width 0.6s ease;
+}
+
+nav:hover {
+  max-width: 15rem;
+}
+
+nav:hover a {
+  display: block;
+}
+
+nav:hover ul li p {
+  display: block;
+}
