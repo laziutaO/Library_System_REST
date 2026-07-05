@@ -1,1 +1,45 @@
-<p>books-manage works!</p>
+<body id="container">
+    <form class="search-bar">
+        <input type="text" placeholder="Search books, authors..." 
+        [value]="filterService.filterBookAdmin()"
+        (input)="filterService.filterBookAdmin.set($any($event.target).value)">
+    </form>
+    <table class="book-table">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Publisher</th>
+            <th>Year</th>
+            <th>Pages</th>
+            <th>Description</th>
+            <th>Copies Available</th>
+            <th>Authors</th>
+            <th>Genres</th>
+            <th>Status</th>
+            <th>Library</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+        @for(book of bookList(); track book.id){
+        <tr>
+            <td>{{book.title}}</td>
+            <td>{{book.authorNames}}</td>
+            <td>{{book.isbn}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.pagesCount}}</td>
+            <td>{{book.description}}</td>
+            <td>{{book.bookAccessType}}</td>
+            <td>{{book.authorNames}}</td>
+            <td>{{book.genreNames}}</td>
+            <td>{{book.status}}</td>
+            <td>{{book.libraryNames}}</td>
+            <td>{{book.type}}</td>
+            <td class="actions-column">
+                <a [routerLink]="['edit', book.id]" [queryParams]="{ type: book.type }">Edit</a>
+                <button (click)="deleteBook(book.id, book.type)">Delete</button>
+            </td>
+        </tr>}
+    </table>
+</body>

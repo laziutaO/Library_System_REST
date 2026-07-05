@@ -28,4 +28,7 @@ export class EbooksService {
     return this.http.get<BooksResponce>(this.apiUrlGetByGenres + genre)
     .pipe(map(book => book["books"].map(b => ({ ...b, type: 'ebook' as const }))));
   }
+  deleteBook(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }

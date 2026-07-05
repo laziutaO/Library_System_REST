@@ -28,4 +28,7 @@ export class BookCopiesService{
     return this.http.get<BooksResponce>(this.apiUrlGetByGenres + genre)
     .pipe(map(book => book["books"].map(b => ({ ...b, type: 'copy' as const }))));
   }
+  deleteBook(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
