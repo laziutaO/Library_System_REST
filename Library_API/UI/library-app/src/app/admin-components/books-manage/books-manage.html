@@ -1,9 +1,11 @@
 <body id="container">
-    <form class="search-bar">
-        <input type="text" placeholder="Search books, authors..." 
-        [value]="filterService.filterBookAdmin()"
-        (input)="filterService.filterBookAdmin.set($any($event.target).value)">
+    <section id="options">
+        <a class ="alter-button" [routerLink]="['add']">Add Book</a>
+        <form class="search-bar">
+        <input type="text" placeholder="Search books..." [value]="filterService.filterBookAdmin()"
+            (input)="filterService.filterBookAdmin.set($any($event.target).value)">
     </form>
+    </section>
     <table class="book-table">
         <tr>
             <th>Title</th>
@@ -21,7 +23,7 @@
             <th>Type</th>
             <th>Actions</th>
         </tr>
-        @for(book of bookList(); track book.id){
+        @for(book of filteredBooksList(); track book.id){
         <tr>
             <td>{{book.title}}</td>
             <td>{{book.authorNames}}</td>
@@ -37,9 +39,9 @@
             <td>{{book.libraryNames}}</td>
             <td>{{book.type}}</td>
             <td class="actions-column">
-                <a [routerLink]="['edit', book.id]" [queryParams]="{ type: book.type }">Edit</a>
+                <a class="alter-button" [routerLink]="['edit', book.id]" [queryParams]="{ type: book.type }">Edit</a>
                 <button (click)="deleteBook(book.id, book.type)">Delete</button>
             </td>
-        </tr>}
+            }
     </table>
 </body>

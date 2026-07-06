@@ -13,14 +13,14 @@ import { FilterService } from '../../services/filter-service';
 })
 export class BooksManage {
   bookList= signal<BookData[]>([]);
-  public filteredBooksList = signal<BookData[]>([]);
+  public filteredBooksList = computed(()=>this.bookList()
+  .filter(book => book.title.toLowerCase()
+  .includes(this.filterService.debouncedFilterBooks().toLowerCase())));
 
   constructor(private ebooksService: EbooksService,
     private bookCopiesService: BookCopiesService,
     public filterService: FilterService) {
-    effect(() => {
-      this.bookList.set(this.bookList().filter(book => book.title.toLowerCase().includes(this.filterService.debouncedFilterText().toLowerCase())));
-    })
+
   }
   ngOnInit(): void {
     this.ebooksService.getAllEbooks().subscribe((data) => {
