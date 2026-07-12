@@ -13,6 +13,7 @@ namespace BusinessLogicLayer.Mapping
         public static AuthorGetRequest AuthorToGetDto(this Author author)
         {
             return new(
+                author.Id.ToString(),
                 author.Name,
                 author.BookAuthors.Select(ba => ba.Book.Title).ToList());
         }

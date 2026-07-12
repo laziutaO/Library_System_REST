@@ -16,6 +16,14 @@ namespace DataAccessLayer.Repositories
         {
 
         }
+        public new async Task<IEnumerable<Author>> GetAllAsync()
+        {
+            var authors = await libraryDbContext.Authors
+                .Include(b => b.BookAuthors)
+                .ThenInclude(ba => ba.Book)
+                .ToListAsync();
+            return authors;
+        }
         public new async Task<Author?> GetAsync(Guid id)
         {
             var author = await libraryDbContext.Authors

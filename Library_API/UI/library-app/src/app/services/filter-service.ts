@@ -9,6 +9,7 @@ export class FilterService {
   public filterText = signal('');
   public filterLibrary = signal('');
   public filterBookAdmin = signal('');
+  public filterAuthors = signal('');
 
    debouncedFilterText = toSignal(
     toObservable(this.filterText).pipe(
@@ -36,4 +37,14 @@ export class FilterService {
     ),
     { initialValue: '' }
   );
+
+  debouncedFilterAuthors = toSignal(
+    toObservable(this.filterAuthors).pipe(
+      debounceTime(100),
+      distinctUntilChanged(),
+      map(value => value.trim())
+    ),
+    { initialValue: '' }  
+    );
+  
 }

@@ -65,5 +65,12 @@ namespace BusinessLogicLayer.Services
             return author.AuthorToGetDto();
         }
 
+        public async Task<IEnumerable<AuthorGetRequest>> GetAllAuthorsAsync()
+        {
+            var authors = await _repository.GetAllAsync();
+            var authorResponce = authors.Select(a => a.AuthorToGetDto());
+            return authorResponce;
+        }
+
     }
 }

@@ -1,1 +1,39 @@
-<p>add-book-form works!</p>
+<form [formGroup]="addBookForm">
+
+    <input class="input-add" type="text" placeholder="Title" formControlName="title">
+
+    <input class="input-add" type="text" placeholder="ISBN" formControlName="isbn">
+
+    <input class="input-add" type="text" placeholder="Publisher" formControlName="publisher">
+    <input class="input-add" type="number" placeholder="Publication Year" formControlName="publicationYear">
+    <input class="input-add" type="number" placeholder="Number of Pages" formControlName="numberOfPages">
+    <input class="input-add" type="text" placeholder="Description" formControlName="description">
+    <input class="input-add" type="url" placeholder="Cover image URL" formControlName="coverImage">
+    <input class="input-add" type="url" placeholder="File URL" formControlName="file">
+    <select class="select-add" formControlName="accessType">
+        <option value="Free">Ebook</option>
+        <option value="Paid">Book Copy</option>
+    </select>
+    <select class="select-add" formControlName="category">
+        <option value="ebook">Ebook</option>
+        <option value="copy">Book Copy</option>
+    </select>
+    <section class="input-chips">
+        <mat-autocomplete #auto="matAutocomplete">
+            @for (filteredAuthor of filteredAuthorsList(); track filteredAuthor) {
+            <mat-option [value]="filteredAuthor">{{filteredAuthor.name}}</mat-option>
+            }
+        </mat-autocomplete>
+        <mat-form-field>
+            <mat-chip-grid #authorChips aria-label="Author selection">
+                <input class="input-chip" placeholder="Authors" [matChipInputFor]="authorChips"
+                        (matChipInputTokenEnd)="addAuthor($event)" [matAutocomplete]="auto" formControlName="author">
+                @for(author of searchedAuthors; track author){
+                <mat-chip-row>
+                    {{author}}
+                </mat-chip-row>
+                }
+            </mat-chip-grid>
+        </mat-form-field>
+    </section>
+</form>

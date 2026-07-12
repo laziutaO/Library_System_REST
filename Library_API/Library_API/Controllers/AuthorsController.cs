@@ -20,6 +20,21 @@ namespace Library_API.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetAllAuthors()
+        {
+            var authors = await _authorService.GetAllAuthorsAsync();
+            if (authors == null)
+            {
+                return NotFound();
+            }
+            var output = new Dictionary<string, IEnumerable<AuthorGetRequest>>()
+            {
+                ["authors"] = authors
+            };
+            return Ok(output);
+        }
+
+        [HttpGet]
         [Route("{id:Guid}")]
         public async Task<IActionResult> GetAuthor([FromRoute] Guid id)
         {

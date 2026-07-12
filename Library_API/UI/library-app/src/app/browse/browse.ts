@@ -40,7 +40,6 @@ export class Browse implements OnInit {
   }
 
   filterBooks(text: string | null) {
-    console.log(text);
     if (!text) {
       this.selectedGenre = 'All Books';
       this.booksList.set([]);
