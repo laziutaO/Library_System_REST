@@ -5,7 +5,7 @@ import { BookResponce } from '../interfaces/book-responce';
 import { BooksResponce } from '../interfaces/books-responce';
 import { map } from 'rxjs/operators';
 import { BookData } from '../interfaces/book-data';
-
+import { BookCopyCreateRequest } from '../interfaces/book-copy-create-request';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +30,8 @@ export class BookCopiesService{
   }
   deleteBook(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  createBook(book: BookCopyCreateRequest): Observable<any> {
+    return this.http.post(this.apiUrl, book);
   }
 }
