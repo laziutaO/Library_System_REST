@@ -12,8 +12,8 @@ import { FilterService } from '../../services/filter-service';
 import { MatAutocompleteModule, MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { EbooksService } from '../../services/ebooks-service';
 import { BookCopiesService } from '../../services/book-copies-service';
-import { EbookCreateRequest} from '../../interfaces/ebook-create-request';
-import {BookCopyCreateRequest} from '../../interfaces/book-copy-create-request';
+import { EbookRequest} from '../../interfaces/ebook-create-request';
+import {BookCopyRequest} from '../../interfaces/book-copy-create-request';
 import {LibraryData} from '../../interfaces/library-data';
 import {LibrariesService} from '../../services/libraries-service';
 
@@ -94,7 +94,7 @@ export class AddBookForm {
     });
   }
   onSubmit() {
-    const copyRequest: BookCopyCreateRequest = {
+    const copyRequest: BookCopyRequest = {
       title: this.addBookForm.value.title!,
       isbn: this.addBookForm.value.isbn!,
       publisher: this.addBookForm.value.publisher!,
@@ -108,7 +108,7 @@ export class AddBookForm {
       libraryNames: this.searchedLibraries
     };
 
-      const ebookRequest: EbookCreateRequest = {
+      const ebookRequest: EbookRequest = {
       title: this.addBookForm.value.title!,
       isbn: this.addBookForm.value.isbn!,
       publisher: this.addBookForm.value.publisher!,

@@ -1,4 +1,4 @@
-export interface EbookCreateRequest {
+export interface EbookRequest {
     title: string,
     isbn: string,
     publisher: string,

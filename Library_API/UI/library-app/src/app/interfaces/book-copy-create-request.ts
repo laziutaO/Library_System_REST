@@ -1,4 +1,4 @@
-export interface BookCopyCreateRequest {
+export interface BookCopyRequest {
     title: string,
     isbn: string,
     publisher: string,

@@ -50,7 +50,7 @@ private snackBar: MatSnackBar) {
     combineLatest([
       this.booksFacade.getBookById(this.bookPanelId, this.type),
       this.librariesService.getAllLibraries()
-    ]).subscribe(([bookData, libraries]) => {
+    ]).subscribe(([bookData, libraries]) => { 
       this.bookData = bookData;
       this.libraryList = libraries;
       this.havebookLibraries = this.libraryList.filter(lib => this.bookData?.libraryNames?.includes(lib.name));
