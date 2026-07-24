@@ -37,13 +37,14 @@ nav {
   background-color: white;
   margin: 0rem 0 2rem 1rem;
   border: 1px solid #ccc;
-  width: 7rem;
+  min-width: 7rem;
+  flex: 0 0 7rem;
   transition: width 0.6s ease;
  
 }
 
 nav:hover {
-  width: 15rem;
+  flex-basis: 15rem;
 }
 
 nav:hover a {

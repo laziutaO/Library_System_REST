@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LibsManage } from './libs-manage';
+import { LibrariesManage } from './libraries-manage';
 
-describe('LibsManage', () => {
-  let component: LibsManage;
-  let fixture: ComponentFixture<LibsManage>;
+describe('LibrariesManage', () => {
+  let component: LibrariesManage;
+  let fixture: ComponentFixture<LibrariesManage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LibsManage]
+      imports: [LibrariesManage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LibsManage);
+    fixture = TestBed.createComponent(LibrariesManage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

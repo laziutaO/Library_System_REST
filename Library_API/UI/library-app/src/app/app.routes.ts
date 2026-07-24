@@ -10,11 +10,13 @@ import { Register } from './register/register';
 import { adminGuard } from './guards/admin-guard';
 import { UsersManage } from './admin-components/users-manage/users-manage';
 import { BooksManage } from './admin-components/books-manage/books-manage';
-import { LibsManage } from './admin-components/libs-manage/libs-manage';
 import { AdminHome } from './admin-components/admin-home/admin-home';
 import { AdminLayoutComponent } from './admin-components/admin-layout-component/admin-layout-component';
 import { EditBookForm} from './admin-components/edit-book-form/edit-book-form';
 import { AddBookForm} from './admin-components/add-book-form/add-book-form';
+import { LibrariesManage } from './admin-components/libraries-manage/libraries-manage';
+import { EditLibraryForm } from './admin-components/edit-library-form/edit-library-form';
+import { AddLibraryForm } from './admin-components/add-library-form/add-library-form';
 
 export const routes: Routes = [
     { path: '', component: Home },
@@ -34,9 +36,11 @@ export const routes: Routes = [
             {path: 'home', component: AdminHome },
             {path: 'users', component: UsersManage},
             {path: 'books', component: BooksManage},
-            {path: 'libraries', component: LibsManage},
+            {path: 'libraries', component: LibrariesManage},
             {path: 'books/edit/:id', component: EditBookForm },
-            {path: 'books/add', component: AddBookForm }
+            {path: 'books/add', component: AddBookForm },
+            {path: 'libraries/edit/:id', component: EditLibraryForm },
+            {path: 'libraries/add', component: AddLibraryForm },
         ]
     }
 ];

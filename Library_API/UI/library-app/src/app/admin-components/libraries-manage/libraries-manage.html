@@ -1,0 +1,36 @@
+<div id="container">
+    <section id="options">
+        <a class ="add-button" [routerLink]="['add']">Add Library</a>
+        <form class="search-bar">
+        <input type="text" placeholder="Search libraries..." [value]="filterService.filterLibrary()"
+            (input)="filterService.filterLibrary.set($any($event.target).value)">
+    </form>
+    </section>
+    <table class="book-table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Study Rooms</th>
+            <th>Computers</th>
+            <th>Actions</th>
+        </tr>
+        @for(library of filteredLibrariesList(); track library.id){
+        <tr>
+            <td>{{library.name}}</td>
+            <td>{{library.description}}</td>
+            <td>{{library.address}}</td>
+            <td>{{library.phone}}</td>
+            <td>{{library.email}}</td>
+            <td>{{library.studyRooms}}</td>
+            <td>{{library.computers}}</td>
+           
+            <td class="actions-column">
+                <a class="alter-button" [routerLink]="['edit', library.id]">Edit</a>
+                <button class="alter-button" (click)="deleteLibrary(library.id)">Delete</button>
+            </td>
+            }
+    </table>
+</div>   

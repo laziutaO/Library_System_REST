@@ -1,6 +1,6 @@
-<body id="container">
+<div id="container">
     <section id="options">
-        <a class ="alter-button" [routerLink]="['add']">Add Book</a>
+        <a class ="add-button" [routerLink]="['add']">Add Book</a>
         <form class="search-bar">
         <input type="text" placeholder="Search books..." [value]="filterService.filterBookAdmin()"
             (input)="filterService.filterBookAdmin.set($any($event.target).value)">
@@ -40,8 +40,8 @@
             <td>{{book.type}}</td>
             <td class="actions-column">
                 <a class="alter-button" [routerLink]="['edit', book.id]" [queryParams]="{ type: book.type }">Edit</a>
-                <button (click)="deleteBook(book.id, book.type)">Delete</button>
+                <button class="alter-button" (click)="deleteBook(book.id, book.type)">Delete</button>
             </td>
             }
     </table>
-</body>
+</div>

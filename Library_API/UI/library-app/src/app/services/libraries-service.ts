@@ -20,4 +20,8 @@ export class LibrariesService {
   getLibraryById(id: string): Observable<LibraryData>{
     return this.http.get<LibraryResponce>(`${this.apiUrl}/${id}`).pipe(map(library=> library['library']));
   }
+
+  deleteLibrary(id: string):Observable<any>{
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
