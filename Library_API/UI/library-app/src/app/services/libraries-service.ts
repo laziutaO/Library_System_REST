@@ -5,6 +5,7 @@ import { LibraryData } from '../interfaces/library-data';
 import { LibrariesResponce } from '../interfaces/libraries-responce';
 import { map } from 'rxjs/operators';
 import { LibraryResponce } from '../interfaces/library-responce';
+import {LibraryRequest} from '../interfaces/library-request'
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,8 @@ export class LibrariesService {
 
   deleteLibrary(id: string):Observable<any>{
     return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  createLibrary(request: LibraryRequest): Observable<any>{
+    return this.http.post(this.apiUrl, request);
   }
 }
