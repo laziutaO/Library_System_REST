@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal, computed, effect } from '@angular/co
 import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LibrariesService } from '../../services/libraries-service';
 import { LibraryRequest } from '../../interfaces/library-request';
+import {ScheduleRequest} from '../../interfaces/schedule-request';
 
 @Component({
   selector: 'app-add-library-form',
@@ -10,13 +11,6 @@ import { LibraryRequest } from '../../interfaces/library-request';
   templateUrl: './add-library-form.html',
   styleUrl: './add-library-form.css',
 })
-  type scheduleForDay = {
-    dayOfWeek: string,
-    openTime: string | null,
-    closeTime: string | null,
-    isClosed: boolean
-  }
-
 export class AddLibraryForm {
   fb = inject(FormBuilder);
   libraryService = inject(LibrariesService);
@@ -58,7 +52,7 @@ export class AddLibraryForm {
       email: this.addLibraryForm.value.email!,
       studyRooms: this.addLibraryForm.value.studyRooms!,
       computers: this.addLibraryForm.value.computers!,
-      schedule: this.addLibraryForm.value.schedule!,
+      schedule: this.addLibraryForm.value.schedule! as ScheduleRequest[],
     };
     this.libraryService.createLibrary(request).subscribe();
   }

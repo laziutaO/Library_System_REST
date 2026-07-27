@@ -1,3 +1,5 @@
+import {ScheduleRequest} from './schedule-request';
+
 export interface LibraryRequest {
     name: string,
     description: string,
@@ -7,12 +9,5 @@ export interface LibraryRequest {
     email: string,
     studyRooms: number,
     computers: number,
-    schedule: daySchedule[]
-}
-
-type daySchedule =  {    
-    dayOfWeek: string,
-    openTime: string | null,
-    closeTime: string | null,
-    isClosed: boolean
+    schedule: ScheduleRequest[]
 }

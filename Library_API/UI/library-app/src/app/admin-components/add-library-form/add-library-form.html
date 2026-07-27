@@ -1,6 +1,6 @@
 <body id="container">
 <form [formGroup]="addLibraryForm" id="add-book-form" (ngSubmit)="onSubmit()">
-    <input class="input-add" type="text" placeholder="Title" formControlName="description">
+    <input class="input-add" type="text" placeholder="Description" formControlName="description">
     <input class="input-add" type="url" placeholder="Cover image URL" formControlName="coverImageUrl">
     <input class="input-add" type="text" placeholder="Name" formControlName="name">
     <input class="input-add" type="text" placeholder="Address" formControlName="address">
@@ -8,44 +8,64 @@
     <input class="input-add" type="text" placeholder="Email" formControlName="email">
     <input class="input-add-n" type="number" placeholder="Study Rooms Number" formControlName="studyRooms">
     <input class="input-add-n" type="number" placeholder="Computers Number" formControlName="computers">
-    <section>
+    <div formArrayName="schedule">
+    <section [formGroupName]="0">
         <label>Monday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[0].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[0].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
         <label>
-            <input type="checkbox" formControlName="schedule[0].isClosed">Closed
+            <input type="checkbox" formControlName="isClosed">Closed
         </label>
     </section>
-    <section>
+    <section [formGroupName]="1">
         <label>Tuesday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[1].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[1].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
+        <label>
+            <input type="checkbox" formControlName="isClosed">Closed
+        </label>
     </section>
-    <section>
+    <section [formGroupName]="2">
         <label>Wednesday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[2].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[2].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
+        <label>
+            <input type="checkbox" formControlName="isClosed">Closed
+        </label>
     </section>
-    <section>
+    <section [formGroupName]="3">
         <label>Thursday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[3].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[3].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
+        <label>
+            <input type="checkbox" formControlName="isClosed">Closed
+        </label>
     </section>
-    <section>
+    <section [formGroupName]="4">
         <label>Friday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[4].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[4].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
+        <label>
+            <input type="checkbox" formControlName="isClosed">Closed
+        </label>
     </section>
-    <section>
+    <section [formGroupName]="5">
         <label>Saturday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[5].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[5].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
+                <label>
+            <input type="checkbox" formControlName="isClosed">Closed
+        </label>
     </section>
-    <section>
+    <section [formGroupName]="6">
         <label>Sunday</label>
-        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="schedule[6].openTime">
-        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="schedule[6].closeTime">
+        <input class="input-add" type="time" placeholder="Time opening(00:00)" formControlName="openTime">
+        <input class="input-add" type="time" placeholder="Time closing(00:00)" formControlName="closeTime">
+        <label>
+            <input type="checkbox" formControlName="isClosed">Closed
+        </label>
     </section>
+</div>
     <div>
         <button class="submit" type="submit">Add Library</button>
     </div>
