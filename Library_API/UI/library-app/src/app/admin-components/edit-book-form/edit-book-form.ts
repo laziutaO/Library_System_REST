@@ -19,6 +19,7 @@ import { LibrariesService } from '../../services/libraries-service';
 import { ActivatedRoute } from '@angular/router';
 import { BooksFacadeService } from '../../services/books-facade-service';
 import { BookData } from '../../interfaces/book-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-book-form',
@@ -30,6 +31,7 @@ import { BookData } from '../../interfaces/book-data';
 })
 export class EditBookForm {
   fb = inject(FormBuilder);
+  router = inject(Router)
   authorService = inject(AuthorSerivce);
   libraryService = inject(LibrariesService);
   filterService = inject(FilterService);
@@ -155,6 +157,7 @@ export class EditBookForm {
     else {
       this.ebooksService.updateBook(this.bookId, ebookRequest).subscribe();
     }
+    this.router.navigateByUrl('/admin/books');
   }
 
   addAuthor(event: MatChipInputEvent): void {

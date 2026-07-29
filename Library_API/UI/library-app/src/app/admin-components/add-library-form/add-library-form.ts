@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { LibrariesService } from '../../services/libraries-service';
 import { LibraryRequest } from '../../interfaces/library-request';
 import {ScheduleRequest} from '../../interfaces/schedule-request';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-library-form',
@@ -13,6 +14,7 @@ import {ScheduleRequest} from '../../interfaces/schedule-request';
 })
 export class AddLibraryForm {
   fb = inject(FormBuilder);
+  router = inject(Router)
   libraryService = inject(LibrariesService);
 
   days = [
@@ -55,6 +57,7 @@ export class AddLibraryForm {
       schedule: this.addLibraryForm.value.schedule! as ScheduleRequest[],
     };
     this.libraryService.createLibrary(request).subscribe();
+    this.router.navigateByUrl('/admin/libraries');
   }
 
 

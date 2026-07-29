@@ -13,21 +13,15 @@ import { Router } from '@angular/router';
   styleUrl: './user-profile.css'
 })
 export class UserProfile implements OnInit{
-  userData: UserData = {
-    userName: '',
-    email: '',
-    phone: undefined
-  };
+  userData!: UserData
   userService = inject(UserService);
   authService = inject(AuthService);
   route = inject(ActivatedRoute)
   router = inject(Router)
-  constructor(){
 
-  }
 ngOnInit(): void {
-    this.userData.userName = this.authService.currentUser()?.userName; 
-    this.userData.email = this.authService.currentUser()?.email;
+    this.userData.userName = this.authService.currentUser()!.userName; 
+    this.userData.email = this.authService.currentUser()!.email;
 }
 
 logout():void {

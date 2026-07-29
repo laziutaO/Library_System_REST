@@ -14,6 +14,7 @@ export class UserService {
   private apiUrl = "https://localhost:7103/api/Users";
 
   constructor(private http: HttpClient) {
+    
   }
 
   getAllUsers(): Observable<UserData[]> {

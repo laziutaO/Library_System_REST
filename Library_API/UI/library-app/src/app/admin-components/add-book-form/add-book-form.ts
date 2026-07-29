@@ -16,6 +16,7 @@ import { EbookRequest} from '../../interfaces/ebook-create-request';
 import {BookCopyRequest} from '../../interfaces/book-copy-create-request';
 import {LibraryData} from '../../interfaces/library-data';
 import {LibrariesService} from '../../services/libraries-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-book-form',
@@ -27,6 +28,7 @@ import {LibrariesService} from '../../services/libraries-service';
 })
 export class AddBookForm {
   fb = inject(FormBuilder);
+  router = inject(Router)
   authorService = inject(AuthorSerivce);
   libraryService = inject(LibrariesService);
   filterService = inject(FilterService);
@@ -78,8 +80,6 @@ export class AddBookForm {
     status: ['Available', Validators.required]
   });
 
-  private AddBookForm() {
-  }
   ngOnInit() {
     this.authorService.getAllAuthors().subscribe((authors) => {
       this.allAuthors = authors;
@@ -127,6 +127,7 @@ export class AddBookForm {
     else {
       this.ebooksService.createBook(ebookRequest).subscribe();
     }
+    this.router.navigateByUrl('/admin/books');
   }
 
   addAuthor(event: MatChipInputEvent): void {

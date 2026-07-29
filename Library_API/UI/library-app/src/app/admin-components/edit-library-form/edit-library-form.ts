@@ -77,5 +77,4 @@ export class EditLibraryForm {
       };
       this.libraryService.updateLibrary(this.libraryId, request).subscribe();
     }
-
   }

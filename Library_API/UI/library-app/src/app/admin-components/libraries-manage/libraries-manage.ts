@@ -20,6 +20,7 @@ export class LibrariesManage {
   constructor(private libsService: LibrariesService,
     public filterService: FilterService) {
   }
+  
   ngOnInit(): void {
     this.libsService.getAllLibraries().subscribe((data) => {
       this.librariesList.set([...this.librariesList(), ...data]);
