@@ -28,4 +28,7 @@ export class LibrariesService {
   createLibrary(request: LibraryRequest): Observable<any>{
     return this.http.post(this.apiUrl, request);
   }
+  updateLibrary( id:string, request: LibraryRequest): Observable<any>{
+    return this.http.put(`${this.apiUrl}/${id}`, request);
+  }
 }
