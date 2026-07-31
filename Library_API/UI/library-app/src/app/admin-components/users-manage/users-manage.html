@@ -26,7 +26,13 @@
             <td>{{user.isBlocked}}</td>
             
             <td class="actions-column">
-                <a class="alter-button" [routerLink]="['edit', user.id]">Edit</a>
+                @if(user.isBlocked === false){
+                    <button class="alter-button" (click)="blockUser(user.id)">Block</button>
+                }
+                @else{
+                    <button class="alter-button" (click)="unblockUser(user.id)">Unblock</button>
+                }
+                <button class="alter-button" (click)="promoteUser(user.id)">Promote to Admin</button>
                 <button class="alter-button" (click)="deleteUser(user.id)">Delete</button>
             </td>
             }

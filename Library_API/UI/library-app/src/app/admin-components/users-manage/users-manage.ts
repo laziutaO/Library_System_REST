@@ -3,6 +3,7 @@ import { UserData } from '../../interfaces/user-data';
 import { Router, RouterLink } from '@angular/router';
 import { FilterService } from '../../services/filter-service';
 import {UserService} from '../../services/user-service'
+import {UserUpdateRequest} from '../../interfaces/user-update-request';
 
 @Component({
   selector: 'app-users-manage',
@@ -30,5 +31,18 @@ export class UsersManage {
     this.userService.deleteUser(userId).subscribe(() => {
       this.usersList.set(this.usersList().filter(user => user.id !== userId));
     });
+  }
+  blockUser(userId: string): void {
+    const request: UserUpdateRequest = {
+      isBlocked: true
+    }
+  }
+  unblockUser(userId: string): void {
+    const request: UserUpdateRequest = {
+      isBlocked: false
+    }
+  }
+  promoteUser(userId: string): void {
+    
   }
 }
