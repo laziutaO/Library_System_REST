@@ -33,6 +33,10 @@ export class UserService {
   }
 
   deleteUser(id: string):Observable<HttpResponse<void>> {
-    return this.http.delete<HttpResponse<void>>(`${this.apiUrl}/${id}`);
+     return this.http.delete<HttpResponse<void>>(`${this.apiUrl}/${id}`);
+  }
+
+  updateRole(id: string, role: string): Observable<void> {
+    return this.http.patch<void>(`${this.apiUrl}/${id}`, {role});
   }
 }

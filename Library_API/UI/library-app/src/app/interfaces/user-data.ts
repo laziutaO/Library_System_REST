@@ -5,5 +5,6 @@ export interface UserData {
     phone: string,
     firstName: string,
     lastName: string,
+    role: string,
     isBlocked: boolean
 }

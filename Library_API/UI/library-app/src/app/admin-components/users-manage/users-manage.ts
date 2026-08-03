@@ -36,13 +36,19 @@ export class UsersManage {
     const request: UserUpdateRequest = {
       isBlocked: true
     }
+    this.userService.updateUser(userId, request).subscribe(() => {
+      this.usersList.set(this.usersList().map(user => user.id === userId ? { ...user, isBlocked: true } : user));
+    });
   }
   unblockUser(userId: string): void {
     const request: UserUpdateRequest = {
       isBlocked: false
     }
+    this.userService.updateUser(userId, request).subscribe(() => {
+      this.usersList.set(this.usersList().map(user => user.id === userId ? { ...user, isBlocked: false } : user));
+    });
   }
-  promoteUser(userId: string): void {
-    
+  promoteUser(userId: string, role: string): void {
+    this.userService.updateRole(userId, role).subscribe();
   }
 }

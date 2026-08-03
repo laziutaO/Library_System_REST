@@ -13,6 +13,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Phone</th>
+            
             <th>Is Blocked</th>
             <th>Actions</th>
         </tr>
@@ -23,6 +24,7 @@
             <td>{{user.userName}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phone}}</td>
+            
             <td>{{user.isBlocked}}</td>
             
             <td class="actions-column">
@@ -32,7 +34,7 @@
                 @else{
                     <button class="alter-button" (click)="unblockUser(user.id)">Unblock</button>
                 }
-                <button class="alter-button" (click)="promoteUser(user.id)">Promote to Admin</button>
+                <button class="alter-button" (click)="promoteUser(user.id, 'Admin')">Promote to Admin</button>
                 <button class="alter-button" (click)="deleteUser(user.id)">Delete</button>
             </td>
             }
